@@ -19,6 +19,7 @@ public class HomePageLocators {
 
 
     //Pratham
+    public static By accept = By.id("onetrust-accept-btn-handler");
     public static By popup = By.cssSelector(".dy-lb-close");
     public static By searchBar = By.id("autocomplete-0-input");
 }

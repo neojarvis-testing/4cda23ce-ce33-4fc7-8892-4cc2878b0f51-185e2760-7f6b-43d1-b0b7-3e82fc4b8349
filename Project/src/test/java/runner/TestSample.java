@@ -27,12 +27,12 @@ public class TestSample extends Base{
         openBrowser();
         driver.navigate().refresh();
     }
-    @Test(dataProvider = "exceldata",dataProviderClass = Dataproviderr.class)
-    // @Test
-    public void carFunc(String value){
+    // @Test(dataProvider = "exceldata",dataProviderClass = Dataproviderr.class)
+    @Test
+    public void carFunc(){
         test = report.createTest("Cars");
         ElcCars car = new ElcCars(test);
-        car.cars(value);
+        car.cars();
     }
     @AfterMethod
     public void closeELC(){
