@@ -12,6 +12,7 @@ import com.aventstack.extentreports.ExtentTest;
 
 import pages.ElcCars;
 import pages.Elcfooterverify;
+import pages.footerPage;
 import utils.Base;
 import utils.Dataproviderr;
 import utils.Reporter;
@@ -40,6 +41,11 @@ public class TestSample extends Base{
         test= report.createTest("Verification");
         Elcfooterverify footer = new Elcfooterverify(test);
         footer.clickAndVerifyUrl();
+    @Test
+    public void footer(){
+        test=report.createTest("testCase10");
+        footerPage page=new footerPage(test);
+        page.footerFunctionality();
     }
     @AfterMethod
     public void closeELC(){
@@ -50,4 +56,5 @@ public class TestSample extends Base{
         report.flush();
     }
 
+}
 }
