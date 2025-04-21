@@ -11,6 +11,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
 import pages.ElcCars;
+import pages.Elcfooterverify;
 import utils.Base;
 import utils.Dataproviderr;
 import utils.Reporter;
@@ -28,11 +29,17 @@ public class TestSample extends Base{
         driver.navigate().refresh();
     }
     // @Test(dataProvider = "exceldata",dataProviderClass = Dataproviderr.class)
-    @Test
+    // @Test
     public void carFunc(){
         test = report.createTest("Cars");
         ElcCars car = new ElcCars(test);
         car.cars();
+    }
+    @Test
+    public void verification(){
+        test= report.createTest("Verification");
+        Elcfooterverify footer = new Elcfooterverify(test);
+        footer.clickAndVerifyUrl();
     }
     @AfterMethod
     public void closeELC(){

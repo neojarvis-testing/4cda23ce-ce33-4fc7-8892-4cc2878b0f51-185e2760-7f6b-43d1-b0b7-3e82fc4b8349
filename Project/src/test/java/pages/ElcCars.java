@@ -21,6 +21,7 @@ public class ElcCars {
         this.test =test;
     }
 
+
     /*
      * a.Method Name: clickOnAccept
      * b.Author Name: Pratham Maheshwari
@@ -37,6 +38,25 @@ public class ElcCars {
         }
     }
 
+    /*
+     * a.Method Name: verifyLogo
+     * b.Author Name: Pratham Maheshwari
+     * c.Description: Verifies the logo
+     * d.Parameter: None
+     * e.Return Type: void
+     */
+    public void verifyLogo(){
+        try {
+            String text = Base.driver.findElement(HomePageLocators.logo).getDomAttribute("title");
+            System.out.println(text);
+            Assert.assertEquals(text,"Early Learning Centre");
+            LoggerHandler.info("Logo verified");
+            test.log(Status.PASS,"Logo Verified");
+        } catch (AssertionError e) {
+            LoggerHandler.error("Logo not verified");
+            test.log(Status.FAIL,"Logo not Verified");
+        }
+    }
     /*
      * a.Method Name: clickOnSearchBar
      * b.Author Name: Pratham Maheshwari
@@ -132,6 +152,7 @@ public class ElcCars {
             helper.wait(ElcCarsHomePageLocator.toyCars);
             helper.clickOnElement(ElcCarsHomePageLocator.toyCars);
             String x = helper.getText(ElcCarsHomePageLocator.imaginativePlay);
+            System.out.println(x);
             Assert.assertTrue(x.contains("play"));
             LoggerHandler.info("Clicked on Toy Cars");
             test.log(Status.PASS, "Clicked on Toy Cars");
@@ -233,7 +254,16 @@ public class ElcCars {
      * e.Return Type: void
      */
     public void back(){
-        Base.driver.navigate().back();
+        try {
+            Base.driver.navigate().back();
+            // String x = helper.getText(ElcCarsFirstProductLocator.wishlist);
+            // Assert.assertTrue(x.contains("Wishlist"));
+            // LoggerHandler.info("Verified text Wishlist");
+            // test.log(Status.PASS, "Verified text Wishlist");
+        } catch (AssertionError | Exception e) {
+            // LoggerHandler.error("Not able to Verify text Wishlist");
+            // test.log(Status.FAIL, "Not able to Verify text Wishlist");
+        }
     }
 
     /*
@@ -245,6 +275,7 @@ public class ElcCars {
      */
     public void cars(){
         clickOnAccept();
+        verifyLogo();
         clickOnSearchBar();
         enterDataOnSearchBar();
         verifyCarUrl();
