@@ -20,6 +20,20 @@ public class HappyLandHomePage {
         helper=new WebDriverHelper(Base.driver);
         this.test=test;
     }
+    public void clickAcceptCookies(){
+        try {
+            helper.wait(HomePageLocators.Cookies);
+            helper.clickOnElement(HomePageLocators.Cookies);
+            test.log(Status.PASS, "clicked on accept cookies");
+            LoggerHandler.info("clicked on accept cookies");
+        } catch (Exception e) {
+            e.printStackTrace();
+            test.log(Status.PASS, "Not able to clicked on accept cookies");
+            LoggerHandler.info("Not able to clicked on accept cookies");
+
+        }
+    }
+   
     public void hoverExplore(){
         try {
             helper.hoverOverElement(HomePageLocators.explore); 
@@ -139,6 +153,8 @@ public class HappyLandHomePage {
         }
     }
     public void output1(){
+      Base.driver.navigate().back();
+      clickAcceptCookies();
        hoverExplore();
        clickGif();
        verifyGift();
