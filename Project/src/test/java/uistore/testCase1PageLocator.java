@@ -2,7 +2,7 @@ package uistore;
 
 import org.openqa.selenium.By;
 
-public class testCase1Locators {
+public class testCase1PageLocator {
     public static By acceptAllCookies=By.cssSelector("button[id='onetrust-accept-btn-handler']");
     public static By logo=By.cssSelector("img[title='Early Learning Centre']");
     public static By shopByAge=By.cssSelector("a[title='Shop by age']");
@@ -16,4 +16,5 @@ public class testCase1Locators {
     public static By addToBasket=By.cssSelector("button[id='addToCartButton']");
     public static By continueShopping=By.cssSelector("a[href='javascript:window.location.reload(false)']");
     public static By home=By.cssSelector("li > a[href='/']");
+
 }
