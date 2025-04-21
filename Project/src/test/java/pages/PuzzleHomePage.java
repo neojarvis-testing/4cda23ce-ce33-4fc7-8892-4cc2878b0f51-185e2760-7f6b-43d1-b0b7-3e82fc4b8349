@@ -19,6 +19,13 @@ public class PuzzleHomePage {
         helper=new WebDriverHelper(Base.driver);
         this.test=test;
     }
+      /*
+    * Method name : clickOnAcceptCookies
+    * Author name : PrasannaLaxmi
+    * Description : Clicks on the accept cookies button
+    * Return Type : void
+    * Parameter : None
+    */
     public void clickAcceptCookies(){
         try {
             helper.wait(HomePageLocators.Cookies);
@@ -32,7 +39,14 @@ public class PuzzleHomePage {
 
         }
     }
-    public void clickSearch(){
+    /*
+    * Method name : clickOnSearch
+    * Author name : PrasannaLaxmi
+    * Description : This method click on Searchbar
+    * Return Type : void
+    * Parameter : None
+    */
+    public void clickOnSearch(){
         try {
             helper.clickOnElement(HomePageLocators.searchbar); 
         LoggerHandler.info("Clicked on SearchBar");
@@ -43,6 +57,13 @@ public class PuzzleHomePage {
           test.log(Status.PASS,"Not able to Clicked on SearchBar");
         }
     }
+    /*
+    * Method name : senddata
+    * Author name : PrasannaLaxmi
+    * Description : This method senddata on searchbar
+    * Return Type : value
+    * Parameter : None
+    */
     public void sendadata(String value){
         try {
             helper.sendData(HomePageLocators.searchbar,value); 
@@ -56,6 +77,13 @@ public class PuzzleHomePage {
           test.log(Status.PASS,"Not able to sent data on SearchBar");
         }
     }
+    /*
+    * Method name : performEnter
+    * Author name : PrasannaLaxmi
+    * Description : This method perform enter action
+    * Return Type : void
+    * Parameter : None
+    */
     public void performEnter(){
         try {
             Thread.sleep(500);
@@ -68,8 +96,14 @@ public class PuzzleHomePage {
           test.log(Status.PASS,"Not able to enter value on searchBar");
         }
     }
-
-    public void clickShowmore(){
+    /*
+    * Method name : clickOnShowmore
+    * Author name : PrasannaLaxmi
+    * Description : This method click on Showmore
+    * Return Type : void
+    * Parameter : None
+    */
+    public void clickOnShowmore(){
         try {
             helper.wait(HappyLandHomePageLocator.showmore);
             helper.clickOnElement(HappyLandHomePageLocator.showmore); 
@@ -81,19 +115,32 @@ public class PuzzleHomePage {
           test.log(Status.PASS,"Not able to Clicked on Showmore");
         }
     }
-    public void clickJigsawPuzzle(){
+     /*
+    * Method name : clickONJigsawPuzzle
+    * Author name : PrasannaLaxmi
+    * Description : This method click on JigsawPuzzle
+    * Return Type : void
+    * Parameter : None
+    */
+    public void clickOnJigsawPuzzle(){
         try {
         helper.clickOnElement(HappyLandHomePageLocator.jigsaw); 
-        LoggerHandler.info("Clicked on Showmore");
-        test.log(Status.PASS,"Clicked on Showmore");
+        LoggerHandler.info("Clicked on jigsaw");
+        test.log(Status.PASS,"Clicked on jigsaw");
         } catch (Exception e) {
           System.out.println(e.getMessage());
           LoggerHandler.error("Not able to Clicked on Showmore");
           test.log(Status.PASS,"Not able to Clicked on Showmore");
         }
     }
-
-    public void clickChildren(){
+    /*
+    * Method name : clickChildren
+    * Author name : PrasannaLaxmi
+    * Description : This method click on children's Games
+    * Return Type : void
+    * Parameter : None
+    */
+    public void clickOnChildren(){
         try {
         helper.wait(HappyLandHomePageLocator.children);
         helper.clickOnElement(HappyLandHomePageLocator.children); 
@@ -105,7 +152,14 @@ public class PuzzleHomePage {
           test.log(Status.PASS,"Not able to Clicked on Children Games");
         }
     } 
-    public void clickDiscover(){
+     /*
+    * Method name : clickOnDiscover
+    * Author name : PrasannaLaxmi
+    * Description : This method click on Discover more
+    * Return Type : void
+    * Parameter : None
+    */
+    public void clickOnDiscover(){
         try {
             helper.wait(HappyLandHomePageLocator.discover);
          helper.clickOnElement(HappyLandHomePageLocator.discover); 
@@ -117,7 +171,14 @@ public class PuzzleHomePage {
           test.log(Status.PASS,"Not able to Clicked on Discover");
         }
     }
-    public void clickFirst(){
+     /*
+    * Method name : clickOnFirst
+    * Author name : PrasannaLaxmi
+    * Description : This method click on FirstProduct in List of Product
+    * Return Type : void
+    * Parameter : None
+    */
+    public void clickOnFirst(){
         try {
         helper.wait(HappyLandHomePageLocator.second);
         helper.clickOnElement(HappyLandHomePageLocator.second); 
@@ -129,7 +190,14 @@ public class PuzzleHomePage {
           test.log(Status.PASS,"Not able to Clicked on FirstElement");
         }
     }
-    public void clickAddtoWishlist(){
+     /*
+    * Method name : clickOnAddtoWishlist
+    * Author name : PrasannaLaxmi
+    * Description : This method click on Add to wishlist
+    * Return Type : void
+    * Parameter : None
+    */
+    public void clickOnAddtoWishlist(){
         try {
         helper.wait(HappyLandHomePageLocator.wishlist);
          helper.clickOnElement(HappyLandHomePageLocator.wishlist); 
@@ -141,12 +209,19 @@ public class PuzzleHomePage {
           test.log(Status.PASS,"Not able to Clicked on Wishlist");
         }
     }
+     /*
+    * Method name : verifyLearning
+    * Author name : PrasannaLaxmi
+    * Description : This method verify keyword Learning
+    * Return Type : void
+    * Parameter : None
+    */
     public void verifyLearning(){
         try {
             String learning=helper.getText(HappyLandHomePageLocator.learning);
             Assert.assertTrue(learning.contains("Learning"));
             Screenshot.captureScreenShot("learning");
-            LoggerHandler.error("Text contains Learning");
+            LoggerHandler.info("Text contains Learning");
             test.log(Status.PASS,"Text contains Learning");
             Screenshot.captureScreenShot("learning");
         } catch (Exception e) {
@@ -155,18 +230,25 @@ public class PuzzleHomePage {
             test.log(Status.PASS,"Text not contain Learning");
         }
     }
+    /*
+    * Method name : output1
+    * Author name : PrasannaLaxmi
+    * Description : This method call all methods by calling this method all actions performed
+    * Return Type : void
+    * Parameter : None
+    */
    public void output2(String value){
    
     clickAcceptCookies();
-    clickSearch();
+    clickOnSearch();
     sendadata(value);
     performEnter();
-    clickShowmore();
-    clickJigsawPuzzle();
-    clickChildren();
-    clickDiscover();
-    clickFirst();
-    clickAddtoWishlist();
+    clickOnShowmore();
+    clickOnJigsawPuzzle();
+    clickOnChildren();
+    clickOnDiscover();
+    clickOnFirst();
+    clickOnAddtoWishlist();
     verifyLearning();
    }
 }

@@ -34,12 +34,12 @@ public class TestSample extends Base{
     //     footerPage page=new footerPage(test);
     //     page.footerFunctionality();
     // }
-    // @Test
-    // public void happyland(){
-    //     test=report.createTest("happy");
-    //     HappyLandHomePage h=new HappyLandHomePage(test);
-    //     h.output1();
-    // }
+    @Test
+    public void happyland(){
+        test=report.createTest("happy");
+        HappyLandHomePage h=new HappyLandHomePage(test);
+        h.output1();
+    }
     // @Test(dataProvider = "exceldata",dataProviderClass = DataProviderclass.class)
     @Test(dataProvider = "exceldata",dataProviderClass = DataProviderclass.class)
     public void puzzle(String value){
