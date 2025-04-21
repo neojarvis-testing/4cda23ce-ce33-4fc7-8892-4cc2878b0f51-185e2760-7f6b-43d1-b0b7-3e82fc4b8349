@@ -63,7 +63,7 @@ public class footerPage {
     public void verifyAboutUsUrl(){
         try {
             String value=helper.getUrl();
-            Assert.assertEquals(value, value);
+            Assert.assertEquals(value, "https://www.elc.co.uk/aboutus");
             System.out.println(value);
             Base.driver.navigate().back();
             test.log(Status.PASS, "verify the about us url");
@@ -100,7 +100,7 @@ public class footerPage {
     public void verifyStoreFindUrl(){
         try {
             String value=helper.getUrl();
-            Assert.assertEquals(value, value);
+            Assert.assertEquals(value, "https://www.elc.co.uk/store-finder");
             System.out.println(value);
             Base.driver.navigate().back();
             test.log(Status.PASS, "verify the store finder url");
@@ -121,9 +121,9 @@ public class footerPage {
             helper.jsScrollIntoView(HomePageLocators.WEERegulations);
             helper.wait(HomePageLocators.WEERegulations);
             helper.clickOnElement(HomePageLocators.WEERegulations);
+            helper.switchTab();
             test.log(Status.PASS, "click on WEE Regulations");
             LoggerHandler.info("click on WEE Regulations");
-            helper.switchTab();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -138,9 +138,9 @@ public class footerPage {
     public void verifyWEERegulationsUrl(){
         try {
             String value=helper.getUrl();
-            Assert.assertEquals(value, value);
+            Assert.assertEquals(value, "https://www.thetoyshop.com/weee");
             System.out.println(value);
-            helper.switchBackToDefault();
+            helper.switchBackToParent();
             test.log(Status.PASS, "verify the weeRegulations url");
             LoggerHandler.info("verify the weeRegulations url");
         } catch (Exception e) {
@@ -175,7 +175,7 @@ public class footerPage {
     public void verifyPressUrl(){
         try {
             String value=helper.getUrl();
-            Assert.assertEquals(value, value);
+            Assert.assertEquals(value, "https://www.elc.co.uk/press");
             System.out.println(value);
             Base.driver.navigate().back();
             test.log(Status.PASS, "verify the press url");
@@ -212,7 +212,7 @@ public class footerPage {
     public void verifyAffilatesUrl(){
         try {
             String value=helper.getUrl();
-            Assert.assertEquals(value, value);
+            Assert.assertEquals(value, "https://www.elc.co.uk/affiliates");
             System.out.println(value);
             Base.driver.navigate().back();
             test.log(Status.PASS, "verify the affilates url");
@@ -250,9 +250,9 @@ public class footerPage {
     public void verifyCareersUrl(){
         try {
             String value=helper.getUrl();
-            Assert.assertEquals(value, value);
+            Assert.assertEquals(value, "https://careers.thetoyshop.com/");
             System.out.println(value);
-            helper.switchBackToDefault();
+            helper.switchBackToParent();
             test.log(Status.PASS, "verify the careers url");
             LoggerHandler.info("verify the careers url");
         } catch (Exception e) {
@@ -287,7 +287,7 @@ public class footerPage {
     public void verifyGiftCardUrl(){
         try {
             String value=helper.getUrl();
-            Assert.assertEquals(value, value);
+            Assert.assertEquals(value, "https://www.elc.co.uk/gift-cards/The-Entertainer-%26-Early-Learning-Centre-Gift-Card-%C2%A310/p/99880000001_10");
             System.out.println(value);
             test.log(Status.PASS, "verify the gift card url");
             LoggerHandler.info("verify the gift card url");
@@ -324,7 +324,7 @@ public class footerPage {
     public void verifyKlarnaUrl(){
         try {
             String value=helper.getUrl();
-            Assert.assertEquals(value, value);
+            Assert.assertEquals(value, "https://www.elc.co.uk/klarna");
             System.out.println(value);
             Base.driver.navigate().back();
             test.log(Status.PASS, "verify the klarna url");
@@ -343,7 +343,7 @@ public class footerPage {
     public void verifyUsefulLinksText(){
         try {
             String value=helper.getText(HomePageLocators.usefulLinks);
-            Assert.assertEquals(value, value);
+            Assert.assertEquals(value, "Useful links");
             System.out.println(value);
             test.log(Status.PASS, "verify the useful links url");
             LoggerHandler.info("verify the useful links url");
@@ -379,14 +379,14 @@ public class footerPage {
         verifyAboutUsUrl();
         clickOnStoreFinder();
         verifyStoreFindUrl();
-        // clickOnWEERegulations();
-        // verifyWEERegulationsUrl();
+        clickOnWEERegulations();
+        verifyWEERegulationsUrl();
         clickOnPress();
         verifyPressUrl();
         clickOnAffilates();
         verifyAffilatesUrl();
-        // clickOnCareers();
-        // verifyCareersUrl();
+        clickOnCareers();
+        verifyCareersUrl();
         clickOnGiftCard();
         verifyGiftCardUrl();
         clickOnKlarna();
