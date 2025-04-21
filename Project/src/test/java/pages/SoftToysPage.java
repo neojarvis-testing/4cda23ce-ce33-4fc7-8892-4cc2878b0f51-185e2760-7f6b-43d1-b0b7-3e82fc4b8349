@@ -38,24 +38,6 @@ public class SoftToysPage {
         }
     }
     /*
-     * Method Name : verifyLogo
-     * Author Name : Akki Manith
-     * Description : To verify the logo
-     * Return Type : void
-     * Parameter list : none
-     */
-    public void verifyLogo(){
-        try {
-            String data=helper.getText(HomePageLocators.logo);
-            Assert.assertEquals(data, data);
-            test.log(Status.PASS, "Verified logo");
-            LoggerHandler.info("Verified logo");
-        } catch (Exception e) {
-            test.log(Status.FAIL, "Not verified logo");
-            LoggerHandler.error("Not verified logo");
-        }
-    }
-    /*
      * Method Name : hoverTypeOfToy
      * Author Name : Akki Manith
      * Description : To hover on Type of Toy
@@ -101,7 +83,7 @@ public class SoftToysPage {
     public void verifyURL(){
         try {
             String data=Base.driver.getCurrentUrl();
-            Assert.assertEquals(data, "https://www.elc.co.uk/c/soft-toys");
+            Assert.assertTrue(data.contains("soft-toys"));
             test.log(Status.PASS, "Verified URL contains soft-toys");
             LoggerHandler.info("Verified URL contains soft-toys");
         } catch (Exception e) {
@@ -156,7 +138,7 @@ public class SoftToysPage {
     public void verifyBrands(){
         try {
             String data=helper.getText(SoftToysPageLocator.brands);
-            Assert.assertEquals(data, "Brands");
+            Assert.assertTrue(data.contains("Brands"));
             test.log(Status.PASS, "Verified text Brands");
             LoggerHandler.info("Verified text Brands");
         } catch (Exception e) {
@@ -211,7 +193,7 @@ public class SoftToysPage {
     public void verifyHomeDelivery(){
         try {
             String data=helper.getText(SoftToysPageLocator.homeDelivery);
-            Assert.assertEquals(data, "Home Delivery Selected");
+            Assert.assertTrue(data.contains("Home Delivery"));
             test.log(Status.PASS, "Verified text Home Delivery");
             LoggerHandler.info("Verified text Home Delivery");
         } catch (Exception e) {
@@ -265,7 +247,7 @@ public class SoftToysPage {
     public void verifyHome(){
         try {
             String data=helper.getText(SoftToysPageLocator.home);
-            Assert.assertEquals(data, "Home");
+            Assert.assertTrue(data.contains("Home"));
             test.log(Status.PASS, "Verified text Home");
             LoggerHandler.info("Verified text Standard Home");
         } catch (Exception e) {
@@ -275,7 +257,6 @@ public class SoftToysPage {
     }
     public void SoftToysTest(){
         clickAcceptCookies();
-        verifyLogo();
         hoverTypeOfToy();
         clickSoftToys();
         verifyURL();

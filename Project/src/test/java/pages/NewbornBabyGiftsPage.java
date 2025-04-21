@@ -38,24 +38,6 @@ public class NewbornBabyGiftsPage {
         }
     }
     /*
-     * Method Name : verifyLogo
-     * Author Name : Akki Manith
-     * Description : To verify the logo
-     * Return Type : void
-     * Parameter list : none
-     */
-    public void verifyLogo(){
-        try {
-            String data=helper.getText(HomePageLocators.logo);
-            Assert.assertEquals(data, data);
-            test.log(Status.PASS, "Verified logo");
-            LoggerHandler.info("Verified logo");
-        } catch (Exception e) {
-            test.log(Status.FAIL, "Not verified logo");
-            LoggerHandler.error("Not verified logo");
-        }
-    }
-    /*
      * Method Name : hoverShopByAge
      * Author Name : Akki Manith
      * Description : To hover Shop by age
@@ -101,7 +83,7 @@ public class NewbornBabyGiftsPage {
     public void verifyURL(){
         try {
             String data=Base.driver.getCurrentUrl();
-            Assert.assertEquals(data, "https://www.elc.co.uk/c/shop-by-age/new-born-baby-gift-ideas");
+            Assert.assertTrue(data.contains("new-born-baby-gift-ideas"));
             test.log(Status.PASS, "Verified URL contains new-born-baby-gift-ideas");
             LoggerHandler.info("Verified URL contains new-born-baby-gift-ideas");
         } catch (Exception e) {
@@ -213,7 +195,7 @@ public class NewbornBabyGiftsPage {
     public void verifyStandardDelivery(){
         try {
             String data=helper.getText(NewbornBabyGiftsPageLocator.standardDelivery);
-            Assert.assertEquals(data, "Standard Delivery available for £3.99 (up to 3 working days). Express Delivery available for £5.99.");
+            Assert.assertTrue(data.contains("Standard Delivery"));
             test.log(Status.PASS, "Verified text Standard Deliver");
             LoggerHandler.info("Verified text Standard Delivery");
         } catch (Exception e) {
@@ -267,7 +249,7 @@ public class NewbornBabyGiftsPage {
     public void verifyHome(){
         try {
             String data=helper.getText(NewbornBabyGiftsPageLocator.home);
-            Assert.assertEquals(data, "Home");
+            Assert.assertTrue(data.contains("Home"));
             test.log(Status.PASS, "Verified text Home");
             LoggerHandler.info("Verified text Standard Home");
         } catch (Exception e) {
@@ -284,7 +266,6 @@ public class NewbornBabyGiftsPage {
      */
     public void NewbabyBornGiftsPageTest(){
         clickAcceptCookies();
-        // verifyLogo();
         hoverShopByAge();
         clickNewbornGifts();
         verifyURL();

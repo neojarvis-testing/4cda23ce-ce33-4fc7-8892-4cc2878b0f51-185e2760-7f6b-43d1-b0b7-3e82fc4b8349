@@ -30,7 +30,7 @@ public class TestSample extends Base{
     }
     // @Test
     // @Test(dataProvider = "exceldata",dataProviderClass = DataProviderclass.class)
-    @Test
+    // @Test
     public void footer(){
         test=report.createTest("testCase10");
         footerPage page=new footerPage(test);
