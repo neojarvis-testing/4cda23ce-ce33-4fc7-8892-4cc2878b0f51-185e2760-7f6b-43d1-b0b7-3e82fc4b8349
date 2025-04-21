@@ -1,0 +1,12 @@
+2025.04.21.18.09.03 INFO  utils.LoggerHandler - click on accept cookies
+2025.04.21.18.09.03 INFO  utils.LoggerHandler - Successfully Hover on Brands
+2025.04.21.18.09.05 INFO  utils.LoggerHandler - Successfully click on PawPatrol
+2025.04.21.18.09.05 INFO  utils.LoggerHandler - verify the url
+2025.04.21.18.09.05 INFO  utils.LoggerHandler - Successfully click on Playsets & Action Figures
+2025.04.21.18.09.06 INFO  utils.LoggerHandler - Successfully verifed the text Narrow
+2025.04.21.18.09.06 INFO  utils.LoggerHandler - Successfully clicked on Savings
+2025.04.21.18.09.09 INFO  utils.LoggerHandler - Successfully clicked on Product
+2025.04.21.18.09.09 INFO  utils.LoggerHandler - Successfully verifed the text Available
+2025.04.21.18.09.10 INFO  utils.LoggerHandler - Successfully Clicked on Add to Basket
+2025.04.21.18.09.12 INFO  utils.LoggerHandler - Succesffully Clicked on CheckOut
+2025.04.21.18.09.13 INFO  utils.LoggerHandler - Successfully verifed the text Basket

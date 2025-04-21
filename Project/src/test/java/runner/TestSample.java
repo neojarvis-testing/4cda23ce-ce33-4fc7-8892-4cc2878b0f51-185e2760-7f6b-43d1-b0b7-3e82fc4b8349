@@ -26,17 +26,17 @@ public class TestSample extends Base{
         openBrowser();
         driver.navigate().refresh();
     }
-    // @Test
-    // public void footer(){
-    //     test=report.createTest("testCase10");
-    //     footerPage page=new footerPage(test);
-    //     page.footerFunctionality();
-    // }
+    @Test
+    public void footer(){
+        test=report.createTest("testCase10");
+        footerPage page=new footerPage(test);
+        page.footerFunctionality();
+    }
     @Test
     public void PawPatroll(){
-        test = report.createTest("testcase5");
+        test = report.createTest("PawPatrol");
         PawPatrolHomePage pawPatrolHomePage = new PawPatrolHomePage(test);
-        pawPatrolHomePage.testcase5();
+        pawPatrolHomePage.TestPawPatrol();
     }
     @AfterMethod
     public void closeELC(){

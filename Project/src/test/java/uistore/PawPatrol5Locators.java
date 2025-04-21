@@ -12,7 +12,7 @@ public class PawPatrol5Locators {
     public static By VerifyAvailable = By.cssSelector("p[class='store-availability-text']");
     public static By ClickOnAddBasket = By.xpath("//button[@id='addToCartButton']");
     public static By ClickOnCheckOut = By.cssSelector("a[class='btn btn-primary btn-block add-to-cart-button']");
-    public static By VerifyBasket = By.cssSelector("span[class='headline-text']");
+    public static By VerifyBasket = By.cssSelector("div[class='dy-overlay__item-content-button']");
 
 
 

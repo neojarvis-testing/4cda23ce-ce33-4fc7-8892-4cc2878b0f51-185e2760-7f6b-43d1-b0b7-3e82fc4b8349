@@ -33,7 +33,10 @@ public class PawPatrolHomePage {
             test.log(Status.PASS, "click on accept cookies");
             LoggerHandler.info("click on accept cookies");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            test.log(Status.FAIL, "Failed to Click on accept cookies");
+            LoggerHandler.error("Failed to Click on accept cookies");
+
         }
     }
 /*
@@ -51,6 +54,10 @@ public void hoverOnBrands(){
         test.log(Status.PASS,"Succesfully Hover on Brands");
         
     } catch (Exception e) {
+        System.out.println(e.getMessage());
+        LoggerHandler.error("Failed to Hover on Brands");
+        test.log(Status.FAIL,"Failed to Hover on Brands");
+
         // TODO: handle exception
     }
     
@@ -71,6 +78,9 @@ public void ClickOnPawPatrol(){
         
     } catch (Exception e) {
         // TODO: handle exception
+        System.out.println(e.getMessage());
+        LoggerHandler.error("Failed to Click on PawPatrol");
+        test.log(Status.FAIL,"Failed to Click on PawPatrol");
     }
 }
 /*
@@ -83,12 +93,15 @@ public void ClickOnPawPatrol(){
 public void verifyurl(){
     try {
         String value = helper.getUrl();
-        Assert.assertEquals(value,value);
+        Assert.assertEquals(value,"https://www.elc.co.uk/brands/paw-patrol");
         System.out.println(value);
         LoggerHandler.info("verify the url");
         test.log(Status.INFO,"verify the url");
     } catch (Exception e) {
         // TODO: handle exception
+        System.out.println(e.getMessage());
+        LoggerHandler.error("Failed to Verify the Url");
+        test.log(Status.FAIL,"Failed to Verify the Url");
     }
     
 }
@@ -107,7 +120,9 @@ public void ClickonPlaysetsAction(){
         test.log(Status.PASS,"Successfully click on Playsets & Action Figures");
         
     } catch (Exception e) {
-        // TODO: handle exception
+        System.out.println(e.getMessage());
+        LoggerHandler.error("Failed to Click on Playsets & Action Figures ");
+        test.log(Status.FAIL,"Failed to Click on Playsets & Action Figures");
     }
     
 }
@@ -121,13 +136,16 @@ public void ClickonPlaysetsAction(){
 public void CheckNarrow(){
     try {
         String data = helper.getText(PawPatrol5Locators.VerifyNarrow);
-        Assert.assertEquals(data,data);
+        Assert.assertEquals(data,"Narrow Your Results");
         System.out.println(data);
         LoggerHandler.info("Successfully verifed the text Narrow");
         test.log(Status.PASS, "Successfully verifed the text Narrow");
         
     } catch (Exception e) {
-        // TODO: handle exception
+        System.out.println(e.getMessage());
+        LoggerHandler.error("Failed to verify the text.");
+        test.log(Status.FAIL,"Failed to verify the text.");
+
     }
 }
 /*
@@ -145,7 +163,9 @@ public void ClickOnSavings(){
         LoggerHandler.info("Successfully clicked on Savings");
         test.log(Status.PASS,"Successfully clicked on Savings");
     } catch (Exception e) {
-        // TODO: handle exception
+        LoggerHandler.error("Failed to Click on Savings");
+        test.log(Status.FAIL,"Failed to Click on Savings.");
+
     }
 }
 /*
@@ -162,7 +182,8 @@ public void ClickOnProduct(){
         LoggerHandler.info("Successfully clicked on Product");
         test.log(Status.PASS,"Successfully clicked on Product" );
     } catch (Exception e) {
-        // TODO: handle exception
+        LoggerHandler.error("Failed to Click on Product");
+        test.log(Status.FAIL,"Failed to Click On Product.");
     }
     
 }
@@ -177,13 +198,14 @@ public void VerifyAvailable(){
     try {
         helper.wait(PawPatrol5Locators.VerifyAvailable);
         String data = helper.getText(PawPatrol5Locators.VerifyAvailable);
-        Assert.assertEquals(data,data);
+        Assert.assertEquals(data,"Available to pick up for FREE from our stores within 30 minutes.");
         System.out.println(data);
         LoggerHandler.info("Successfully verifed the text Available");
         test.log(Status.PASS,"Successfully verifed the text Available");
         
     } catch (Exception e) {
-        // TODO: handle exception
+        LoggerHandler.error("Failed to verify the text.");
+        test.log(Status.FAIL,"Failed to verify the text.");
     }
 }
 /*
@@ -200,7 +222,10 @@ public void ClickOnAddtoBasket(){
         LoggerHandler.info("Successfully Clicked on Add to Basket");
         test.log(Status.PASS,"Successfully Clicked on Add to Basket");
     } catch (Exception e) {
-        // TODO: handle exception
+        System.out.println(e.getMessage());
+        LoggerHandler.error("Failed to Click on AddtoBasket");
+        test.log(Status.FAIL,"Failed to Click on AddtoBasket");
+
     }
 }
 /*
@@ -218,7 +243,9 @@ public void ClickOnCheckOut()
         LoggerHandler.info("Succesffully Clicked on CheckOut");
         test.log(Status.PASS,"Succesffully Clicked on CheckOut");
     } catch (Exception e) {
-        // TODO: handle exception
+        System.out.println(e.getMessage());
+        LoggerHandler.error("Failed to Click on CheckOut");
+        test.log(Status.FAIL,"Failed to Click on CheckOut");
     }
 }
 /*
@@ -228,22 +255,29 @@ public void ClickOnCheckOut()
  * d.Return Type : void
  * e.Parameter List :None
  */
-    public void verifyBasket(){
-        try {
-            helper.wait(PawPatrol5Locators.VerifyBasket);
-            String data = helper.getText(PawPatrol5Locators.VerifyBasket);
-            Assert.assertEquals(data,data);
-            System.out.println(data);
-            LoggerHandler.info("Successfully verifed the text Basket");
-            test.log(Status.INFO,"Successfully verifed the text Available");
-            Screenshot.captureScreenShot("Basket");
-        } catch (Exception e) {
-            // TODO: handle exception
-        }
+public void verifyBasket(){
+    try {
+        helper.wait(PawPatrol5Locators.VerifyBasket);
+        String data = helper.getText(PawPatrol5Locators.VerifyBasket);
+        Assert.assertEquals(data,"Add to Basket");
+        System.out.println(data);
+        LoggerHandler.info("Successfully verifed the text Basket");
+        test.log(Status.INFO,"Successfully verifed the text Available");
+        Screenshot.captureScreenShot("Add to Basket");
+    } catch (Exception e) {
+        System.out.println(e.getMessage());
+        LoggerHandler.error("Failed to Verify the text");
+        test.log(Status.FAIL,"Failed to Verify the text");
     }
-
-
-    public void  testcase5(){
+}
+/*
+ * a.Method Name : TestPawPatrol
+ * b.Author Name : Karthik
+ * c.Description : Executes TestPawPatrol by calling relevant methods.
+ * d.Return Type : void
+ * e.Parameter List :None
+ */
+    public void  TestPawPatrol(){
         clickOnAcceptCookies();
         hoverOnBrands();
         ClickOnPawPatrol();
