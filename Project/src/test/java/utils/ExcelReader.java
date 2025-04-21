@@ -1,6 +1,8 @@
 package utils;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -38,7 +40,9 @@ public class ExcelReader {
                 }
             }
             return data;
-        } catch (Exception e) {
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }catch(IOException e){
             e.printStackTrace();
         }
         return null;
