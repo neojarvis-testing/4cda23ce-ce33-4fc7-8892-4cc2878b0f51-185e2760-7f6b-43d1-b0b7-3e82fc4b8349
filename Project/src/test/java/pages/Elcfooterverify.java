@@ -8,6 +8,7 @@ import com.aventstack.extentreports.Status;
 import uistore.HomePageLocators;
 import utils.Base;
 import utils.LoggerHandler;
+import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class Elcfooterverify {
@@ -422,5 +423,6 @@ public class Elcfooterverify {
         clickOnHowToComplain();
         verifyHowToComplainUrl();
         verifyAboutUs();
+        Screenshot.captureScreenShot("About Us");
     }
 }
