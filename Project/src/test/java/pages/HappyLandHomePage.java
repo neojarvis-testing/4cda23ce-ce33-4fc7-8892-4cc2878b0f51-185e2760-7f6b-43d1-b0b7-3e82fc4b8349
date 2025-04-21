@@ -136,5 +136,8 @@ public class HappyLandHomePage {
           test.log(Status.PASS,"Not able to Clicked Checkout");
         }
     }
+    public void output(){
+        
+    }
 
 }
