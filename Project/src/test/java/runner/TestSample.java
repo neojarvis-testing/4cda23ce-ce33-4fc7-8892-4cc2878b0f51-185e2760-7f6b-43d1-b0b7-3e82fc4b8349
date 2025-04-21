@@ -29,7 +29,7 @@ public class TestSample extends Base{
         driver.navigate().refresh();
     }
     // @Test(dataProvider = "exceldata",dataProviderClass = Dataproviderr.class)
-    // @Test
+    @Test
     public void carFunc(){
         test = report.createTest("Cars");
         ElcCars car = new ElcCars(test);
