@@ -1,0 +1,18 @@
+2025.04.21.17.43.18 INFO  utils.LoggerHandler - click on accept cookies
+2025.04.21.17.43.20 INFO  utils.LoggerHandler - scroll down to footer
+2025.04.21.17.43.22 INFO  utils.LoggerHandler - verify the about us url
+2025.04.21.17.43.24 INFO  utils.LoggerHandler - click on store finder
+2025.04.21.17.43.26 INFO  utils.LoggerHandler - verify the store finder url
+2025.04.21.17.43.27 INFO  utils.LoggerHandler - click on WEE Regulations
+2025.04.21.17.43.30 INFO  utils.LoggerHandler - verify the weeRegulations url
+2025.04.21.17.43.31 INFO  utils.LoggerHandler - click on Press
+2025.04.21.17.43.34 INFO  utils.LoggerHandler - verify the press url
+2025.04.21.17.43.36 INFO  utils.LoggerHandler - click on Affilates
+2025.04.21.17.43.38 INFO  utils.LoggerHandler - verify the affilates url
+2025.04.21.17.43.38 INFO  utils.LoggerHandler - click on Careers
+2025.04.21.17.43.44 INFO  utils.LoggerHandler - verify the careers url
+2025.04.21.17.43.46 INFO  utils.LoggerHandler - click on gift card
+2025.04.21.17.43.46 INFO  utils.LoggerHandler - verify the gift card url
+2025.04.21.17.43.50 INFO  utils.LoggerHandler - click on klarna
+2025.04.21.17.43.53 INFO  utils.LoggerHandler - verify the klarna url
+2025.04.21.17.43.53 INFO  utils.LoggerHandler - verify the useful links url

@@ -13,6 +13,7 @@ import pages.HappyLandHomePage;
 import pages.PuzzleHomePage;
 import pages.footerPage;
 import utils.Base;
+import utils.DataProviderclass;
 import utils.Reporter;
 
 public class TestSample extends Base{
@@ -39,7 +40,8 @@ public class TestSample extends Base{
     //     HappyLandHomePage h=new HappyLandHomePage(test);
     //     h.output1();
     // }
-    @Test
+    // @Test(dataProvider = "exceldata",dataProviderClass = DataProviderclass.class)
+    @Test(dataProvider = "exceldata",dataProviderClass = DataProviderclass.class)
     public void puzzle(String value){
         test=report.createTest("puzzle");
         PuzzleHomePage p=new PuzzleHomePage(test);

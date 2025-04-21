@@ -273,7 +273,8 @@ public class WebDriverHelper {
      * d.Parameter: By path - Locator for the element
      * e.Return Type: void
      */
-    public void hoverOverElement(By path){
+    public void hoverOverElement(By path)
+    {
         try {
             Actions action = new Actions(driver);
             WebElement element = driver.findElement(path);
@@ -295,6 +296,20 @@ public class WebDriverHelper {
             Actions action = new Actions(driver);
             WebElement element = driver.findElement(path);
             action.click(element).build().perform();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void switchBackToParent(){
+        try {
+            if (!list.isEmpty()) {
+                String parentWindow = list.get(0); // Assuming the first stored window is the parent
+                driver.switchTo().window(parentWindow);
+            } else {
+                System.out.println("No parent window found in the list.");
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
