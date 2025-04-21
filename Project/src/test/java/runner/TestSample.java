@@ -33,7 +33,7 @@ public class TestSample extends Base{
         footerPage page=new footerPage(test);
         page.footerFunctionality();
     }
-    // @Test
+    @Test
     public void NewbornBabyGifts(){
         test=report.createTest("Newborn Baby Gifts");
         NewbornBabyGiftsPage newbornBabyGifts=new NewbornBabyGiftsPage(test);

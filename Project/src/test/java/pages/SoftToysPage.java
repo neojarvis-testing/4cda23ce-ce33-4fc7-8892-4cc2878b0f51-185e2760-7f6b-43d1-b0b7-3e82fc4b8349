@@ -101,10 +101,9 @@ public class SoftToysPage {
     public void verifyURL(){
         try {
             String data=Base.driver.getCurrentUrl();
-            Assert.assertEquals(data, data);
-            System.out.println(data);
-            test.log(Status.PASS, "Verified URL contains ");
-            LoggerHandler.info("Verified URL contains ");
+            Assert.assertEquals(data, "https://www.elc.co.uk/c/soft-toys");
+            test.log(Status.PASS, "Verified URL contains soft-toys");
+            LoggerHandler.info("Verified URL contains soft-toys");
         } catch (Exception e) {
             test.log(Status.FAIL, "Not verified URL contains");
             LoggerHandler.error("Not verified URL contains");
@@ -157,8 +156,7 @@ public class SoftToysPage {
     public void verifyBrands(){
         try {
             String data=helper.getText(SoftToysPageLocator.brands);
-            Assert.assertEquals(data, data);
-            System.out.println(data);
+            Assert.assertEquals(data, "Brands");
             test.log(Status.PASS, "Verified text Brands");
             LoggerHandler.info("Verified text Brands");
         } catch (Exception e) {
@@ -213,8 +211,7 @@ public class SoftToysPage {
     public void verifyHomeDelivery(){
         try {
             String data=helper.getText(SoftToysPageLocator.homeDelivery);
-            Assert.assertEquals(data, data);
-            System.out.println(data);
+            Assert.assertEquals(data, "Home Delivery Selected");
             test.log(Status.PASS, "Verified text Home Delivery");
             LoggerHandler.info("Verified text Home Delivery");
         } catch (Exception e) {

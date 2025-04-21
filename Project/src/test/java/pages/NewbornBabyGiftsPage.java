@@ -118,7 +118,7 @@ public class NewbornBabyGiftsPage {
      */
     public void clickShowMore(){
         try {
-            helper.jsScrollIntoView(NewbornBabyGiftsPageLocator.showMore);
+            // helper.jsScrollIntoView(NewbornBabyGiftsPageLocator.showMore);
             helper.wait(NewbornBabyGiftsPageLocator.showMore);
             helper.clickOnElement(NewbornBabyGiftsPageLocator.showMore);
             test.log(Status.PASS, "Clicked on Show More under Toy type");
@@ -137,7 +137,7 @@ public class NewbornBabyGiftsPage {
      */
     public void clickBabyActivityToys(){
         try {
-            helper.jsScrollIntoView(NewbornBabyGiftsPageLocator.babyActivityToys);
+            // helper.jsScrollIntoView(NewbornBabyGiftsPageLocator.babyActivityToys);
             helper.wait(NewbornBabyGiftsPageLocator.babyActivityToys);
             helper.clickOnElement(NewbornBabyGiftsPageLocator.babyActivityToys);
             test.log(Status.PASS, "Clicked on Baby Activity Toys");
