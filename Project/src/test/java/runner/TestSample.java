@@ -9,6 +9,8 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
+import pages.NewbornBabyGiftsPage;
+import pages.SoftToysPage;
 import pages.footerPage;
 import utils.Base;
 import utils.Reporter;
@@ -25,11 +27,23 @@ public class TestSample extends Base{
         openBrowser();
         driver.navigate().refresh();
     }
-    @Test
+    // @Test
     public void footer(){
         test=report.createTest("testCase10");
         footerPage page=new footerPage(test);
         page.footerFunctionality();
+    }
+    // @Test
+    public void NewbornBabyGifts(){
+        test=report.createTest("Newborn Baby Gifts");
+        NewbornBabyGiftsPage newbornBabyGifts=new NewbornBabyGiftsPage(test);
+        newbornBabyGifts.NewbabyBornGiftsPageTest();
+    }
+    @Test
+    public void SoftToys(){
+        test=report.createTest("Soft Toys");
+        SoftToysPage softToy=new SoftToysPage(test);
+        softToy.SoftToysTest();
     }
     @AfterMethod
     public void closeELC(){

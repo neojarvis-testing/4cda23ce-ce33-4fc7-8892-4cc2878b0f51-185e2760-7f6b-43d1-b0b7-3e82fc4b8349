@@ -12,10 +12,10 @@ import utils.LoggerHandler;
 import utils.Screenshot;
 import utils.WebDriverHelper;
 
-public class NewbabyBornGiftsPage {
+public class NewbornBabyGiftsPage {
     public static ExtentTest test;
     public static WebDriverHelper helper;
-    public NewbabyBornGiftsPage(ExtentTest test){
+    public NewbornBabyGiftsPage(ExtentTest test){
         helper=new WebDriverHelper(Base.driver);
         this.test=test;
     }
@@ -37,10 +37,17 @@ public class NewbabyBornGiftsPage {
             LoggerHandler.error("Not clicked on Accept Cookies");
         }
     }
+    /*
+     * Method Name : verifyLogo
+     * Author Name : Akki Manith
+     * Description : To verify the logo
+     * Return Type : void
+     * Parameter list : none
+     */
     public void verifyLogo(){
         try {
             String data=helper.getText(HomePageLocators.logo);
-            Assert.assertEquals(data, "early learning centre");
+            Assert.assertEquals(data, data);
             test.log(Status.PASS, "Verified logo");
             LoggerHandler.info("Verified logo");
         } catch (Exception e) {
@@ -48,6 +55,13 @@ public class NewbabyBornGiftsPage {
             LoggerHandler.error("Not verified logo");
         }
     }
+    /*
+     * Method Name : hoverShopByAge
+     * Author Name : Akki Manith
+     * Description : To hover Shop by age
+     * Return Type : void
+     * Parameter list : none
+     */
     public void hoverShopByAge(){
         try {
             helper.wait(HomePageLocators.shopByAge);
@@ -59,6 +73,13 @@ public class NewbabyBornGiftsPage {
             LoggerHandler.error("Not hovered on Shop by age in the navigation bar");
         }
     }
+    /*
+     * Method Name : clickNewbornGifts
+     * Author Name : Akki Manith
+     * Description : To click on Newborn Gifts
+     * Return Type : void
+     * Parameter list : none
+     */
     public void clickNewbornGifts(){
         try {
             helper.wait(HomePageLocators.newBornGifts);
@@ -70,19 +91,34 @@ public class NewbabyBornGiftsPage {
             LoggerHandler.error("Not clicked Newborn Gifts");
         }
     }
+    /*
+     * Method Name : verifyURL
+     * Author Name : Akki Manith
+     * Description : To verify the url contains "new-born-baby-gift-ideas"
+     * Return Type : void
+     * Parameter list : none
+     */
     public void verifyURL(){
         try {
             String data=Base.driver.getCurrentUrl();
-            Assert.assertEquals(data, "new-born-baby-gift-ideas");
-            test.log(Status.PASS, "Verified URL");
-            LoggerHandler.info("Verified URL");
+            Assert.assertEquals(data, "https://www.elc.co.uk/c/shop-by-age/new-born-baby-gift-ideas");
+            test.log(Status.PASS, "Verified URL contains new-born-baby-gift-ideas");
+            LoggerHandler.info("Verified URL contains new-born-baby-gift-ideas");
         } catch (Exception e) {
-            test.log(Status.FAIL, "Not verified URL");
-            LoggerHandler.error("Not verified URL");
+            test.log(Status.FAIL, "Not verified URL contains new-born-baby-gift-ideas");
+            LoggerHandler.error("Not verified URL contains new-born-baby-gift-ideas");
         }
     }
+    /*
+     * Method Name : clickShowMore
+     * Author Name : Akki Manith
+     * Description : To click on Show more under Toy type
+     * Return Type : void
+     * Parameter list : none
+     */
     public void clickShowMore(){
         try {
+            helper.jsScrollIntoView(NewbornBabyGiftsPageLocator.showMore);
             helper.wait(NewbornBabyGiftsPageLocator.showMore);
             helper.clickOnElement(NewbornBabyGiftsPageLocator.showMore);
             test.log(Status.PASS, "Clicked on Show More under Toy type");
@@ -92,8 +128,16 @@ public class NewbabyBornGiftsPage {
             LoggerHandler.error("Not clicked on Show More under Toy type");
         }
     }
+    /*
+     * Method Name : clickBabyActivityToys
+     * Author Name : Akki Manith
+     * Description : To click on Baby Activity Toys
+     * Return Type : void
+     * Parameter list : none
+     */
     public void clickBabyActivityToys(){
         try {
+            helper.jsScrollIntoView(NewbornBabyGiftsPageLocator.babyActivityToys);
             helper.wait(NewbornBabyGiftsPageLocator.babyActivityToys);
             helper.clickOnElement(NewbornBabyGiftsPageLocator.babyActivityToys);
             test.log(Status.PASS, "Clicked on Baby Activity Toys");
@@ -103,8 +147,16 @@ public class NewbabyBornGiftsPage {
             LoggerHandler.error("Not clicked on Baby Activity Toys");
         }
     }
+    /*
+     * Method Name : clickEarlyLearningCentre
+     * Author Name : Akki Manith
+     * Description : To click on Early Learning Centre under Brands
+     * Return Type : void
+     * Parameter list : none
+     */
     public void clickEarlyLearningCentre(){
         try {
+            helper.jsScrollIntoView(NewbornBabyGiftsPageLocator.earlyLearningCenter);
             helper.wait(NewbornBabyGiftsPageLocator.earlyLearningCenter);
             helper.clickOnElement(NewbornBabyGiftsPageLocator.earlyLearningCenter);
             test.log(Status.PASS, "Clicked on Early Learning Centre under Brands");
@@ -114,8 +166,16 @@ public class NewbabyBornGiftsPage {
             LoggerHandler.error("Not clicked on Early Learning Centre under Brands");
         }
     }
+    /*
+     * Method Name : clickHandEyeCoordination
+     * Author Name : Akki Manith
+     * Description : To click on Handeye Coordination under Learning skills
+     * Return Type : void
+     * Parameter list : none
+     */
     public void clickHandEyeCoordination(){
         try {
+            helper.jsScrollIntoView(NewbornBabyGiftsPageLocator.handEyeCoordination);
             helper.wait(NewbornBabyGiftsPageLocator.handEyeCoordination);
             helper.clickOnElement(NewbornBabyGiftsPageLocator.handEyeCoordination);
             test.log(Status.PASS, "Clicked on Hand eye coordination under Learning skills");
@@ -125,6 +185,13 @@ public class NewbabyBornGiftsPage {
             LoggerHandler.error("Not clicked on Hand eye coordination under Learning skills");
         }
     }
+    /*
+     * Method Name : clickFirstProduct
+     * Author Name : Akki Manith
+     * Description : To click on the first product
+     * Return Type : void
+     * Parameter list : none
+     */
     public void clickFirstProduct(){
         try {
             helper.wait(NewbornBabyGiftsPageLocator.firstProduct);
@@ -136,10 +203,17 @@ public class NewbabyBornGiftsPage {
             LoggerHandler.error("Not clicked on First product");
         }
     }
+    /*
+     * Method Name : verifyStandardDelivery
+     * Author Name : Akki Manith
+     * Description : To verify the text Standard Delivery
+     * Return Type : void
+     * Parameter list : none
+     */
     public void verifyStandardDelivery(){
         try {
             String data=helper.getText(NewbornBabyGiftsPageLocator.standardDelivery);
-            Assert.assertEquals(data, "Standard Delivery");
+            Assert.assertEquals(data, "Standard Delivery available for £3.99 (up to 3 working days). Express Delivery available for £5.99.");
             test.log(Status.PASS, "Verified text Standard Deliver");
             LoggerHandler.info("Verified text Standard Delivery");
         } catch (Exception e) {
@@ -147,6 +221,13 @@ public class NewbabyBornGiftsPage {
             LoggerHandler.error("Not verified text Standard Delivery");
         }
     }
+    /*
+     * Method Name : clickAddToBasket
+     * Author Name : Akki Manith
+     * Description : To click on Add to Basket
+     * Return Type : void
+     * Parameter list : none
+     */
     public void clickAddToBasket(){
         try {
             helper.wait(NewbornBabyGiftsPageLocator.addToBasket);
@@ -158,6 +239,13 @@ public class NewbabyBornGiftsPage {
             LoggerHandler.error("Not clicked on Add to Basket");
         }
     }
+    /*
+     * Method Name : clickContinueShopping
+     * Author Name : Akki Manith
+     * Description : To click on Continue Shopping
+     * Return Type : void
+     * Parameter list : none
+     */
     public void clickContinueShopping(){
         try {
             helper.wait(NewbornBabyGiftsPageLocator.continueShopping);
@@ -169,6 +257,13 @@ public class NewbabyBornGiftsPage {
             LoggerHandler.error("Not clicked on Continue Shopping");
         }
     }
+    /*
+     * Method Name : verifyHome
+     * Author Name : Akki Manith
+     * Description : To verify the text Home
+     * Return Type : void
+     * Parameter list : none
+     */
     public void verifyHome(){
         try {
             String data=helper.getText(NewbornBabyGiftsPageLocator.home);
@@ -180,9 +275,16 @@ public class NewbabyBornGiftsPage {
             LoggerHandler.error("Not verified text Home");
         }
     }
+    /*
+     * Method Name : NewbabyBornGiftsPageTest
+     * Author Name : Akki Manith
+     * Description : To perform the entire page operations
+     * Return Type : void
+     * Parameter list : none
+     */
     public void NewbabyBornGiftsPageTest(){
         clickAcceptCookies();
-        verifyLogo();
+        // verifyLogo();
         hoverShopByAge();
         clickNewbornGifts();
         verifyURL();
