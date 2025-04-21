@@ -8,6 +8,7 @@ import com.aventstack.extentreports.Status;
 import uistore.HomePageLocators;
 import utils.Base;
 import utils.LoggerHandler;
+import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class OutdoorToysPage {
@@ -21,7 +22,26 @@ public class OutdoorToysPage {
 
 
     }
-
+    /*Method Name:clickOnAccept
+     * Author Name:Vipul Saxena
+     * Description: This methods clicks on accept cookies.
+     * Parameters:None
+     * return type:void
+     */
+    public void clickOnAccept(){
+        try {
+            helper.wait(HomePageLocators.accept);
+            helper.clickOnElement(HomePageLocators.accept);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    /*Method Name:hoveronoutdoortoys
+     * Author Name:Vipul Saxena
+     * Description: This method hovers on outdoor toys.
+     * Parameters:None
+     * return type:void
+     */
     public void hoveronoutdoortoys()
     {
         try {
@@ -36,7 +56,16 @@ public class OutdoorToysPage {
         }
 
     }
-    public void ClickonBikes()
+
+    /*Method Name:clickonbikes
+     * Author Name:Vipul Saxena
+     * Description: This method click on bikes.
+     * Parameters:None
+     * return type:void
+     */
+
+
+    public void clickonbikes()
     {
         try {
             helper.wait(HomePageLocators.Bikes);
@@ -51,6 +80,13 @@ public class OutdoorToysPage {
 
     }
 
+    /*Method Name:bikesurlverify
+     * Author Name:Vipul Saxena
+     * Description: This method verify bikes page url.
+     * Parameters:None
+     * return type:void
+     */
+
     public void bikesurlverify()
     {
         try {
@@ -64,7 +100,14 @@ public class OutdoorToysPage {
         }
     }
 
-    public void Clickonhuffy()
+    /*Method Name:clickonhuffy
+     * Author Name:Vipul Saxena
+     * Description: This method click on huffy.
+     * Parameters:None
+     * return type:void
+     */
+
+    public void clickonhuffy()
     {
         try {
             helper.wait(HomePageLocators.Huffy);
@@ -78,6 +121,13 @@ public class OutdoorToysPage {
         }
 
     }
+
+    /*Method Name:ClickonToddlerBikes
+     * Author Name:Vipul Saxena
+     * Description: This methods click on toddler bikes.
+     * Parameters:None
+     * return type:void
+     */
 
     public void ClickonToddlerBikes()
     {
@@ -94,6 +144,13 @@ public class OutdoorToysPage {
 
     }
 
+    /*Method Name:searchverify
+     * Author Name:Vipul Saxena
+     * Description: This methods verify text "search".
+     * Parameters:None
+     * return type:void
+     */
+
     public void searchverify()
     {
         try {
@@ -106,6 +163,13 @@ public class OutdoorToysPage {
             LoggerHandler.info("Not Verified Search");
         }
     }
+
+    /*Method Name:Clickondisney
+     * Author Name:Vipul Saxena
+     * Description: This methods clicks on disney..
+     * Parameters:None
+     * return type:void
+     */
 
     public void Clickondisney()
     {
@@ -121,7 +185,15 @@ public class OutdoorToysPage {
         }
 
     }
-    public void FirstProduct()
+
+    /*Method Name:clickFirstProduct
+     * Author Name:Vipul Saxena
+     * Description: This methods clicks on first product..
+     * Parameters:None
+     * return type:void
+     */
+
+    public void clickFirstProduct()
     {
         try {
             helper.wait(HomePageLocators.firstproduct);
@@ -136,7 +208,96 @@ public class OutdoorToysPage {
 
     }
 
-    
+    /*Method Name:clickaddtobasket
+     * Author Name:Vipul Saxena
+     * Description: This methods clicks on add to basket.
+     * Parameters:None
+     * return type:void
+     */
+    public void clickaddtobasket()
+    {
+        try {
+            helper.wait(HomePageLocators.addtobasket);
+            helper.clickOnElement(HomePageLocators.addtobasket);
+            test.log(Status.PASS, "Clicked on addtobasket");
+            LoggerHandler.info("Clicked on addtobasket");
+            
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Not Clicked on addtobasket");
+            LoggerHandler.info("Not Clicked on addtobasket");
+        }
+
+    }
+
+    /*Method Name:clickoncheckout
+     * Author Name:Vipul Saxena
+     * Description: This methods clicks on checkout.
+     * Parameters:None
+     * return type:void
+     */
+    public void clickoncheckout()
+    {
+        try {
+            helper.wait(HomePageLocators.checkout);
+            helper.clickOnElement(HomePageLocators.checkout);
+            test.log(Status.PASS, "Clicked on checkout");
+            LoggerHandler.info("Clicked on checkout");
+            
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Not Clicked on checkout");
+            LoggerHandler.info("Not Clicked on checkout");
+        }
+
+    }
+
+    /*Method Name:verifycheckout
+     * Author Name:Vipul Saxena
+     * Description: This methods verify checkout.
+     * Parameters:None
+     * return type:void
+     */
+
+    public void verifycheckout()
+    {
+        try {
+            String data=helper.getText(HomePageLocators.checkout);
+            Assert.assertTrue(data.contains("Check Out"));
+            test.log(Status.PASS, "Verified checkout");
+            LoggerHandler.info("Verified checkout");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Not Verified checkout");
+            LoggerHandler.info("Not Verified checkout");
+        }
+    }
+
+    /*Method Name:takescreenshot
+     * Author Name:Vipul Saxena
+     * Description: This methods hovers on outdoor toys.
+     * Parameters:None
+     * return type:void
+     */
+
+    public void takescreenshot()
+    {
+        Screenshot.captureScreenShot("Learning product");
+    }
+    public void testcase3()
+    {
+        clickOnAccept();
+        hoveronoutdoortoys();
+        clickonbikes();
+        bikesurlverify();
+        clickonhuffy();
+        ClickonToddlerBikes();
+        searchverify();
+        Clickondisney();
+        clickFirstProduct();
+        clickaddtobasket();
+        clickoncheckout();
+        verifycheckout();
+        takescreenshot();
+        
+    }
 
 
 }
