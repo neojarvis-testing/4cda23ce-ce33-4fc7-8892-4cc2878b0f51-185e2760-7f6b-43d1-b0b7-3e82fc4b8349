@@ -9,6 +9,7 @@ import uistore.HomePageLocators;
 import uistore.NewbornBabyGiftsPageLocator;
 import utils.Base;
 import utils.LoggerHandler;
+import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NewbabyBornGiftsPage {
@@ -187,5 +188,6 @@ public class NewbabyBornGiftsPage {
         clickAddToBasket();
         clickContinueShopping();
         verifyHome();
+        Screenshot.captureScreenShot("Newborn Baby Gifts");
     }
 }

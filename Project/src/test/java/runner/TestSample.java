@@ -24,10 +24,6 @@ public class TestSample extends Base{
         openBrowser();
         driver.navigate().refresh();
     }
-    @Test
-    public void Manith(){
-        
-    }
     @AfterMethod
     public void closeELC(){
         driver.quit();

@@ -21,4 +21,7 @@ public class HomePageLocators {
     public static By logo=By.cssSelector("img[title='Early Learning Centre']");
     public static By shopByAge=By.cssSelector("a[title='Shop by age']");
     public static By newBornGifts=By.cssSelector("a[title='Newborn Gifts']");
+
+    public static By typeOfToy=By.cssSelector("a[title='Type of toy']");
+    public static By softToys=By.cssSelector("a[title='Soft Toys']");
 }
