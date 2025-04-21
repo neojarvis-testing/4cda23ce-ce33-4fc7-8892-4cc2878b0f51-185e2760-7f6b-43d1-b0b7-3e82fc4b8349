@@ -1,0 +1,31 @@
+2025.04.21.18.19.06 INFO  utils.LoggerHandler - click on accept cookies
+2025.04.21.18.19.08 INFO  utils.LoggerHandler - scroll down to footer
+2025.04.21.18.19.10 INFO  utils.LoggerHandler - verify the about us url
+2025.04.21.18.19.12 INFO  utils.LoggerHandler - click on store finder
+2025.04.21.18.19.14 INFO  utils.LoggerHandler - verify the store finder url
+2025.04.21.18.19.16 INFO  utils.LoggerHandler - click on Press
+2025.04.21.18.19.18 INFO  utils.LoggerHandler - verify the press url
+2025.04.21.18.19.20 INFO  utils.LoggerHandler - click on Affilates
+2025.04.21.18.19.21 INFO  utils.LoggerHandler - verify the affilates url
+2025.04.21.18.19.24 INFO  utils.LoggerHandler - click on gift card
+2025.04.21.18.19.24 INFO  utils.LoggerHandler - verify the gift card url
+2025.04.21.18.19.27 INFO  utils.LoggerHandler - click on klarna
+2025.04.21.18.19.29 INFO  utils.LoggerHandler - verify the klarna url
+2025.04.21.18.19.29 INFO  utils.LoggerHandler - verify the useful links url
+2025.04.21.18.19.37 INFO  utils.LoggerHandler - Clicked on Contact us
+2025.04.21.18.19.37 INFO  utils.LoggerHandler - Verified ContactUs URL
+2025.04.21.18.19.40 INFO  utils.LoggerHandler - Clicked on Delivery option
+2025.04.21.18.19.40 INFO  utils.LoggerHandler - Verified Delivery Option URL
+2025.04.21.18.19.45 INFO  utils.LoggerHandler - Clicked on Product Safety Notices
+2025.04.21.18.19.45 INFO  utils.LoggerHandler - Verified Product Safety notices URL
+2025.04.21.18.19.47 INFO  utils.LoggerHandler - Clicked on Returns
+2025.04.21.18.19.47 INFO  utils.LoggerHandler - Verified Returns URL
+2025.04.21.18.19.52 INFO  utils.LoggerHandler - Clicked on Track your Order
+2025.04.21.18.19.52 INFO  utils.LoggerHandler - Verified Track your Order URL
+2025.04.21.18.19.55 INFO  utils.LoggerHandler - Clicked on Help Centre
+2025.04.21.18.19.55 INFO  utils.LoggerHandler - Verified Help Centre URL
+2025.04.21.18.19.59 INFO  utils.LoggerHandler - Clicked on Your Privacy
+2025.04.21.18.19.59 INFO  utils.LoggerHandler - Verified Your Privacy URL
+2025.04.21.18.20.02 INFO  utils.LoggerHandler - Clicked on How to Complain
+2025.04.21.18.20.03 INFO  utils.LoggerHandler - Verified How to complain URL
+2025.04.21.18.20.05 INFO  utils.LoggerHandler - Verified Keyword 'About Us'

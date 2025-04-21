@@ -17,7 +17,8 @@ import utils.Base;
 import utils.Dataproviderr;
 import utils.Reporter;
 
-public class TestSample extends Base{
+public class TestSample extends Base
+{
     public static ExtentTest test;
     public static ExtentReports report;
     @BeforeClass
@@ -29,32 +30,35 @@ public class TestSample extends Base{
         openBrowser();
         driver.navigate().refresh();
     }
-    // @Test(dataProvider = "exceldata",dataProviderClass = Dataproviderr.class)
-    @Test
-    public void carFunc(){
+
+    //testcase8
+    @Test(dataProvider = "exceldata",dataProviderClass = Dataproviderr.class)
+    public void carFunc(String value){
         test = report.createTest("Cars");
         ElcCars car = new ElcCars(test);
-        car.cars();
+        car.cars(value);
     }
-    @Test
-    public void verification(){
-        test= report.createTest("Verification");
-        Elcfooterverify footer = new Elcfooterverify(test);
-        footer.clickAndVerifyUrl();
-    @Test
-    public void footer(){
-        test=report.createTest("testCase10");
-        footerPage page=new footerPage(test);
-        page.footerFunctionality();
-    }
+    //testcase9
+    // @Test
+    // public void verification(){
+    //     test= report.createTest("Verification");
+    //     Elcfooterverify footer = new Elcfooterverify(test);
+    //     footer.clickAndVerifyUrl();
+    // }
+    // @Test
+    // public void footer(){
+    //     test=report.createTest("testCase10");
+    //     footerPage page=new footerPage(test);
+    //     page.footerFunctionality();
+    // }
     @AfterMethod
     public void closeELC(){
         driver.quit();
     }
     @AfterClass
-    public void closeReport(){
+    public void closeReport()
+    {
         report.flush();
     }
 
-}
 }

@@ -83,10 +83,10 @@ public class ElcCars {
      * d.Parameter: None
      * e.Return Type: void
      */
-    public void enterDataOnSearchBar(){
+    public void enterDataOnSearchBar(String value1){
         try {
             helper.wait(HomePageLocators.searchBar);
-            helper.sendData(HomePageLocators.searchBar,"Cars");
+            helper.sendData(HomePageLocators.searchBar,value1);
             Thread.sleep(500);
             helper.enterAction(HomePageLocators.searchBar);
             String x = helper.getText(ElcCarsHomePageLocator.verifyCar);
@@ -273,11 +273,11 @@ public class ElcCars {
      * d.Parameter: None
      * e.Return Type: void
      */
-    public void cars(){
+    public void cars(String value){
         clickOnAccept();
         verifyLogo();
         clickOnSearchBar();
-        enterDataOnSearchBar();
+        enterDataOnSearchBar(value);
         verifyCarUrl();
         clickOnShowMore();
         clickOnToyCars();
