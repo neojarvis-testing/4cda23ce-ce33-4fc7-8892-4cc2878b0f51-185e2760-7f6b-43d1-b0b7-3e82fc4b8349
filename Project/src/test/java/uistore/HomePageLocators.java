@@ -13,13 +13,10 @@ public class HomePageLocators {
     public static By affilates=By.cssSelector("a[title='Affiliates']");
     public static By careers=By.cssSelector("a[title='Careers']");
     public static By giftCards = By.cssSelector("li[class='yCmsComponent footer__link'] a[title='Gift cards']");
-<<<<<<< HEAD:Project/src/test/java/uistore/testCase10Locators.java
     public static By explore=By.cssSelector("a[title='Explore']");
     public static By offers=By.cssSelector("a[title='Offers']");
     public static By searchbar=By.cssSelector("input[class='aa-Input form-control']");
-
-=======
+    public static By serachIcon=By.cssSelector("//button[@class='aa-SubmitButton btn btn-link js_search_button']");
     public static By klarna=By.cssSelector("a[title='Klarna']");
     public static By usefulLinks=By.cssSelector("div[href='#footerNavList2']");
->>>>>>> b4047a9a672f8df18e8ee42ca678d409a7beb7df:Project/src/test/java/uistore/HomePageLocators.java
 }

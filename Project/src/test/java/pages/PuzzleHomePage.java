@@ -15,7 +15,7 @@ import utils.WebDriverHelper;
 public class PuzzleHomePage {
     public static WebDriverHelper helper;
     public static ExtentTest test;
-    public PuzzleHomePage(){
+    public PuzzleHomePage(ExtentTest test){
         helper=new WebDriverHelper(Base.driver);
         this.test=test;
     }
@@ -43,9 +43,11 @@ public class PuzzleHomePage {
           test.log(Status.PASS,"Not able to Clicked on SearchBar");
         }
     }
-    public void sendadata(){
+    public void sendadata(String value){
         try {
-            helper.sendData(HomePageLocators.searchbar,"Puzzles"); 
+            helper.sendData(HomePageLocators.searchbar,value); 
+            // helper.enterAction(HomePageLocators.searchbar); 
+            // helper.enterAction(HomePageLocators.searchbar); 
         LoggerHandler.info("Data sent on SearchBar");
         test.log(Status.PASS,"Data sent on SearchBar");
         } catch (Exception e) {
@@ -56,7 +58,8 @@ public class PuzzleHomePage {
     }
     public void performEnter(){
         try {
-            helper.enterAction(HomePageLocators.searchbar); 
+            Thread.sleep(500);
+            helper.enterAction(HomePageLocators.searchbar);
         LoggerHandler.info("Puzzles entered on searchBar");
         test.log(Status.PASS,"Puzzles entered on searchBar");
         } catch (Exception e) {
@@ -152,11 +155,11 @@ public class PuzzleHomePage {
             test.log(Status.PASS,"Text not contain Learning");
         }
     }
-   public void output2(){
-    Base.driver.navigate().back();
+   public void output2(String value){
+   
     clickAcceptCookies();
     clickSearch();
-    sendadata();
+    sendadata(value);
     performEnter();
     clickShowmore();
     clickJigsawPuzzle();

@@ -16,7 +16,7 @@ import utils.WebDriverHelper;
 public class HappyLandHomePage {
     public static WebDriverHelper helper;
     public static ExtentTest test;
-    public HappyLandHomePage(){
+    public HappyLandHomePage(ExtentTest test){
         helper=new WebDriverHelper(Base.driver);
         this.test=test;
     }
@@ -36,6 +36,7 @@ public class HappyLandHomePage {
    
     public void hoverExplore(){
         try {
+            helper.wait(HomePageLocators.explore);
             helper.hoverOverElement(HomePageLocators.explore); 
         LoggerHandler.info("Hover on Explore");
         test.log(Status.PASS,"Hover on Explore");
@@ -47,6 +48,7 @@ public class HappyLandHomePage {
     }
     public void clickGif(){
         try {
+            helper.wait(HomePageLocators.giftCards);
             helper.clickOnElement(HomePageLocators.giftCards); 
         LoggerHandler.info("Hover on Explore");
         test.log(Status.PASS,"Hover on Explore");
@@ -59,6 +61,7 @@ public class HappyLandHomePage {
     public void verifyGift(){
         try {
             String url=Base.driver.getCurrentUrl();
+            System.out.println(url);
             Assert.assertTrue(url.contains("gift"));
             LoggerHandler.error("Url contain gift");
             test.log(Status.PASS,"Url contain gift");
@@ -82,9 +85,10 @@ public class HappyLandHomePage {
     public void verifyMonths(){
         try {
             String text=helper.getText(HappyLandHomePageLocator.months);
+            // System.out.println(text);
             Assert.assertTrue(text.contains("months"));
-            LoggerHandler.error("Text contain months");
-            test.log(Status.PASS,"Text contain months");
+            LoggerHandler.error("Text contains stores");
+            test.log(Status.PASS,"Text contains stores");
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -94,6 +98,7 @@ public class HappyLandHomePage {
     }
     public void clickHappyLand(){
         try {
+            helper.wait(HappyLandHomePageLocator.happyland);
             helper.clickOnElement(HappyLandHomePageLocator.happyland); 
         LoggerHandler.info("Clicked on HappyLand");
         test.log(Status.PASS,"Clicked on First HappyLand");
@@ -118,14 +123,15 @@ public class HappyLandHomePage {
     public void verifyStore(){
         try {
             String text=helper.getText(HappyLandHomePageLocator.store);
+            System.out.println(text);
             Assert.assertTrue(text.contains("store"));
-            LoggerHandler.error("Text contain months");
-            test.log(Status.PASS,"Text contain months");
+            LoggerHandler.error("Text contains stores");
+            test.log(Status.PASS,"Text contains stores");
 
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            LoggerHandler.error("Text not contain months");
-            test.log(Status.PASS,"Text not contain months");
+            LoggerHandler.error("Text not contain Stores");
+            test.log(Status.PASS,"Text not contain Stores");
         }
     }
     
@@ -153,7 +159,7 @@ public class HappyLandHomePage {
         }
     }
     public void output1(){
-      Base.driver.navigate().back();
+     
       clickAcceptCookies();
        hoverExplore();
        clickGif();

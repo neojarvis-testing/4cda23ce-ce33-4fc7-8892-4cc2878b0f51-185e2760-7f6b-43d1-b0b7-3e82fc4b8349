@@ -3,8 +3,8 @@ package uistore;
 import org.openqa.selenium.By;
 
 public class HappyLandHomePageLocator {
-    public static By months=By.cssSelector("input[value='0 - 3 months']");
-    public static By happyland=By.cssSelector("div[class='podText'] a[title='Happyland']");
+    public static By months=By.xpath("//span[text()='0 - 3 months']");
+    public static By happyland=By.xpath("(//a[text()='Happyland'])[2]");
     public static By first=By.xpath("//a[text()='Happyland Sunny Farm Red Playset']");
     public static By store=By.cssSelector("p[class='store-availability-text']");
     public static By addcart=By.id("addToCartButton");

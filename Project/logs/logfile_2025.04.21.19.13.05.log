@@ -1,0 +1,11 @@
+2025.04.21.19.13.05 INFO  utils.LoggerHandler - clicked on accept cookies
+2025.04.21.19.13.06 INFO  utils.LoggerHandler - Hover on Explore
+2025.04.21.19.13.08 INFO  utils.LoggerHandler - Hover on Explore
+2025.04.21.19.13.08 ERROR utils.LoggerHandler - Url contain gift
+2025.04.21.19.13.10 INFO  utils.LoggerHandler - Clicked on Offers
+2025.04.21.19.13.11 ERROR utils.LoggerHandler - Text contain months
+2025.04.21.19.13.12 INFO  utils.LoggerHandler - Clicked on HappyLand
+2025.04.21.19.13.18 INFO  utils.LoggerHandler - Clicked on First Product
+2025.04.21.19.13.23 ERROR utils.LoggerHandler - Text not contain months
+2025.04.21.19.13.28 INFO  utils.LoggerHandler - Clicked on Add to Basket
+2025.04.21.19.13.33 INFO  utils.LoggerHandler - Clicked on CheckOut
