@@ -19,6 +19,13 @@ public class NewbabyBornGiftsPage {
         helper=new WebDriverHelper(Base.driver);
         this.test=test;
     }
+    /*
+     * Method Name : clickAcceptCookies
+     * Author Name : Akki Manith
+     * Description : To click on Accept cookies
+     * Return Type : void
+     * Parameter list : none
+     */
     public void clickAcceptCookies(){
         try {
             helper.wait(HomePageLocators.acceptAllCookies);
@@ -45,11 +52,11 @@ public class NewbabyBornGiftsPage {
         try {
             helper.wait(HomePageLocators.shopByAge);
             helper.hoverOverElement(HomePageLocators.shopByAge);
-            test.log(Status.PASS, "Hovered Shop by age");
-            LoggerHandler.info("Hovered Shop by age");
+            test.log(Status.PASS, "Hovered on Shop by age in the navigation bar");
+            LoggerHandler.info("Hovered on Shop by age in the navigation bar");
         } catch (Exception e) {
-            test.log(Status.FAIL, "Not hovered Shop by age");
-            LoggerHandler.error("Not hovered Shop by age");
+            test.log(Status.FAIL, "Not hovered on Shop by age in the navigation bar");
+            LoggerHandler.error("Not hovered on Shop by age in the navigation bar");
         }
     }
     public void clickNewbornGifts(){
@@ -78,11 +85,11 @@ public class NewbabyBornGiftsPage {
         try {
             helper.wait(NewbornBabyGiftsPageLocator.showMore);
             helper.clickOnElement(NewbornBabyGiftsPageLocator.showMore);
-            test.log(Status.PASS, "Clicked on Show More");
-            LoggerHandler.info("Clicked on Show More");
+            test.log(Status.PASS, "Clicked on Show More under Toy type");
+            LoggerHandler.info("Clicked on Show More under Toy type");
         } catch (Exception e) {
-            test.log(Status.FAIL, "Not clicked on Show More");
-            LoggerHandler.error("Not clicked on Show More");
+            test.log(Status.FAIL, "Not clicked on Show More under Toy type");
+            LoggerHandler.error("Not clicked on Show More under Toy type");
         }
     }
     public void clickBabyActivityToys(){
@@ -100,22 +107,22 @@ public class NewbabyBornGiftsPage {
         try {
             helper.wait(NewbornBabyGiftsPageLocator.earlyLearningCenter);
             helper.clickOnElement(NewbornBabyGiftsPageLocator.earlyLearningCenter);
-            test.log(Status.PASS, "Clicked on Early Learning Centre");
-            LoggerHandler.info("Clicked on Early Learning Centre");
+            test.log(Status.PASS, "Clicked on Early Learning Centre under Brands");
+            LoggerHandler.info("Clicked on Early Learning Centre under Brands");
         } catch (Exception e) {
-            test.log(Status.FAIL, "Not clicked on Early Learning Centre");
-            LoggerHandler.error("Not clicked on Early Learning Centre");
+            test.log(Status.FAIL, "Not clicked on Early Learning Centre under Brands");
+            LoggerHandler.error("Not clicked on Early Learning Centre under Brands");
         }
     }
     public void clickHandEyeCoordination(){
         try {
             helper.wait(NewbornBabyGiftsPageLocator.handEyeCoordination);
             helper.clickOnElement(NewbornBabyGiftsPageLocator.handEyeCoordination);
-            test.log(Status.PASS, "Clicked on Hand eye coordination");
-            LoggerHandler.info("Clicked on Hand eye coordination");
+            test.log(Status.PASS, "Clicked on Hand eye coordination under Learning skills");
+            LoggerHandler.info("Clicked on Hand eye coordination under Learning skills");
         } catch (Exception e) {
-            test.log(Status.FAIL, "Not clicked on Hand eye coordination");
-            LoggerHandler.error("Not clicked on Hand eye coordination");
+            test.log(Status.FAIL, "Not clicked on Hand eye coordination under Learning skills");
+            LoggerHandler.error("Not clicked on Hand eye coordination under Learning skills");
         }
     }
     public void clickFirstProduct(){
