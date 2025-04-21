@@ -14,11 +14,8 @@ import pages.ElcCars;
 import pages.Elcfooterverify;
 import pages.footerPage;
 import utils.Base;
-<<<<<<< HEAD
-import utils.Dataproviderr;
-=======
+
 import utils.DataProviderclass;
->>>>>>> 5a76e0679ddd2c5d8ec7b6d6b5d483675787f0b1
 import utils.Reporter;
 
 public class TestSample extends Base
@@ -34,36 +31,29 @@ public class TestSample extends Base
         openBrowser();
         driver.navigate().refresh();
     }
-<<<<<<< HEAD
 
     //testcase8
-    @Test(dataProvider = "exceldata",dataProviderClass = Dataproviderr.class)
+    @Test(dataProvider = "exceldata",dataProviderClass = DataProviderclass.class)
     public void carFunc(String value){
         test = report.createTest("Cars");
         ElcCars car = new ElcCars(test);
         car.cars(value);
-=======
+    }
+    //testcase 10
     // @Test(dataProvider = "exceldata",dataProviderClass = DataProviderclass.class)
-    @Test
+    // @Test
     public void footer(){
         test=report.createTest("testCase10");
         footerPage page=new footerPage(test);
         page.footerFunctionality();
->>>>>>> 5a76e0679ddd2c5d8ec7b6d6b5d483675787f0b1
     }
-    //testcase9
-    // @Test
-    // public void verification(){
-    //     test= report.createTest("Verification");
-    //     Elcfooterverify footer = new Elcfooterverify(test);
-    //     footer.clickAndVerifyUrl();
-    // }
-    // @Test
-    // public void footer(){
-    //     test=report.createTest("testCase10");
-    //     footerPage page=new footerPage(test);
-    //     page.footerFunctionality();
-    // }
+    // testcase9
+    @Test
+    public void verification(){
+        test= report.createTest("Verification");
+        Elcfooterverify footer = new Elcfooterverify(test);
+        footer.clickAndVerifyUrl();
+    }
     @AfterMethod
     public void closeELC(){
         driver.quit();

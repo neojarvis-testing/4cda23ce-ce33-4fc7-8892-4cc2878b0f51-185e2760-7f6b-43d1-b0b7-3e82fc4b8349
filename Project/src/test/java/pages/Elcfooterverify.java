@@ -59,7 +59,7 @@ public class Elcfooterverify {
     /*
      * a.Method Name: verifyCarUrl
      * b.Author Name: Pratham Maheshwari
-     * c.Description: Verifies that the current URL contains the expected keyword "Cars".
+     * c.Description: Verifies that the current page URL matches the expected "Contact Us" article link..
      * d.Parameter: None
      * e.Return Type: void
      */
@@ -84,7 +84,7 @@ public class Elcfooterverify {
     /*
      * a.Method Name: clickOnDeliveryOption
      * b.Author Name: Pratham Maheshwari
-     * c.Description: clicks on the contact us button in the footer
+     * c.Description: clicks on the Delivery Option button in the footer
      * d.Parameter: None
      * e.Return Type: void
      */
@@ -104,7 +104,7 @@ public class Elcfooterverify {
     /*
      * a.Method Name: verifyDeliveryOptionUrl
      * b.Author Name: Pratham Maheshwari
-     * c.Description: Verifies that the current URL contains the expected keyword "Cars".
+     * c.Description: Verifies that the current page URL matches the expected "Delivery Option" article link..
      * d.Parameter: None
      * e.Return Type: void
      */
@@ -127,7 +127,7 @@ public class Elcfooterverify {
     /*
      * a.Method Name: clickOnproductSafetyNotices
      * b.Author Name: Pratham Maheshwari
-     * c.Description: clicks on the contact us button in the footer
+     * c.Description: clicks on the Product safety notices button in the footer
      * d.Parameter: None
      * e.Return Type: void
      */
@@ -147,7 +147,7 @@ public class Elcfooterverify {
     /*
      * a.Method Name: verifyProductSafetyUrl
      * b.Author Name: Pratham Maheshwari
-     * c.Description: Verifies that the current URL contains the expected keyword "Cars".
+     * c.Description: Verifies that the current page URL matches the expected "Product Safety notices" article link.
      * d.Parameter: None
      * e.Return Type: void
      */
@@ -170,7 +170,7 @@ public class Elcfooterverify {
     /*
      * a.Method Name: clickOnReturn
      * b.Author Name: Pratham Maheshwari
-     * c.Description: clicks on the contact us button in the footer
+     * c.Description: clicks on the Returns button in the footer
      * d.Parameter: None
      * e.Return Type: void
      */
@@ -190,7 +190,7 @@ public class Elcfooterverify {
     /*
      * a.Method Name: verifyReturnsUrl
      * b.Author Name: Pratham Maheshwari
-     * c.Description: Verifies that the current URL contains the expected keyword "Cars".
+     * c.Description:Verifies that the current page URL matches the expected "Return" article link.
      * d.Parameter: None
      * e.Return Type: void
      */
@@ -213,7 +213,7 @@ public class Elcfooterverify {
     /*
      * a.Method Name: clickOnTrackYourOrder
      * b.Author Name: Pratham Maheshwari
-     * c.Description: clicks on the contact us button in the footer
+     * c.Description: clicks on the Track your order button in the footer
      * d.Parameter: None
      * e.Return Type: void
      */
@@ -233,7 +233,7 @@ public class Elcfooterverify {
     /*
      * a.Method Name: verifyTrackYourOrderUrl
      * b.Author Name: Pratham Maheshwari
-     * c.Description: Verifies that the current URL contains the expected keyword "Cars".
+     * c.Description: Verifies that the current page URL matches the expected "Track Your Order" article link.
      * d.Parameter: None
      * e.Return Type: void
      */
@@ -256,7 +256,7 @@ public class Elcfooterverify {
     /*
      * a.Method Name: clickOnHelpCentre
      * b.Author Name: Pratham Maheshwari
-     * c.Description: clicks on the contact us button in the footer
+     * c.Description: clicks on the Help Centre button in the footer
      * d.Parameter: None
      * e.Return Type: void
      */
@@ -276,7 +276,7 @@ public class Elcfooterverify {
     /*
      * a.Method Name: verifyHelpCentreUrl
      * b.Author Name: Pratham Maheshwari
-     * c.Description: Verifies that the current URL contains the expected keyword "Cars".
+     * c.Description:Verifies that the current page URL matches the expected "Help centre" article link.
      * d.Parameter: None
      * e.Return Type: void
      */
@@ -299,7 +299,7 @@ public class Elcfooterverify {
     /*
      * a.Method Name: clickOnYourPrivacy
      * b.Author Name: Pratham Maheshwari
-     * c.Description: clicks on the contact us button in the footer
+     * c.Description: clicks on the Your Privacy button in the footer
      * d.Parameter: None
      * e.Return Type: void
      */
@@ -319,7 +319,7 @@ public class Elcfooterverify {
     /*
      * a.Method Name: verifyYourPrivacyUrl
      * b.Author Name: Pratham Maheshwari
-     * c.Description: Verifies that the current URL contains the expected keyword "Cars".
+     * c.Description: Verifies that the current page URL matches the expected "Your Privacy" article link.
      * d.Parameter: None
      * e.Return Type: void
      */
@@ -342,7 +342,7 @@ public class Elcfooterverify {
     /*
      * a.Method Name: clickOnHowToComplain
      * b.Author Name: Pratham Maheshwari
-     * c.Description: clicks on the contact us button in the footer
+     * c.Description: clicks on the How to complain button in the footer
      * d.Parameter: None
      * e.Return Type: void
      */
@@ -359,10 +359,11 @@ public class Elcfooterverify {
         }
     }
 
+    
     /*
      * a.Method Name: verifyHowToComplainUrl
      * b.Author Name: Pratham Maheshwari
-     * c.Description: Verifies that the current URL contains the expected keyword "Cars".
+     * c.Description: Verifies that the current page URL matches the expected "How to Complain" article link.
      * d.Parameter: None
      * e.Return Type: void
      */
@@ -382,9 +383,9 @@ public class Elcfooterverify {
         }
     }
     /*
-     * a.Method Name: verifyHowToComplainUrl
+     * a.Method Name: verifyAboutUs
      * b.Author Name: Pratham Maheshwari
-     * c.Description: Verifies that the current URL contains the expected keyword "Cars".
+     * c.Description: Verifies keyword "About us " present in the footer section.
      * d.Parameter: None
      * e.Return Type: void
      */

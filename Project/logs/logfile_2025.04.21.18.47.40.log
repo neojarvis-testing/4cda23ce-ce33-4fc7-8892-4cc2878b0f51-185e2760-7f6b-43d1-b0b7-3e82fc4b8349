@@ -1,0 +1,27 @@
+2025.04.21.18.47.40 INFO  utils.LoggerHandler - Logo verified
+2025.04.21.18.47.41 INFO  utils.LoggerHandler - Clicked on searchBar
+2025.04.21.18.47.44 INFO  utils.LoggerHandler - Data entered on searchBar
+2025.04.21.18.47.44 INFO  utils.LoggerHandler - Verified Cars
+2025.04.21.18.47.44 INFO  utils.LoggerHandler - Clicked on show more
+2025.04.21.18.47.45 INFO  utils.LoggerHandler - Clicked on Toy Cars
+2025.04.21.18.47.46 INFO  utils.LoggerHandler - Clicked on Imaginative Play
+2025.04.21.18.47.46 INFO  utils.LoggerHandler - Clicked on Fine Motor Skill
+2025.04.21.18.47.49 INFO  utils.LoggerHandler - Clicked on First Product
+2025.04.21.18.47.49 INFO  utils.LoggerHandler - Clicked on Wishlist
+2025.04.21.18.47.59 INFO  utils.LoggerHandler - Clicked on Contact us
+2025.04.21.18.47.59 INFO  utils.LoggerHandler - Verified ContactUs URL
+2025.04.21.18.48.02 INFO  utils.LoggerHandler - Clicked on Delivery option
+2025.04.21.18.48.02 INFO  utils.LoggerHandler - Verified Delivery Option URL
+2025.04.21.18.48.07 INFO  utils.LoggerHandler - Clicked on Product Safety Notices
+2025.04.21.18.48.07 INFO  utils.LoggerHandler - Verified Product Safety notices URL
+2025.04.21.18.48.10 INFO  utils.LoggerHandler - Clicked on Returns
+2025.04.21.18.48.10 INFO  utils.LoggerHandler - Verified Returns URL
+2025.04.21.18.48.15 INFO  utils.LoggerHandler - Clicked on Track your Order
+2025.04.21.18.48.16 INFO  utils.LoggerHandler - Verified Track your Order URL
+2025.04.21.18.48.19 INFO  utils.LoggerHandler - Clicked on Help Centre
+2025.04.21.18.48.19 INFO  utils.LoggerHandler - Verified Help Centre URL
+2025.04.21.18.48.23 INFO  utils.LoggerHandler - Clicked on Your Privacy
+2025.04.21.18.48.24 INFO  utils.LoggerHandler - Verified Your Privacy URL
+2025.04.21.18.48.26 INFO  utils.LoggerHandler - Clicked on How to Complain
+2025.04.21.18.48.26 INFO  utils.LoggerHandler - Verified How to complain URL
+2025.04.21.18.48.29 INFO  utils.LoggerHandler - Verified Keyword 'About Us'
