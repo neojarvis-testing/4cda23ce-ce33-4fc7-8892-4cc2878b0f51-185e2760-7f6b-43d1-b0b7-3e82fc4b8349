@@ -2,7 +2,9 @@ package uistore;
 
 import org.openqa.selenium.By;
 
-public class testCase10Locators {
+public class HomePageLocators {
+    //Sai Kiran Locators
+    
     public static By aboutUs=By.cssSelector("li[class='yCmsComponent footer__link'] a[title='About us']");
     public static By home=By.cssSelector("a[title='Home']");
     public static By storeFinder=By.cssSelector("a[title='Store finder']");
@@ -11,5 +13,12 @@ public class testCase10Locators {
     public static By affilates=By.cssSelector("a[title='Affiliates']");
     public static By careers=By.cssSelector("a[title='Careers']");
     public static By giftCards = By.cssSelector("li[class='yCmsComponent footer__link'] a[title='Gift cards']");
+    public static By klarna=By.cssSelector("a[title='Klarna']");
+    public static By usefulLinks=By.cssSelector("div[href='#footerNavList2']");
 
+
+
+    //Pratham
+    public static By popup = By.cssSelector(".dy-lb-close");
+    public static By searchBar = By.id("autocomplete-0-input");
 }

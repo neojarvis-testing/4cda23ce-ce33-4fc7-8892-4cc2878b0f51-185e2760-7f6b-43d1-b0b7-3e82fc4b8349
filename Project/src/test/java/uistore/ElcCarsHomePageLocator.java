@@ -12,6 +12,5 @@ public class ElcCarsHomePageLocator {
 
 
     
-    // public static By popup = By.cssSelector(".dy-lb-close");
-    // public static By searchBar = By.id("autocomplete-0-input");
+    
 }
