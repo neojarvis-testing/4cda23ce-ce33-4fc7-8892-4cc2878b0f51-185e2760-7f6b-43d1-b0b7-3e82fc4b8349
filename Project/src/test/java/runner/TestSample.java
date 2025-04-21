@@ -4,10 +4,13 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
+import pages.PawPatrolHomePage;
+import pages.footerPage;
 import utils.Base;
 import utils.Reporter;
 
@@ -22,6 +25,18 @@ public class TestSample extends Base{
     public void openELC(){
         openBrowser();
         driver.navigate().refresh();
+    }
+    // @Test
+    // public void footer(){
+    //     test=report.createTest("testCase10");
+    //     footerPage page=new footerPage(test);
+    //     page.footerFunctionality();
+    // }
+    @Test
+    public void PawPatroll(){
+        test = report.createTest("testcase5");
+        PawPatrolHomePage pawPatrolHomePage = new PawPatrolHomePage(test);
+        pawPatrolHomePage.testcase5();
     }
     @AfterMethod
     public void closeELC(){

@@ -1,0 +1,16 @@
+2025.04.21.16.55.08 INFO  utils.LoggerHandler - Successfully Hover on Brands
+2025.04.21.16.55.24 INFO  utils.LoggerHandler - Successfully click on PawPatrol
+2025.04.21.16.55.29 INFO  utils.LoggerHandler - click on accept cookies
+2025.04.21.16.55.32 INFO  utils.LoggerHandler - scroll down to footer
+2025.04.21.16.55.34 INFO  utils.LoggerHandler - verify the about us url
+2025.04.21.16.55.35 INFO  utils.LoggerHandler - click on store finder
+2025.04.21.16.55.37 INFO  utils.LoggerHandler - verify the store finder url
+2025.04.21.16.55.39 INFO  utils.LoggerHandler - click on Press
+2025.04.21.16.55.41 INFO  utils.LoggerHandler - verify the press url
+2025.04.21.16.55.43 INFO  utils.LoggerHandler - click on Affilates
+2025.04.21.16.55.44 INFO  utils.LoggerHandler - verify the affilates url
+2025.04.21.16.55.47 INFO  utils.LoggerHandler - click on gift card
+2025.04.21.16.55.47 INFO  utils.LoggerHandler - verify the gift card url
+2025.04.21.16.55.50 INFO  utils.LoggerHandler - click on klarna
+2025.04.21.16.55.52 INFO  utils.LoggerHandler - verify the klarna url
+2025.04.21.16.55.52 INFO  utils.LoggerHandler - verify the useful links url
