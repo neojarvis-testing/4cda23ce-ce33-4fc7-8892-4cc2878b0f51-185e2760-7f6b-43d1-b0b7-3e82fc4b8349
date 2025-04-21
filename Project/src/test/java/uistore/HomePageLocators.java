@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 
 public class HomePageLocators {
     //Sai Kiran Locators
-    
+    public static By Cookies=By.cssSelector("button[id='onetrust-accept-btn-handler']");
     public static By aboutUs=By.cssSelector("li[class='yCmsComponent footer__link'] a[title='About us']");
     public static By home=By.cssSelector("a[title='Home']");
     public static By storeFinder=By.cssSelector("a[title='Store finder']");
