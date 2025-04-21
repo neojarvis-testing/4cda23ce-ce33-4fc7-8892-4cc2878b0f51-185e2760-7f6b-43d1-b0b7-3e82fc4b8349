@@ -2,7 +2,7 @@ package uistore;
 
 import org.openqa.selenium.By;
 
-public class testCase5Locators {
+public class PawPatrol5Locators {
     public static By HoveronBrands = By.cssSelector("a[title='Brands']");
     public static By ClickOnPawPatrol = By.cssSelector("a[title='Paw Patrol']");
     public static By ClickPlaysetsActions = By.xpath("(//span[@class='facet__text'])[2]");
