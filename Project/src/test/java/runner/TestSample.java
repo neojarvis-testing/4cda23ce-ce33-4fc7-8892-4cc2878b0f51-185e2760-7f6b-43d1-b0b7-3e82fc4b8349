@@ -13,6 +13,7 @@ import pages.NewbornBabyGiftsPage;
 import pages.SoftToysPage;
 import pages.footerPage;
 import utils.Base;
+import utils.DataProviderclass;
 import utils.Reporter;
 
 public class TestSample extends Base{
@@ -28,6 +29,8 @@ public class TestSample extends Base{
         driver.navigate().refresh();
     }
     // @Test
+    // @Test(dataProvider = "exceldata",dataProviderClass = DataProviderclass.class)
+    @Test
     public void footer(){
         test=report.createTest("testCase10");
         footerPage page=new footerPage(test);

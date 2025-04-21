@@ -299,4 +299,16 @@ public class WebDriverHelper {
             e.printStackTrace();
         }
     }
+    public void switchBackToParent(){
+        try {
+            if (!list.isEmpty()) {
+                String parentWindow = list.get(0); // Assuming the first stored window is the parent
+                driver.switchTo().window(parentWindow);
+            } else {
+                System.out.println("No parent window found in the list.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
