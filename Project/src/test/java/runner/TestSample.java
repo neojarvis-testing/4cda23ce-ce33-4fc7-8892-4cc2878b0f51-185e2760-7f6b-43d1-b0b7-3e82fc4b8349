@@ -11,6 +11,7 @@ import com.aventstack.extentreports.ExtentTest;
 
 import pages.footerPage;
 import utils.Base;
+import utils.DataProviderclass;
 import utils.Reporter;
 
 public class TestSample extends Base{
@@ -25,6 +26,7 @@ public class TestSample extends Base{
         openBrowser();
         driver.navigate().refresh();
     }
+    // @Test(dataProvider = "exceldata",dataProviderClass = DataProviderclass.class)
     @Test
     public void footer(){
         test=report.createTest("testCase10");
