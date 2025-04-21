@@ -86,6 +86,3 @@ public class Screenshot extends Base{
             }
         }
     }
-
-    
-

@@ -248,6 +248,12 @@ public class WebDriverHelper {
     public String getText(By path){
         return driver.findElement(path).getText();
     }
+    public String getUrl(){
+        return driver.getCurrentUrl();
+    }
+    public String getPageTitle(){
+        return driver.getTitle();
+    }
 
     /*
      * a.Method Name: getElementsByXPath

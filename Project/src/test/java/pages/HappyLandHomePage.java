@@ -6,7 +6,8 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import uistore.HappyLandHomePageLocator;
-import uistore.testCase10Locators;
+import uistore.HomePageLocators;
+
 import utils.Base;
 import utils.LoggerHandler;
 import utils.Screenshot;
@@ -21,7 +22,7 @@ public class HappyLandHomePage {
     }
     public void hoverExplore(){
         try {
-            helper.hoverOverElement(testCase10Locators.explore); 
+            helper.hoverOverElement(HomePageLocators.explore); 
         LoggerHandler.info("Hover on Explore");
         test.log(Status.PASS,"Hover on Explore");
         } catch (Exception e) {
@@ -32,7 +33,7 @@ public class HappyLandHomePage {
     }
     public void clickGif(){
         try {
-            helper.clickOnElement(testCase10Locators.giftCards); 
+            helper.clickOnElement(HomePageLocators.giftCards); 
         LoggerHandler.info("Hover on Explore");
         test.log(Status.PASS,"Hover on Explore");
         } catch (Exception e) {
@@ -55,7 +56,7 @@ public class HappyLandHomePage {
     }
     public void clickOffers(){
         try {
-            helper.clickOnElement(testCase10Locators.offers); 
+            helper.clickOnElement(HomePageLocators.offers); 
         LoggerHandler.info("Clicked on Offers");
         test.log(Status.PASS,"Clicked on Offers");
         } catch (Exception e) {
@@ -90,6 +91,7 @@ public class HappyLandHomePage {
     }
     public void clickFirst(){
         try {
+            helper.wait(HappyLandHomePageLocator.first);
             helper.clickOnElement(HappyLandHomePageLocator.first); 
         LoggerHandler.info("Clicked on First Product");
         test.log(Status.PASS,"Clicked on First Product");
@@ -136,8 +138,17 @@ public class HappyLandHomePage {
           test.log(Status.PASS,"Not able to Clicked Checkout");
         }
     }
-    public void output(){
-        
+    public void output1(){
+       hoverExplore();
+       clickGif();
+       verifyGift();
+       clickOffers();
+       verifyMonths();
+       clickHappyLand();
+       clickFirst();
+       verifyStore();
+       clickAddtoCart();
+       clickCheck();
     }
 
 }
