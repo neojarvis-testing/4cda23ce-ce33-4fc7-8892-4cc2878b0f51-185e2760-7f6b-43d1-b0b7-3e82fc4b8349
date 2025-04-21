@@ -7,6 +7,6 @@ public class Dataproviderr {
     public static Object[][] excelDataProvider(){
         String path=System.getProperty("user.dir")+"/testData/Excel.xlsx";
         String sheet="ELC sheet";
-        return null;
+        return ExcelReader.getExcelData(path, sheet);
     }
 }
