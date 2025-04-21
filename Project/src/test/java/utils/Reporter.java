@@ -7,21 +7,25 @@ import java.util.Date;
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.devtools.v117.io.IO;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
-import com.aventstack.extentreports.model.Media;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
-import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.google.common.io.Files;
 
 
 
 public class Reporter extends Base {
     public static TakesScreenshot ts;
+/*
+ * a.Method Name: generateExtentReport
+ * b.Author Name : 
+ * c.Description : Generates the ExtentReport with the given Report name.
+ * d.Return Type: ExtentReports.
+ * e.Parameter List: String reportName
+ */
     public static ExtentReports generateExtentReport(String reportName){
         ExtentReports extentReport = new ExtentReports();
         SimpleDateFormat dateFormat = new  SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
@@ -34,6 +38,14 @@ public class Reporter extends Base {
         return extentReport;
 
     }
+ /*
+ * a.Method Name: captureScreenShot
+ * b.Author Name : 
+ * c.Description : Captures the Screenshot and saves it with given report name.
+ * d.Return Type: String.
+ * e.Parameter List: String fileName.
+ */
+
     public static String captureScreenShot(String filename){
         String timestamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
         String name = filename + timestamp + ".png";
@@ -52,6 +64,14 @@ public class Reporter extends Base {
         }
         return destPath;
     }
+/*
+ * a.Method Name: attachScreenshotReport
+ * b.Author Name : 
+ * c.Description : Attaches the name the ExtentReport and saves it with given report name.
+ * d.Return Type: void.
+ * e.Parameter List: String fileName, ExtentTest test, String description.
+ */
+
     public static void attachScreenshotToReport(String filename, ExtentTest test, String description){
         try {
             test.log(Status.INFO,description,MediaEntityBuilder.createScreenCaptureFromPath(captureScreenShot(filename)).build());
