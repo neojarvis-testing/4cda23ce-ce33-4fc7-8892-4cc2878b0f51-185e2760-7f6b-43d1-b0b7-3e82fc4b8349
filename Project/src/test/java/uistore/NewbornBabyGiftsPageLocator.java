@@ -2,11 +2,11 @@ package uistore;
 
 import org.openqa.selenium.By;
 
-public class testCase1PageLocator {
-    public static By acceptAllCookies=By.cssSelector("button[id='onetrust-accept-btn-handler']");
-    public static By logo=By.cssSelector("img[title='Early Learning Centre']");
-    public static By shopByAge=By.cssSelector("a[title='Shop by age']");
-    public static By newBornGifts=By.cssSelector("a[title='Newborn Gifts']");
+public class NewbornBabyGiftsPageLocator {
+    // public static By acceptAllCookies=By.cssSelector("button[id='onetrust-accept-btn-handler']");
+    // public static By logo=By.cssSelector("img[title='Early Learning Centre']");
+    // public static By shopByAge=By.cssSelector("a[title='Shop by age']");
+    // public static By newBornGifts=By.cssSelector("a[title='Newborn Gifts']");
     public static By showMore=By.cssSelector("a[title='Newborn Gifts']");
     public static By babyActivityToys=By.cssSelector("a[href='https://www.elc.co.uk/c/shop-by-age/new-born-baby-gift-ideas?categories=Baby%20Activity%20Toys']");
     public static By earlyLearningCenter=By.xpath("//span[text()='Early Learning Centre']");

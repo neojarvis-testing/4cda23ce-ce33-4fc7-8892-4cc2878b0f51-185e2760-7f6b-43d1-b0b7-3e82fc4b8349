@@ -15,4 +15,10 @@ public class HomePageLocators {
     public static By giftCards = By.cssSelector("li[class='yCmsComponent footer__link'] a[title='Gift cards']");
     public static By klarna=By.cssSelector("a[title='Klarna']");
     public static By usefulLinks=By.cssSelector("div[href='#footerNavList2']");
+
+    //Akki Manith Locators
+    public static By acceptAllCookies=By.cssSelector("button[id='onetrust-accept-btn-handler']");
+    public static By logo=By.cssSelector("img[title='Early Learning Centre']");
+    public static By shopByAge=By.cssSelector("a[title='Shop by age']");
+    public static By newBornGifts=By.cssSelector("a[title='Newborn Gifts']");
 }
