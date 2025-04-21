@@ -12,7 +12,7 @@ public class Dataproviderr {
      */
     @DataProvider(name="exceldata")
     public static Object[][] excelDataProvider(){
-        String path=System.getProperty("user.dir")+"/testData/Excel.xlsx";
+        String path=System.getProperty("user.dir")+"/testData/ELCData.xlsx";
         String sheet="ELC sheet";
         return ExcelReader.getExcelData(path, sheet);
     }
