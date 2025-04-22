@@ -30,7 +30,13 @@ public class TestSample extends Base{
         driver.navigate().refresh();
     }
 
-   
+   /*Method Name:test3
+     * Author Name:Vipul Saxena
+     * Description: Executes 3rd test case.
+     * Parameters:None
+     * return type:void
+     */
+
     @Test
     public void test3()
     {
@@ -39,6 +45,13 @@ public class TestSample extends Base{
         out.testcase3();
         
     }
+    /*Method Name:test4
+     * Author Name:Vipul Saxena
+     * Description: Executes 4th test case.
+     * Parameters:None
+     * return type:void
+     */
+
     @Test
     public void test4()
     {
