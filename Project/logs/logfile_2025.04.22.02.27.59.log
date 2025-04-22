@@ -1,0 +1,26 @@
+2025.04.22.02.27.59 INFO  utils.LoggerHandler - click on accept cookies
+2025.04.22.02.28.00 INFO  utils.LoggerHandler - Successfully Hover on Brands
+2025.04.22.02.28.02 INFO  utils.LoggerHandler - Successfully click on PawPatrol
+2025.04.22.02.28.02 INFO  utils.LoggerHandler - verify the url
+2025.04.22.02.28.02 INFO  utils.LoggerHandler - Successfully click on Playsets & Action Figures
+2025.04.22.02.28.03 INFO  utils.LoggerHandler - Successfully verifed the text Narrow
+2025.04.22.02.28.03 INFO  utils.LoggerHandler - Successfully clicked on Savings
+2025.04.22.02.28.07 INFO  utils.LoggerHandler - Successfully clicked on Product
+2025.04.22.02.28.07 INFO  utils.LoggerHandler - Successfully verifed the text Available
+2025.04.22.02.28.07 INFO  utils.LoggerHandler - Successfully Clicked on Add to Basket
+2025.04.22.02.28.10 INFO  utils.LoggerHandler - Succesffully Clicked on CheckOut
+2025.04.22.02.28.26 ERROR utils.LoggerHandler - Failed to Verify the text
+2025.04.22.02.28.32 INFO  utils.LoggerHandler - click on accept cookies
+2025.04.22.02.28.34 INFO  utils.LoggerHandler - scroll down to footer
+2025.04.22.02.28.36 INFO  utils.LoggerHandler - verify the about us url
+2025.04.22.02.28.38 INFO  utils.LoggerHandler - click on store finder
+2025.04.22.02.28.40 INFO  utils.LoggerHandler - verify the store finder url
+2025.04.22.02.28.42 INFO  utils.LoggerHandler - click on Press
+2025.04.22.02.28.44 INFO  utils.LoggerHandler - verify the press url
+2025.04.22.02.28.46 INFO  utils.LoggerHandler - click on Affilates
+2025.04.22.02.28.48 INFO  utils.LoggerHandler - verify the affilates url
+2025.04.22.02.28.50 INFO  utils.LoggerHandler - click on gift card
+2025.04.22.02.28.50 INFO  utils.LoggerHandler - verify the gift card url
+2025.04.22.02.28.55 INFO  utils.LoggerHandler - click on klarna
+2025.04.22.02.28.57 INFO  utils.LoggerHandler - verify the klarna url
+2025.04.22.02.28.57 INFO  utils.LoggerHandler - verify the useful links url

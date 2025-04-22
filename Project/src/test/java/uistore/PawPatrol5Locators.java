@@ -30,15 +30,3 @@ public class PawPatrol5Locators {
 
 
 
-
-// hover on brands $$("a[title='Brands']")
-// click on $$("a[title='Paw Patrol']")
-// verify the title Pawpatrol $$("h1[class='category-title']")
-// click on playsets &Actions $x("(//span[@class='facet__text'])[2]")
-// verify the narrow  $$("h4[class='hidden-sm hidden-xs']")
-// click on savings   $x("//span[text()='Savings']")
-// click on first product $$("div[class='details'] a[data-wasprice='49.99']")
-// verify available $$("p[class='store-availability-text']")
-// click on AddBasket $x("//button[@id='addToCartButton']")
-// click on checkout $$("a[class='btn btn-primary btn-block add-to-cart-button']")
-// verify basket $$("span[class='headline-text']")

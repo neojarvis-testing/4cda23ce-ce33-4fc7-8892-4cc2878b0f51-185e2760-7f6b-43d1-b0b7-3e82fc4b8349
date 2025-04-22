@@ -127,13 +127,13 @@ public void ClickonPlaysetsAction(){
     
 }
 /*
- * a.Method Name : CheckNarrow
+ * a.Method Name : VerifyNarrow
  * b.Author Name : Karthik
- * c.Description : Check About us Heading.
+ * c.Description : Verify About us Heading.
  * d.Return Type : void
  * e.Parameter List :None
  */
-public void CheckNarrow(){
+public void VerifyNarrow(){
     try {
         String data = helper.getText(PawPatrol5Locators.VerifyNarrow);
         Assert.assertEquals(data,"Narrow Your Results");
@@ -283,7 +283,7 @@ public void verifyBasket(){
         ClickOnPawPatrol();
         verifyurl();
         ClickonPlaysetsAction();
-        CheckNarrow();
+        VerifyNarrow();
         ClickOnSavings();
         ClickOnProduct();
         VerifyAvailable();
