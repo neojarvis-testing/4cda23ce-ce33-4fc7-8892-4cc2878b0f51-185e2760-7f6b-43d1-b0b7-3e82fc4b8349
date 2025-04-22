@@ -24,22 +24,15 @@ public class ExcelReader {
      * Return Type : String data
      * Parameter : path, sheetName
      */
-    public static Object[][] getExcelData(String path, String sheetName){
+    public static String readData(String path, String sheetName, int r , int c){
         try {
             file = new FileInputStream(path);
             workbook=new XSSFWorkbook(file);
             sheet=workbook.getSheet(sheetName);
-            rowCount=sheet.getPhysicalNumberOfRows();
-            cellCount=sheet.getRow(0).getPhysicalNumberOfCells();
-            Object[][] data=new Object[rowCount][cellCount];
-            for(int i=0;i<rowCount;i++){
-                row=sheet.getRow(i);
-                for(int j=0;j<cellCount;j++){
-                    cell=row.getCell(j);
-                    data[i][j]=cell.toString();
-                }
-            }
-            return data;
+            row=sheet.getRow(r);
+            cell=row.getCell(c);
+            String value=cell.toString();
+            return value;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }catch(IOException e){
@@ -47,4 +40,5 @@ public class ExcelReader {
         }
         return null;
     }
+ 
 }
