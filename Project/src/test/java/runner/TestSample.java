@@ -41,7 +41,6 @@ public class TestSample extends Base{
         HappyLandHomePage h=new HappyLandHomePage(test);
         h.output1();
     }
-    @Test(dataProvider = "exceldata",dataProviderClass = DataProviderclass.class)
     @Test
     public void puzzle(String value){
         test=report.createTest("puzzle");
