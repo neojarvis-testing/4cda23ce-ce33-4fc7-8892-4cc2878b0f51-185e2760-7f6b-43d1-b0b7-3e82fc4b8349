@@ -7,15 +7,16 @@ import com.aventstack.extentreports.Status;
 
 import uistore.HomePageLocators;
 import utils.Base;
+import utils.ExcelReader;
 import utils.LoggerHandler;
 import utils.Reporter;
 import utils.Screenshot;
 import utils.WebDriverHelper;
 
-public class footerPage {
+public class FooterPage {
     public static ExtentTest test;
     public static WebDriverHelper helper;
-    public footerPage(ExtentTest test){
+    public FooterPage(ExtentTest test){
         this.test=test;
         helper=new WebDriverHelper(Base.driver);
     }
@@ -30,10 +31,12 @@ public class footerPage {
         try {
             helper.wait(HomePageLocators.Cookies);
             helper.clickOnElement(HomePageLocators.Cookies);
-            test.log(Status.PASS, "click on accept cookies");
+            test.log(Status.INFO, "click on accept cookies");
             LoggerHandler.info("click on accept cookies");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            test.log(Status.FAIL, "not click on accept cookies");
+            LoggerHandler.error("not click on accept cookies");
         }
     }
     /*
@@ -51,7 +54,9 @@ public class footerPage {
             test.log(Status.PASS, "scroll down to footer");
             LoggerHandler.info("scroll down to footer");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            test.log(Status.FAIL, "not scroll down to footer");
+            LoggerHandler.error("not scroll down to footer");
         }
     }
     /*
@@ -64,13 +69,16 @@ public class footerPage {
     public void verifyAboutUsUrl(){
         try {
             String value=helper.getUrl();
-            Assert.assertEquals(value, "https://www.elc.co.uk/aboutus");
-            System.out.println(value);
+            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 12, 0);
+            Assert.assertEquals(value, data);
+            System.out.println(data);
             Base.driver.navigate().back();
             test.log(Status.PASS, "navigate back to home page");
             LoggerHandler.info("navigate back to home page");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            test.log(Status.FAIL, "not navigate back to home page");
+            LoggerHandler.error("not navigate back to home page");
         }
     }
     /*
@@ -88,7 +96,9 @@ public class footerPage {
             test.log(Status.PASS, "click on store finder");
             LoggerHandler.info("click on store finder");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            test.log(Status.FAIL,"not click on store finder" );
+            LoggerHandler.error("not click on store finder");
         }
     }
     /*
@@ -101,13 +111,16 @@ public class footerPage {
     public void verifyStoreFindUrl(){
         try {
             String value=helper.getUrl();
-            Assert.assertEquals(value, "https://www.elc.co.uk/store-finder");
-            System.out.println(value);
+            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 12, 1);
+            Assert.assertEquals(value, data);
+            System.out.println(data);
             Base.driver.navigate().back();
             test.log(Status.PASS, "verify the store finder url");
             LoggerHandler.info("verify the store finder url");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            test.log(Status.FAIL,"not verify the store finder url" );
+            LoggerHandler.error("not verify the store finder url");
         }
     }
     /*
@@ -126,7 +139,9 @@ public class footerPage {
             test.log(Status.PASS, "click on WEE Regulations");
             LoggerHandler.info("click on WEE Regulations");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            test.log(Status.FAIL, "not click on WEE Regulations");
+            LoggerHandler.error("not click on WEE Regulations");
         }
     }
     /*
@@ -139,18 +154,21 @@ public class footerPage {
     public void verifyWEERegulationsUrl(){
         try {
             String value=helper.getUrl();
-            Assert.assertEquals(value, "https://www.thetoyshop.com/weee");
+            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1" , 12, 2);
+            Assert.assertEquals(value, data);
             System.out.println(value);
             helper.switchBackToParent();
-            test.log(Status.PASS, "verify the weeRegulations url");
+            test.log(Status.INFO, "verify the weeRegulations url");
             LoggerHandler.info("verify the weeRegulations url");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            test.log(Status.FAIL,"not verify the weeRegulations url" );
+            LoggerHandler.error("not verify the weeRegulations url");
         }
     }
     /*
     * Method name : clickOnPress
-    * Author name : C Sai Kiran
+    * Author name : C Sai Kiranvoid
     * Description : Clicks on the Press section
     * Return Type : void
     * Parameter : None
@@ -163,7 +181,9 @@ public class footerPage {
             test.log(Status.PASS, "click on Press");
             LoggerHandler.info("click on Press");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            test.log(Status.FAIL,"not click on Press" );
+            LoggerHandler.error("not click on Press");
         }
     }
     /*
@@ -176,13 +196,16 @@ public class footerPage {
     public void verifyPressUrl(){
         try {
             String value=helper.getUrl();
-            Assert.assertEquals(value, "https://www.elc.co.uk/press");
+            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx","Sheet1" , 12, 3);
+            Assert.assertEquals(value, data);
             System.out.println(value);
             Base.driver.navigate().back();
             test.log(Status.PASS, "verify the press url");
             LoggerHandler.info("verify the press url");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            test.log(Status.FAIL,"not verify the press url" );
+            LoggerHandler.error("not verify the press url");
         }
     }
     /*
@@ -200,7 +223,9 @@ public class footerPage {
             test.log(Status.PASS, "click on Affilates");
             LoggerHandler.info("click on Affilates");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            test.log(Status.FAIL,"not click on Affilates" );
+            LoggerHandler.error("not click on Affilates");
         }
     }
     /*
@@ -213,13 +238,16 @@ public class footerPage {
     public void verifyAffilatesUrl(){
         try {
             String value=helper.getUrl();
-            Assert.assertEquals(value, "https://www.elc.co.uk/affiliates");
+            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx","Sheet1" , 12, 4);
+            Assert.assertEquals(value, data);
             System.out.println(value);
             Base.driver.navigate().back();
-            test.log(Status.PASS, "verify the affilates url");
+            test.log(Status.INFO, "verify the affilates url");
             LoggerHandler.info("verify the affilates url");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            test.log(Status.FAIL, "not verify the affilates url");
+            LoggerHandler.error("not verify the affilates url");
         }
     }
     /*
@@ -238,7 +266,9 @@ public class footerPage {
             LoggerHandler.info("click on Careers");
             helper.switchTab();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            test.log(Status.FAIL,"not click on Careers" );
+            LoggerHandler.error("not click on Careers");
         }
     }
     /*
@@ -251,13 +281,16 @@ public class footerPage {
     public void verifyCareersUrl(){
         try {
             String value=helper.getUrl();
-            Assert.assertEquals(value, value);
+            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx","Sheet1" , 12, 5);
+            Assert.assertEquals(value, data);
             System.out.println(value);
             helper.switchBackToParent();
             test.log(Status.PASS, "verify the careers url");
             LoggerHandler.info("verify the careers url");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            test.log(Status.FAIL,"verify the careers url" );
+            LoggerHandler.error("not verify the careers url");
         }
     }
     /*
@@ -275,7 +308,9 @@ public class footerPage {
             test.log(Status.PASS, "click on gift card");
             LoggerHandler.info("click on gift card");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            test.log(Status.FAIL,"not click on gift card" );
+            LoggerHandler.error("not click on gift card");
         }
     }
     /*
@@ -288,13 +323,16 @@ public class footerPage {
     public void verifyGiftCardUrl(){
         try {
             String value=helper.getUrl();
-            Assert.assertEquals(value, "https://www.elc.co.uk/gift-cards/The-Entertainer-%26-Early-Learning-Centre-Gift-Card-%C2%A310/p/99880000001_10");
+            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx","Sheet1" , 12, 6);
+            Assert.assertEquals(value, data);
             System.out.println(value);
             test.log(Status.PASS, "verify the gift card url");
             LoggerHandler.info("verify the gift card url");
             Base.driver.navigate().back();
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            test.log(Status.FAIL, "not verify the gift card url");
+            LoggerHandler.error("not verify the gift card url");
         }
     }
     /*
@@ -312,7 +350,9 @@ public class footerPage {
             test.log(Status.PASS, "click on klarna");
             LoggerHandler.info("click on klarna");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            test.log(Status.FAIL,"not click on klarna" );
+            LoggerHandler.error("not click on klarna");
         }
     }
     /*
@@ -325,13 +365,16 @@ public class footerPage {
     public void verifyKlarnaUrl(){
         try {
             String value=helper.getUrl();
-            Assert.assertEquals(value, "https://www.elc.co.uk/klarna");
+            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx","Sheet1" , 12, 7);
+            Assert.assertEquals(value, data);
             System.out.println(value);
             Base.driver.navigate().back();
             test.log(Status.PASS, "verify the klarna url");
             LoggerHandler.info("verify the klarna url");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            test.log(Status.FAIL, "not verify the klarna url");
+            LoggerHandler.error("not verify the klarna url");
         }
     }
     /*
@@ -344,12 +387,15 @@ public class footerPage {
     public void verifyUsefulLinksText(){
         try {
             String value=helper.getText(HomePageLocators.usefulLinks);
-            Assert.assertEquals(value, "Useful links");
+            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx","Sheet1" , 12, 8);
+            Assert.assertEquals(value, data);;
             System.out.println(value);
             test.log(Status.PASS, "verify the useful links url");
             LoggerHandler.info("verify the useful links url");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            test.log(Status.FAIL, "not verify the useful links url");
+            LoggerHandler.error("not verify the useful links url");
         }
     }
     /*
@@ -364,8 +410,12 @@ public class footerPage {
             Screenshot ss=new Screenshot();
             ss.captureScreenShot("ELC");
             Reporter.attachScreenshotToReport("ELC", test, "screenshot of elc home page");
+            test.log(Status.PASS, "captured the elc screenshot");
+            LoggerHandler.info("captured the elc screenshot");
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e.getMessage());
+            test.log(Status.FAIL, "not captured the elc screenshot");
+            LoggerHandler.error("not captured the elc screenshot");
         }
     }
     /*
