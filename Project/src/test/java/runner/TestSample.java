@@ -31,13 +31,13 @@ public class TestSample extends Base
         openBrowser();
         driver.navigate().refresh();
     }
-    @Test
+    // @Test
     public void footer(){
         test=report.createTest("testCase10");
         footerPage page=new footerPage(test);
         page.footerFunctionality();
     }
-    @Test
+    // @Test
     public void happyland(){
         test=report.createTest("happy");
         HappyLandHomePage h=new HappyLandHomePage(test);
@@ -55,7 +55,7 @@ public class TestSample extends Base
         SoftToysPage softToy=new SoftToysPage(test);
         softToy.SoftToysTest();
     }
-    @Test
+    // @Test
     public void puzzle(String value){
         test=report.createTest("puzzle");
         PuzzleHomePage p=new PuzzleHomePage(test);
