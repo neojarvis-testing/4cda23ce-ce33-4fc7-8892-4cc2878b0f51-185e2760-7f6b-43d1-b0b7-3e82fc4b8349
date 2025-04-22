@@ -8,6 +8,7 @@ import com.aventstack.extentreports.Status;
 import uistore.HappyLandHomePageLocator;
 import uistore.HomePageLocators;
 import utils.Base;
+import utils.ExcelReader;
 import utils.LoggerHandler;
 import utils.Screenshot;
 import utils.WebDriverHelper;
@@ -64,9 +65,9 @@ public class PuzzleHomePage {
     * Return Type : value
     * Parameter : None
     */
-    public void sendadata(String value){
+    public void sendadata(){
         try {
-            helper.sendData(HomePageLocators.searchbar,value); 
+            helper.sendData(HomePageLocators.searchbar,ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 1, 0)); 
             // helper.enterAction(HomePageLocators.searchbar); 
             // helper.enterAction(HomePageLocators.searchbar); 
         LoggerHandler.info("Data sent on SearchBar");
@@ -237,11 +238,11 @@ public class PuzzleHomePage {
     * Return Type : void
     * Parameter : None
     */
-   public void output2(String value){
+   public void output2(){
    
     clickAcceptCookies();
     clickOnSearch();
-    sendadata(value);
+    sendadata();
     performEnter();
     clickOnShowmore();
     clickOnJigsawPuzzle();
