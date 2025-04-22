@@ -273,7 +273,8 @@ public class WebDriverHelper {
      * d.Parameter: By path - Locator for the element
      * e.Return Type: void
      */
-    public void hoverOverElement(By path){
+    public void hoverOverElement(By path)
+    {
         try {
             Actions action = new Actions(driver);
             WebElement element = driver.findElement(path);
@@ -299,6 +300,8 @@ public class WebDriverHelper {
             e.printStackTrace();
         }
     }
+
+
     public void switchBackToParent(){
         try {
             if (!list.isEmpty()) {
@@ -312,3 +315,4 @@ public class WebDriverHelper {
         }
     }
 }
+
