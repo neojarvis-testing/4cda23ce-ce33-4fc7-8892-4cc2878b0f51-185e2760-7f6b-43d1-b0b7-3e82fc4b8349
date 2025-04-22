@@ -12,7 +12,6 @@ import com.aventstack.extentreports.ExtentTest;
 import pages.PawPatrolHomePage;
 import pages.HappyLandHomePage;
 import pages.PuzzleHomePage;
-import pages.footerPage;
 import utils.Base;
 import utils.DataProviderclass;
 import utils.Reporter;
@@ -29,12 +28,12 @@ public class TestSample extends Base{
         openBrowser();
         driver.navigate().refresh();
     }
-    // @Test
-    // public void footer(){
-    //     test=report.createTest("testCase10");
-    //     footerPage page=new footerPage(test);
-    //     page.footerFunctionality();
-    // }
+    @Test
+    public void footer(){
+        test=report.createTest("testCase10");
+        footerPage page=new footerPage(test);
+        page.footerFunctionality();
+    }
     @Test
     public void happyland(){
         test=report.createTest("happy");
