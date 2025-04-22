@@ -15,6 +15,7 @@ import pages.HappyLandHomePage;
 import pages.PuzzleHomePage;
 import pages.footerPage;
 import utils.Base;
+
 import utils.Reporter;
 
 public class TestSample extends Base{
@@ -58,6 +59,11 @@ public class TestSample extends Base{
         test=report.createTest("Soft Toys");
         SoftToysPage softToy=new SoftToysPage(test);
         softToy.SoftToysTest();
+    @Test
+    public void puzzle(String value){
+        test=report.createTest("puzzle");
+        PuzzleHomePage p=new PuzzleHomePage(test);
+        p.output2(value);
     }
     @AfterMethod
     public void closeELC(){

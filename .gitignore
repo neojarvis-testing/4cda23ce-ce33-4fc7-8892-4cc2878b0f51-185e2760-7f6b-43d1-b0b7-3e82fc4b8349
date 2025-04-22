@@ -1,4 +1,10 @@
 target/
+<<<<<<< HEAD
 logs/
 reports/
 screenshots/
+=======
+screenshots/
+reports/
+logs/
+>>>>>>> d6d9169799ca30dbb304c320e0974e1bc91d2a15
