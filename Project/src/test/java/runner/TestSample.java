@@ -18,7 +18,8 @@ import utils.Base;
 
 import utils.Reporter;
 
-public class TestSample extends Base{
+public class TestSample extends Base
+{
     public static ExtentTest test;
     public static ExtentReports report;
     @BeforeClass
@@ -42,12 +43,6 @@ public class TestSample extends Base{
         HappyLandHomePage h=new HappyLandHomePage(test);
         h.output1();
     }
-    // @Test(dataProvider = "exceldata",dataProviderClass = DataProviderclass.class)
-    // public void puzzle(String value){
-    //     test=report.createTest("puzzle");
-    //     PuzzleHomePage p=new PuzzleHomePage(test);
-    //     p.output2(value);
-    // }
     @Test
     public void NewbornBabyGifts(){
         test=report.createTest("Newborn Baby Gifts");
@@ -59,6 +54,7 @@ public class TestSample extends Base{
         test=report.createTest("Soft Toys");
         SoftToysPage softToy=new SoftToysPage(test);
         softToy.SoftToysTest();
+    }
     @Test
     public void puzzle(String value){
         test=report.createTest("puzzle");
