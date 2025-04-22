@@ -9,6 +9,8 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
+import pages.HappyLandHomePage;
+import pages.PuzzleHomePage;
 import pages.footerPage;
 import utils.Base;
 
@@ -26,11 +28,36 @@ public class TestSample extends Base{
         openBrowser();
         driver.navigate().refresh();
     }
+    // @Test
+    // public void footer(){
+    //     test=report.createTest("testCase10");
+    //     footerPage page=new footerPage(test);
+    //     page.footerFunctionality();
+    // }
     @Test
-    public void footer(){
-        test=report.createTest("testCase10");
-        footerPage page=new footerPage(test);
-        page.footerFunctionality();
+    public void happyland(){
+        test=report.createTest("happy");
+        HappyLandHomePage h=new HappyLandHomePage(test);
+        h.output1();
+    }
+    // @Test(dataProvider = "exceldata",dataProviderClass = DataProviderclass.class)
+    @Test(dataProvider = "exceldata",dataProviderClass = DataProviderclass.class)
+    public void puzzle(String value){
+        test=report.createTest("puzzle");
+        PuzzleHomePage p=new PuzzleHomePage(test);
+        p.output2(value);
+    }
+    @Test
+    public void happyland(){
+        test=report.createTest("happy");
+        HappyLandHomePage h=new HappyLandHomePage(test);
+        h.output1();
+    }
+    @Test
+    public void puzzle(String value){
+        test=report.createTest("puzzle");
+        PuzzleHomePage p=new PuzzleHomePage(test);
+        p.output2(value);
     }
     @AfterMethod
     public void closeELC(){
@@ -42,3 +69,4 @@ public class TestSample extends Base{
     }
 
 }
+
