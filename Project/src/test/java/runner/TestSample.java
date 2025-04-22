@@ -15,8 +15,6 @@ import pages.HappyLandHomePage;
 import pages.PuzzleHomePage;
 import pages.footerPage;
 import utils.Base;
-
-import utils.DataProviderclass;
 import utils.Reporter;
 
 public class TestSample extends Base
@@ -34,14 +32,15 @@ public class TestSample extends Base
     }
 
     //testcase8
-    @Test(dataProvider = "exceldata",dataProviderClass = DataProviderclass.class,priority = 2)
+    @Test
     public void carFunc(String value){
         test = report.createTest("Cars");
         ElcCars car = new ElcCars(test);
         car.cars(value);
     }
     //testcase 10
-     @Test
+    
+    @Test
     public void footer(){
         test=report.createTest("testCase10");
         footerPage page=new footerPage(test);
@@ -55,7 +54,8 @@ public class TestSample extends Base
         h.output1();
     }
     // testcase7
-    @Test(dataProvider = "exceldata",dataProviderClass = DataProviderclass.class ,priority = 1)
+   
+    @Test
     public void puzzle(String value){
         test=report.createTest("puzzle");
         PuzzleHomePage p=new PuzzleHomePage(test);
