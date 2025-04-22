@@ -47,6 +47,13 @@ public class TestSample extends Base{
         PuzzleHomePage p=new PuzzleHomePage(test);
         p.output2(value);
     }
+     /*
+    * Method name : PawPatroll
+    * Author name : karthik
+    * Description : this test case no. 5 ensures that product is added to the basket
+    * Return Type : void
+    * Parameter : None
+     */
     @Test
     public void PawPatroll(){
         test = report.createTest("PawPatrol");
