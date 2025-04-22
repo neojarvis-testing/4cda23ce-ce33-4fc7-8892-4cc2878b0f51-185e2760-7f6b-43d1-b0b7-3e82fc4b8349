@@ -11,13 +11,18 @@ import com.aventstack.extentreports.ExtentTest;
 
 import pages.LearningPage;
 import pages.OutdoorToysPage;
+import pages.NewbornBabyGiftsPage;
+import pages.SoftToysPage;
+import pages.footerPage;
+import pages.ElcCars;
+import pages.Elcfooterverify;
 import pages.HappyLandHomePage;
 import pages.PuzzleHomePage;
 import utils.Base;
-import utils.DataProviderclass;
 import utils.Reporter;
 
-public class TestSample extends Base{
+public class TestSample extends Base
+{
     public static ExtentTest test;
     public static ExtentReports report;
     @BeforeClass
@@ -66,27 +71,88 @@ public class TestSample extends Base{
     //     footerPage page=new footerPage(test);
     //     page.footerFunctionality();
     // }
+    /*
+     * a.Method Name: addFilteredProductToWishlist
+     * b.Author Name: Pratham Maheshwari
+     * c.Description: This test case ensures that a product is successfully added to the wishlist after specific filters have been applied.
+     * d.Parameter: None
+     * e.Return Type: void
+     */
+    @Test
+    public void addFilteredProductToWishlist(){
+        test = report.createTest("Cars");
+        ElcCars car = new ElcCars(test);
+        car.cars();
+    }
+
+    //testcase 10
+    @Test
+    public void footer(){
+        test=report.createTest("testCase10");
+        footerPage page=new footerPage(test);
+        page.footerFunctionality();
+    }
+    //testcase6
     @Test
     public void happyland(){
         test=report.createTest("happy");
         HappyLandHomePage h=new HappyLandHomePage(test);
         h.output1();
     }
-    // @Test(dataProvider = "exceldata",dataProviderClass = DataProviderclass.class)
-    @Test(dataProvider = "exceldata",dataProviderClass = DataProviderclass.class)
-    public void puzzle(String value){
+    /*
+     * Method Name : NewbornBabyGifts
+     * Author Name : Akki Manith
+     * Description : To add the Newborn Baby Gifts under Shop by Age into the basket
+     * Return Type : void
+     * Parameter : none
+     */
+    @Test
+    public void NewbornBabyGifts(){
+        test=report.createTest("Newborn Baby Gifts");
+        NewbornBabyGiftsPage newbornBabyGifts=new NewbornBabyGiftsPage(test);
+        newbornBabyGifts.NewbabyBornGiftsPageTest();
+    }
+    /*
+     * Method Name : SoftToys
+     * Author Name : Akki Manith
+     * Description : To add the Soft toys under Type of toy into the basket
+     * Return Type : void
+     * Parameter : none
+     */
+    @Test
+    public void SoftToys(){
+        test=report.createTest("Soft Toys");
+        SoftToysPage softToy=new SoftToysPage(test);
+        softToy.SoftToysTest();
+    }
+    // testcase7
+    @Test
+    public void puzzle(){
         test=report.createTest("puzzle");
         PuzzleHomePage p=new PuzzleHomePage(test);
-        p.output2(value);
+        p.output2();
+    }
+    /*
+     * a.Method Name: verification
+     * b.Author Name: Pratham Maheshwari
+     * c.Description: This test case verifies the URL of the redirected pages after clicking specific button.
+     * d.Parameter: None
+     * e.Return Type: void
+     */
+    @Test
+    public void verification(){
+        test= report.createTest("Verification");
+        Elcfooterverify footer = new Elcfooterverify(test);
+        footer.clickAndVerifyUrl();
     }
     @AfterMethod
     public void closeELC(){
         driver.quit();
     }
     @AfterClass
-    public void closeReport(){
+    public void closeReport()
+    {
         report.flush();
     }
-
 }
 
