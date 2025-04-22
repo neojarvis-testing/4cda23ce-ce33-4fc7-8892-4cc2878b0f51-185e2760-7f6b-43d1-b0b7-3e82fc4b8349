@@ -13,7 +13,8 @@ public class HomePageLocators {
     public static By affilates=By.cssSelector("a[title='Affiliates']");
     public static By careers=By.cssSelector("a[title='Careers']");
     public static By giftCards = By.cssSelector("li[class='yCmsComponent footer__link'] a[title='Gift cards']");
-    public static By explore=By.cssSelector("a[title='Explore']");
+   // public static By explore=By.cssSelector("a[title='Explore']");
+    public static By explore=By.xpath("//a[text()='Explore']");
     public static By offers=By.cssSelector("a[title='Offers']");
     public static By searchbar=By.cssSelector("input[class='aa-Input form-control']");
     public static By serachIcon=By.cssSelector("//button[@class='aa-SubmitButton btn btn-link js_search_button']");
