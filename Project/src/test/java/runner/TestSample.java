@@ -9,13 +9,15 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
+import pages.LearningPage;
+import pages.OutdoorToysPage;
 import pages.NewbornBabyGiftsPage;
 import pages.SoftToysPage;
+import pages.footerPage;
 import pages.ElcCars;
 import pages.Elcfooterverify;
 import pages.HappyLandHomePage;
 import pages.PuzzleHomePage;
-import pages.footerPage;
 import utils.Base;
 import utils.Reporter;
 
@@ -33,6 +35,42 @@ public class TestSample extends Base
         driver.navigate().refresh();
     }
 
+   /*Method Name:test3
+     * Author Name:Vipul Saxena
+     * Description: Executes 3rd test case.
+     * Parameters:None
+     * return type:void
+     */
+
+    @Test
+    public void test3()
+    {
+        test=report.createTest("Test3");
+        OutdoorToysPage out=new OutdoorToysPage(test);
+        out.testcase3();
+        
+    }
+    /*Method Name:test4
+     * Author Name:Vipul Saxena
+     * Description: Executes 4th test case.
+     * Parameters:None
+     * return type:void
+     */
+
+    @Test
+    public void test4()
+    {
+        test=report.createTest("Test4");
+        LearningPage learn=new LearningPage(test);
+        learn.testcase4();
+    }
+        
+    // @Test
+    // public void footer(){
+    //     test=report.createTest("testCase10");
+    //     footerPage page=new footerPage(test);
+    //     page.footerFunctionality();
+    // }
     /*
      * a.Method Name: addFilteredProductToWishlist
      * b.Author Name: Pratham Maheshwari
