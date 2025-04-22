@@ -22,6 +22,7 @@ public class HomePageLocators {
     public static By usefulLinks=By.cssSelector("div[href='#footerNavList2']");
 
 
+
     //Vipul Locators
     //TestCase 3
     public static By accept = By.id("onetrust-accept-btn-handler");

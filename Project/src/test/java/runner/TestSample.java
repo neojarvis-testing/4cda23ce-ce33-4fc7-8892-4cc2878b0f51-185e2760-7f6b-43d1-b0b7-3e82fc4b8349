@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
+import pages.PawPatrolHomePage;
 import pages.LearningPage;
 import pages.OutdoorToysPage;
 import pages.NewbornBabyGiftsPage;
@@ -145,6 +146,19 @@ public class TestSample extends Base
         Elcfooterverify footer = new Elcfooterverify(test);
         footer.clickAndVerifyUrl();
     }
+     /*
+    * Method name : PawPatroll
+    * Author name : karthik
+    * Description : this test case no. 5 ensures that product is added to the basket
+    * Return Type : void
+    * Parameter : None
+     */
+    @Test
+    public void PawPatroll(){
+        test = report.createTest("PawPatrol");
+        PawPatrolHomePage pawPatrolHomePage = new PawPatrolHomePage(test);
+        pawPatrolHomePage.TestPawPatrol();
+    }
     @AfterMethod
     public void closeELC(){
         driver.quit();
@@ -155,4 +169,3 @@ public class TestSample extends Base
         report.flush();
     }
 }
-
