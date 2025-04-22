@@ -34,12 +34,26 @@ public class TestSample extends Base{
         footerPage page=new footerPage(test);
         page.footerFunctionality();
     }
+     /*
+    * Method name : happyland
+    * Author name : PrasannaLaxmi
+    * Description : This is testcase 6 to add product to basket
+    * Return Type : value
+    * Parameter : None
+    */
     @Test
     public void happyland(){
         test=report.createTest("happy");
         HappyLandHomePage h=new HappyLandHomePage(test);
         h.output1();
     }
+     /*
+    * Method name : puzzle
+    * Author name : PrasannaLaxmi
+    * Description : This is testcase 7 to search and add to wishlist puzzle product
+    * Return Type : value
+    * Parameter : None
+    */
    
     @Test
     public void puzzle(String value){
