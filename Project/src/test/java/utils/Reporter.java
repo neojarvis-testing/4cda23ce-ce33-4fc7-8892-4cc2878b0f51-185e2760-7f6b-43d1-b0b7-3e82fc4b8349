@@ -30,7 +30,7 @@ public class Reporter extends Base {
         ExtentReports extentReport = new ExtentReports();
         SimpleDateFormat dateFormat = new  SimpleDateFormat("yyyy.MM.dd.HH.mm.ss");
         String timestamp = dateFormat.format(new Date());
-        String reportFilepath = System.getProperty("user.dir")+"/reports/";
+        String reportFilepath = System.getProperty("user.dir")+"/"+"reports/";
         reportFilepath += reportName + "_" + timestamp + ".html";
         File extentReportFile = new File(reportFilepath);
         ExtentSparkReporter sparkReporter = new ExtentSparkReporter(extentReportFile);
