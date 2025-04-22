@@ -28,24 +28,11 @@ public class TestSample extends Base{
         openBrowser();
         driver.navigate().refresh();
     }
-    // @Test
-    // public void footer(){
-    //     test=report.createTest("testCase10");
-    //     footerPage page=new footerPage(test);
-    //     page.footerFunctionality();
-    // }
     @Test
-    public void happyland(){
-        test=report.createTest("happy");
-        HappyLandHomePage h=new HappyLandHomePage(test);
-        h.output1();
-    }
-    // @Test(dataProvider = "exceldata",dataProviderClass = DataProviderclass.class)
-    @Test(dataProvider = "exceldata",dataProviderClass = DataProviderclass.class)
-    public void puzzle(String value){
-        test=report.createTest("puzzle");
-        PuzzleHomePage p=new PuzzleHomePage(test);
-        p.output2(value);
+    public void footer(){
+        test=report.createTest("testCase10");
+        footerPage page=new footerPage(test);
+        page.footerFunctionality();
     }
     @Test
     public void happyland(){
