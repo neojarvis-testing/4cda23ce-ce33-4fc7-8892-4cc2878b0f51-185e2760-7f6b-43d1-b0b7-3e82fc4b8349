@@ -12,6 +12,7 @@ import com.aventstack.extentreports.ExtentTest;
 import pages.PawPatrolHomePage;
 import pages.HappyLandHomePage;
 import pages.PuzzleHomePage;
+import pages.footerPage;
 import utils.Base;
 import utils.DataProviderclass;
 import utils.Reporter;
@@ -40,7 +41,6 @@ public class TestSample extends Base{
         HappyLandHomePage h=new HappyLandHomePage(test);
         h.output1();
     }
-    // @Test(dataProvider = "exceldata",dataProviderClass = DataProviderclass.class)
     @Test(dataProvider = "exceldata",dataProviderClass = DataProviderclass.class)
     public void puzzle(String value){
         test=report.createTest("puzzle");
