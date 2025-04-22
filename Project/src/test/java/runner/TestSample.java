@@ -9,14 +9,16 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
+import pages.ElcCars;
+import pages.Elcfooterverify;
 import pages.HappyLandHomePage;
 import pages.PuzzleHomePage;
 import pages.footerPage;
 import utils.Base;
-
 import utils.Reporter;
 
-public class TestSample extends Base{
+public class TestSample extends Base
+{
     public static ExtentTest test;
     public static ExtentReports report;
     @BeforeClass
@@ -28,30 +30,62 @@ public class TestSample extends Base{
         openBrowser();
         driver.navigate().refresh();
     }
+
+    /*
+     * a.Method Name: addFilteredProductToWishlist
+     * b.Author Name: Pratham Maheshwari
+     * c.Description: This test case ensures that a product is successfully added to the wishlist after specific filters have been applied.
+     * d.Parameter: None
+     * e.Return Type: void
+     */
+    @Test
+    public void addFilteredProductToWishlist(){
+        test = report.createTest("Cars");
+        ElcCars car = new ElcCars(test);
+        car.cars();
+    }
+
+    //testcase 10
     @Test
     public void footer(){
         test=report.createTest("testCase10");
         footerPage page=new footerPage(test);
         page.footerFunctionality();
     }
+    //testcase6
     @Test
     public void happyland(){
         test=report.createTest("happy");
         HappyLandHomePage h=new HappyLandHomePage(test);
         h.output1();
     }
+    // testcase7
     @Test
-    public void puzzle(String value){
+    public void puzzle(){
         test=report.createTest("puzzle");
         PuzzleHomePage p=new PuzzleHomePage(test);
-        p.output2(value);
+        p.output2();
+    }
+    /*
+     * a.Method Name: verification
+     * b.Author Name: Pratham Maheshwari
+     * c.Description: This test case verifies the URL of the redirected pages after clicking specific button.
+     * d.Parameter: None
+     * e.Return Type: void
+     */
+    @Test
+    public void verification(){
+        test= report.createTest("Verification");
+        Elcfooterverify footer = new Elcfooterverify(test);
+        footer.clickAndVerifyUrl();
     }
     @AfterMethod
     public void closeELC(){
         driver.quit();
     }
     @AfterClass
-    public void closeReport(){
+    public void closeReport()
+    {
         report.flush();
     }
 
