@@ -6,6 +6,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import uistore.HomePageLocators;
+import uistore.OutdoorPageLocators;
 import utils.Base;
 import utils.LoggerHandler;
 import utils.Screenshot;
@@ -36,6 +37,25 @@ public class OutdoorToysPage {
             e.printStackTrace();
         }
     }
+
+      /*Method Name:verifyHomePageUrl
+     * Author Name:Vipul Saxena
+     * Description: This methods verifies home page url.
+     * Parameters:None
+     * return type:void
+     */
+    public void verifyHomePageUrl(){
+        try {
+            String url=Base.driver.getCurrentUrl();
+            Assert.assertTrue(url.equals("https://www.elc.co.uk/"));
+            test.log(Status.PASS, "Verified HomePage Url");
+            LoggerHandler.info("Verified HomePage Url");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Not Verified HomePage Url");
+            LoggerHandler.info("Not Verified HomePage Url");
+        }
+    }
+
     /*Method Name:hoveronoutdoortoys
      * Author Name:Vipul Saxena
      * Description: This method hovers on outdoor toys.
@@ -110,8 +130,8 @@ public class OutdoorToysPage {
     public void clickonhuffy()
     {
         try {
-            helper.wait(HomePageLocators.Huffy);
-            helper.clickOnElement(HomePageLocators.Huffy);
+            helper.wait(OutdoorPageLocators.Huffy);
+            helper.clickOnElement(OutdoorPageLocators.Huffy);
             test.log(Status.PASS, "Clicked on Huffy");
             LoggerHandler.info("Clicked on Huffy");
             
@@ -132,8 +152,8 @@ public class OutdoorToysPage {
     public void ClickonToddlerBikes()
     {
         try {
-            helper.wait(HomePageLocators.ToddlerBike);
-            helper.clickOnElement(HomePageLocators.ToddlerBike);
+            helper.wait(OutdoorPageLocators.ToddlerBike);
+            helper.clickOnElement(OutdoorPageLocators.ToddlerBike);
             test.log(Status.PASS, "Clicked on ToddlerBike");
             LoggerHandler.info("Clicked on ToddlerBike");
             
@@ -154,7 +174,7 @@ public class OutdoorToysPage {
     public void searchverify()
     {
         try {
-            String text=helper.getText(HomePageLocators.VerifySearch);
+            String text=helper.getText(OutdoorPageLocators.VerifySearch);
             Assert.assertTrue(text.contains("Search"));
             test.log(Status.PASS, "Verified Search");
             LoggerHandler.info("Verified Search");
@@ -174,8 +194,8 @@ public class OutdoorToysPage {
     public void Clickondisney()
     {
         try {
-            helper.wait(HomePageLocators.Disney);
-            helper.clickOnElement(HomePageLocators.Disney);
+            helper.wait(OutdoorPageLocators.Disney);
+            helper.clickOnElement(OutdoorPageLocators.Disney);
             test.log(Status.PASS, "Clicked on Disney");
             LoggerHandler.info("Clicked on Disney");
             
@@ -196,8 +216,8 @@ public class OutdoorToysPage {
     public void clickFirstProduct()
     {
         try {
-            helper.wait(HomePageLocators.firstproduct);
-            helper.clickOnElement(HomePageLocators.firstproduct);
+            helper.wait(OutdoorPageLocators.firstproduct);
+            helper.clickOnElement(OutdoorPageLocators.firstproduct);
             test.log(Status.PASS, "Clicked on firstproduct");
             LoggerHandler.info("Clicked on firstproduct");
             
@@ -217,8 +237,8 @@ public class OutdoorToysPage {
     public void clickaddtobasket()
     {
         try {
-            helper.wait(HomePageLocators.addtobasket);
-            helper.clickOnElement(HomePageLocators.addtobasket);
+            helper.wait(OutdoorPageLocators.addtobasket);
+            helper.clickOnElement(OutdoorPageLocators.addtobasket);
             test.log(Status.PASS, "Clicked on addtobasket");
             LoggerHandler.info("Clicked on addtobasket");
             
@@ -238,8 +258,8 @@ public class OutdoorToysPage {
     public void clickoncheckout()
     {
         try {
-            helper.wait(HomePageLocators.checkout);
-            helper.clickOnElement(HomePageLocators.checkout);
+            helper.wait(OutdoorPageLocators.checkout);
+            helper.clickOnElement(OutdoorPageLocators.checkout);
             test.log(Status.PASS, "Clicked on checkout");
             LoggerHandler.info("Clicked on checkout");
             
@@ -260,7 +280,7 @@ public class OutdoorToysPage {
     public void verifycheckout()
     {
         try {
-            String data=helper.getText(HomePageLocators.checkout);
+            String data=helper.getText(OutdoorPageLocators.checkout);
             Assert.assertTrue(data.contains("Check Out"));
             test.log(Status.PASS, "Verified checkout");
             LoggerHandler.info("Verified checkout");
@@ -284,6 +304,7 @@ public class OutdoorToysPage {
     public void testcase3()
     {
         clickOnAccept();
+        verifyHomePageUrl();
         hoveronoutdoortoys();
         clickonbikes();
         bikesurlverify();

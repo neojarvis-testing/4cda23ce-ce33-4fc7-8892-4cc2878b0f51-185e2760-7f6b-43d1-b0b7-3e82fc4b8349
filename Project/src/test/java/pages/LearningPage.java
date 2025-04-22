@@ -6,6 +6,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import uistore.HomePageLocators;
+import uistore.LearningPageLocators;
 import utils.Base;
 import utils.LoggerHandler;
 import utils.Screenshot;
@@ -35,7 +36,25 @@ public class LearningPage {
             helper.wait(HomePageLocators.accept);
             helper.clickOnElement(HomePageLocators.accept);
         } catch (Exception e) {
-            e.printStackTrace();
+        }
+    }
+      
+     /*Method Name:verifyHomePageUrl
+     * Author Name:Vipul Saxena
+     * Description: This methods verifies homepage url.
+     * Parameters:None
+     * return type:void
+     */
+      
+    public void verifyHomePageUrl(){
+        try {
+            String url=Base.driver.getCurrentUrl();
+            Assert.assertTrue(url.equals("https://www.elc.co.uk/"));
+            test.log(Status.PASS, "Verified HomePage Url");
+            LoggerHandler.info("Verified HomePage Url");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Not Verified HomePage Url");
+            LoggerHandler.info("Not Verified HomePage Url");
         }
     }
 
@@ -83,6 +102,8 @@ public class LearningPage {
 
     }
 
+    
+
     /*Method Name:creativityurlverify
      * Author Name:Vipul Saxena
      * Description: This methods verifies the creativity page url.
@@ -113,8 +134,8 @@ public class LearningPage {
     public void clickonartcraft()
     {
         try {
-            helper.wait(HomePageLocators.artandcraft);
-            helper.clickOnElement(HomePageLocators.artandcraft);
+            helper.wait(LearningPageLocators.artandcraft);
+            helper.clickOnElement(LearningPageLocators.artandcraft);
             test.log(Status.PASS, "Clicked on artandcraft");
             LoggerHandler.info("Clicked on artandcraft");
             
@@ -135,8 +156,8 @@ public class LearningPage {
     public void clickoncreativityfilter()
     {
         try {
-            helper.wait(HomePageLocators.creativityfilter);
-            helper.clickOnElement(HomePageLocators.creativityfilter);
+            helper.wait(LearningPageLocators.creativityfilter);
+            helper.clickOnElement(LearningPageLocators.creativityfilter);
             test.log(Status.PASS, "Clicked on creativityfilter");
             LoggerHandler.info("Clicked on creativityfilter");
             
@@ -157,8 +178,8 @@ public class LearningPage {
     public void clickonartfirstproduct()
     {
         try {
-            helper.wait(HomePageLocators.artfirstproduct);
-            helper.clickOnElement(HomePageLocators.artfirstproduct);
+            helper.wait(LearningPageLocators.artfirstproduct);
+            helper.clickOnElement(LearningPageLocators.artfirstproduct);
             test.log(Status.PASS, "Clicked on artfirstproduct");
             LoggerHandler.info("Clicked on artfirstproduct");
             
@@ -179,7 +200,7 @@ public class LearningPage {
     public void minutesverify()
     {
         try {
-            String text=helper.getText(HomePageLocators.verifyminutes);
+            String text=helper.getText(LearningPageLocators.verifyminutes);
             Assert.assertTrue(text.contains("minutes"));
             test.log(Status.PASS, "Verified minutes");
             LoggerHandler.info("Verified minutes");
@@ -199,8 +220,8 @@ public class LearningPage {
     public void clickartaddtocart()
     {
         try {
-            helper.wait(HomePageLocators.addtobasket);
-            helper.clickOnElement(HomePageLocators.addtobasket);
+            helper.wait(LearningPageLocators.addtobasket);
+            helper.clickOnElement(LearningPageLocators.addtobasket);
             test.log(Status.PASS, "Clicked on addtobasket");
             LoggerHandler.info("Clicked on addtobasket");
             
@@ -221,8 +242,8 @@ public class LearningPage {
     public void clickartcheckout()
     {
         try {
-            helper.wait(HomePageLocators.checkout);
-            helper.clickOnElement(HomePageLocators.checkout);
+            helper.wait(LearningPageLocators.checkout);
+            helper.clickOnElement(LearningPageLocators.checkout);
             test.log(Status.PASS, "Clicked on checkout");
             LoggerHandler.info("Clicked on checkout");
             
@@ -231,6 +252,23 @@ public class LearningPage {
             LoggerHandler.info("Not Clicked on checkout");
         }
 
+    }
+     /*Method Name:verifyChechoutPageUrl
+     * Author Name:Vipul Saxena
+     * Description: This methods verifies checkoutpage url.
+     * Parameters:None
+     * return type:void
+     */
+    public void verifyChechoutPageUrl(){
+        try {
+            String url=Base.driver.getCurrentUrl();
+            Assert.assertTrue(url.equals("https://www.elc.co.uk/cart"));
+            test.log(Status.PASS, "Verified Creativity Page Url");
+            LoggerHandler.info("Verified Creativity Page Url");
+        } catch (Exception e) {
+            test.log(Status.FAIL, "Not Verified Creativity Page Url");
+            LoggerHandler.info("Not Verified Creativity Page Url");
+        }
     }
 
     /*Method Name:takescreenshot
@@ -248,6 +286,7 @@ public class LearningPage {
     public void testcase4()
     {
         clickOnAccept();
+        verifyHomePageUrl();
         hoveronlearningskills();
         clickoncreativity();
         creativityurlverify();
@@ -256,6 +295,7 @@ public class LearningPage {
         clickonartfirstproduct();
         minutesverify();
         clickartaddtocart();
+        verifyChechoutPageUrl();
         takescreenshot();
 
 
