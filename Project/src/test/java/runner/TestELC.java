@@ -22,8 +22,7 @@ import pages.PuzzleHomePage;
 import utils.Base;
 import utils.Reporter;
 
-public class TestSample extends Base
-{
+public class TestELC extends Base{
     public static ExtentTest test;
     public static ExtentReports report;
     @BeforeClass
@@ -66,12 +65,7 @@ public class TestSample extends Base
         learn.testcase4();
     }
         
-    // @Test
-    // public void footer(){
-    //     test=report.createTest("testCase10");
-    //     footerPage page=new footerPage(test);
-    //     page.footerFunctionality();
-    // }
+   
     /*
      * a.Method Name: addFilteredProductToWishlist
      * b.Author Name: Pratham Maheshwari
@@ -86,13 +80,7 @@ public class TestSample extends Base
         car.cars();
     }
 
-    //testcase 10
-    @Test
-    public void footer(){
-        test=report.createTest("testCase10");
-        footerPage page=new footerPage(test);
-        page.footerFunctionality();
-    }
+    
     //testcase6
     @Test
     public void happyland(){
@@ -160,6 +148,19 @@ public class TestSample extends Base
         pawPatrolHomePage.TestPawPatrol();
     }
     @AfterMethod
+    /*
+    * Method name : verifyAboutUsUrl
+    * Author name : C Sai Kiran
+    * Description : this tist case 10 ensures that whether its navigating back to home page
+    * Return Type : void
+    * Parameter : None
+    */
+    @Test
+    public void footer(){
+        test=report.createTest("testCase10");
+        footerPage page=new footerPage(test);
+        page.footerFunctionality();
+    }
     public void closeELC(){
         driver.quit();
     }
