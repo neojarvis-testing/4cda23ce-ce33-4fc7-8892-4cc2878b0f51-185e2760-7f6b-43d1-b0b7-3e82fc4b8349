@@ -1,8 +1,27 @@
 package utils;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+ 
+import org.apache.log4j.FileAppender;
 import org.apache.log4j.Logger;
+import org.apache.log4j.PatternLayout;
 public class LoggerHandler {
-    private static final Logger logger=Logger.getLogger(LoggerHandler.class);
-
+    public static Logger logger = Logger.getLogger(LoggerHandler.class);
+ 
+    static {
+        initializeLogger();
+    }
+ 
+    private static void initializeLogger() {
+        try {
+            String timestamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+            String logFileName = "logs/logfile_" + timestamp + ".log";
+            FileAppender fileAppender = new FileAppender(new PatternLayout("%d{yyyy.MM.dd.HH.mm.ss} %-5p %c - %m%n"), logFileName, true);
+            logger.addAppender(fileAppender);
+        } catch (Exception e) {
+            logger.error(e);
+        }
+    }
 
     /*Method Name:trace
      * Author Name:Vipul Saxena
@@ -97,4 +116,3 @@ public class LoggerHandler {
         }
     }
 }
-
