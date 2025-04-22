@@ -378,6 +378,7 @@ public class Elcfooterverify {
             LoggerHandler.info("Verified How to complain URL");
             test.log(Status.PASS, "Verified How to complain URL");
             Base.driver.navigate().back();
+            test.log(Status.PASS, "navigate back to home page");
         } catch (AssertionError e) {
             LoggerHandler.error("Not able to verify How to complain URL");
             test.log(Status.FAIL, "How to complain URL not verified");
