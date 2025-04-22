@@ -48,6 +48,7 @@ public class PawPatrolHomePage {
  */
 public void hoverOnBrands(){
     try {
+        Thread.sleep(1000);
         helper.wait(PawPatrol5Locators.HoveronBrands);
         helper.hoverOverElement(PawPatrol5Locators.HoveronBrands);
         LoggerHandler.info("Successfully Hover on Brands");
