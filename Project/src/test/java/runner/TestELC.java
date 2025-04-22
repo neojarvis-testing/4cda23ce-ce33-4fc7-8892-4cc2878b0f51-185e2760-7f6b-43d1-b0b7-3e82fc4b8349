@@ -16,7 +16,7 @@ import utils.Base;
 
 import utils.Reporter;
 
-public class TestSample extends Base{
+public class TestELC extends Base{
     public static ExtentTest test;
     public static ExtentReports report;
     @BeforeClass
@@ -27,12 +27,6 @@ public class TestSample extends Base{
     public void openELC(){
         openBrowser();
         driver.navigate().refresh();
-    }
-    @Test
-    public void footer(){
-        test=report.createTest("testCase10");
-        footerPage page=new footerPage(test);
-        page.footerFunctionality();
     }
     @Test
     public void happyland(){
@@ -47,6 +41,19 @@ public class TestSample extends Base{
         p.output2(value);
     }
     @AfterMethod
+    /*
+    * Method name : verifyAboutUsUrl
+    * Author name : C Sai Kiran
+    * Description : this tist case 10 ensures that whether its navigating back to home page
+    * Return Type : void
+    * Parameter : None
+    */
+    @Test
+    public void footer(){
+        test=report.createTest("testCase10");
+        footerPage page=new footerPage(test);
+        page.footerFunctionality();
+    }
     public void closeELC(){
         driver.quit();
     }
