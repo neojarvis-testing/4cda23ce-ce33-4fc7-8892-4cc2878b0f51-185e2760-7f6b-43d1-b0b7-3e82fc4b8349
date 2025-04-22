@@ -15,8 +15,6 @@ public class ExcelReader {
     public static XSSFRow row;
     public static XSSFCell cell;
     public static FileInputStream file;
-    public static int rowCount;
-    public static int cellCount;
     /*
      * Method name : getExcelData
      * Author name : Akki Manith

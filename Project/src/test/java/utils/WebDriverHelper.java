@@ -301,6 +301,13 @@ public class WebDriverHelper {
         }
     }
 
+    /*
+     * a.Method Name: switchBackToParent
+     * b.Author Name: Pratham Maheshwari
+     * c.Description: Switches back to the parent tab from other tab
+     * d.Parameter:None
+     * e.Return Type: void
+     */
 
     public void switchBackToParent(){
         try {
