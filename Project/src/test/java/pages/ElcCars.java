@@ -9,6 +9,7 @@ import uistore.ElcCarsFirstProductLocator;
 import uistore.ElcCarsHomePageLocator;
 import uistore.HomePageLocators;
 import utils.Base;
+import utils.ExcelReader;
 import utils.LoggerHandler;
 import utils.Screenshot;
 import utils.WebDriverHelper;
@@ -83,10 +84,10 @@ public class ElcCars {
      * d.Parameter: None
      * e.Return Type: void
      */
-    public void enterDataOnSearchBar(String value1){
+    public void enterDataOnSearchBar(){
         try {
             helper.wait(HomePageLocators.searchBar);
-            helper.sendData(HomePageLocators.searchBar,value1);
+            helper.sendData(HomePageLocators.searchBar,ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 0, 0));
             Thread.sleep(500);
             helper.enterAction(HomePageLocators.searchBar);
             String x = helper.getText(ElcCarsHomePageLocator.verifyCar);
@@ -273,11 +274,11 @@ public class ElcCars {
      * d.Parameter: None
      * e.Return Type: void
      */
-    public void cars(String value){
+    public void cars(){
         clickOnAccept();
         verifyLogo();
         clickOnSearchBar();
-        enterDataOnSearchBar(value);
+        enterDataOnSearchBar();
         verifyCarUrl();
         clickOnShowMore();
         clickOnToyCars();

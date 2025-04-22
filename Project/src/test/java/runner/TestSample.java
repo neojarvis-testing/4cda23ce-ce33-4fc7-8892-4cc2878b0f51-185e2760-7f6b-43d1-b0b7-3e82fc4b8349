@@ -31,15 +31,21 @@ public class TestSample extends Base
         driver.navigate().refresh();
     }
 
-    //testcase8
+    /*
+     * a.Method Name: addFilteredProductToWishlist
+     * b.Author Name: Pratham Maheshwari
+     * c.Description: This test case ensures that a product is successfully added to the wishlist after specific filters have been applied.
+     * d.Parameter: None
+     * e.Return Type: void
+     */
     @Test
-    public void carFunc(String value){
+    public void addFilteredProductToWishlist(){
         test = report.createTest("Cars");
         ElcCars car = new ElcCars(test);
-        car.cars(value);
+        car.cars();
     }
+
     //testcase 10
-    
     @Test
     public void footer(){
         test=report.createTest("testCase10");
@@ -54,14 +60,19 @@ public class TestSample extends Base
         h.output1();
     }
     // testcase7
-   
     @Test
-    public void puzzle(String value){
+    public void puzzle(){
         test=report.createTest("puzzle");
         PuzzleHomePage p=new PuzzleHomePage(test);
-        p.output2(value);
+        p.output2();
     }
-    // testcase9
+    /*
+     * a.Method Name: verification
+     * b.Author Name: Pratham Maheshwari
+     * c.Description: This test case verifies the URL of the redirected pages after clicking specific button.
+     * d.Parameter: None
+     * e.Return Type: void
+     */
     @Test
     public void verification(){
         test= report.createTest("Verification");
