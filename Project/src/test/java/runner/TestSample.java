@@ -9,6 +9,8 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
+import pages.NewbornBabyGiftsPage;
+import pages.SoftToysPage;
 import pages.ElcCars;
 import pages.Elcfooterverify;
 import pages.HappyLandHomePage;
@@ -59,6 +61,32 @@ public class TestSample extends Base
         HappyLandHomePage h=new HappyLandHomePage(test);
         h.output1();
     }
+    /*
+     * Method Name : NewbornBabyGifts
+     * Author Name : Akki Manith
+     * Description : To add the Newborn Baby Gifts under Shop by Age into the basket
+     * Return Type : void
+     * Parameter : none
+     */
+    @Test
+    public void NewbornBabyGifts(){
+        test=report.createTest("Newborn Baby Gifts");
+        NewbornBabyGiftsPage newbornBabyGifts=new NewbornBabyGiftsPage(test);
+        newbornBabyGifts.NewbabyBornGiftsPageTest();
+    }
+    /*
+     * Method Name : SoftToys
+     * Author Name : Akki Manith
+     * Description : To add the Soft toys under Type of toy into the basket
+     * Return Type : void
+     * Parameter : none
+     */
+    @Test
+    public void SoftToys(){
+        test=report.createTest("Soft Toys");
+        SoftToysPage softToy=new SoftToysPage(test);
+        softToy.SoftToysTest();
+    }
     // testcase7
     @Test
     public void puzzle(){
@@ -88,6 +116,5 @@ public class TestSample extends Base
     {
         report.flush();
     }
-
 }
 
