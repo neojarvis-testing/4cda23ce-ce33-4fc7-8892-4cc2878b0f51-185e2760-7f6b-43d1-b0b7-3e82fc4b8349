@@ -29,7 +29,7 @@ public class TestSample extends Base{
         openBrowser();
         driver.navigate().refresh();
     }
-    // @Test
+    @Test
     public void footer(){
         test=report.createTest("testCase10");
         footerPage page=new footerPage(test);
