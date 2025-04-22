@@ -8,6 +8,7 @@ import com.aventstack.extentreports.Status;
 import uistore.HomePageLocators;
 import uistore.PawPatrol5Locators;
 import utils.Base;
+import utils.ExcelReader;
 import utils.LoggerHandler;
 import utils.Screenshot;
 import utils.WebDriverHelper;
@@ -94,7 +95,8 @@ public void ClickOnPawPatrol(){
 public void verifyurl(){
     try {
         String value = helper.getUrl();
-        Assert.assertEquals(value,"https://www.elc.co.uk/brands/paw-patrol");
+        String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 0);
+        Assert.assertEquals(value,data);
         System.out.println(value);
         LoggerHandler.info("verify the url");
         test.log(Status.INFO,"verify the url");
@@ -137,7 +139,8 @@ public void ClickonPlaysetsAction(){
 public void VerifyNarrow(){
     try {
         String data = helper.getText(PawPatrol5Locators.VerifyNarrow);
-        Assert.assertEquals(data,"Narrow Your Results");
+        String value=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 1);
+        Assert.assertEquals(data,value);
         System.out.println(data);
         LoggerHandler.info("Successfully verifed the text Narrow");
         test.log(Status.PASS, "Successfully verifed the text Narrow");
@@ -199,7 +202,8 @@ public void VerifyAvailable(){
     try {
         helper.wait(PawPatrol5Locators.VerifyAvailable);
         String data = helper.getText(PawPatrol5Locators.VerifyAvailable);
-        Assert.assertEquals(data,"Available to pick up for FREE from our stores within 30 minutes.");
+        String value=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 2);
+        Assert.assertEquals(data,value);
         System.out.println(data);
         LoggerHandler.info("Successfully verifed the text Available");
         test.log(Status.PASS,"Successfully verifed the text Available");
@@ -260,7 +264,8 @@ public void verifyBasket(){
     try {
         helper.wait(PawPatrol5Locators.VerifyBasket);
         String data = helper.getText(PawPatrol5Locators.VerifyBasket);
-        Assert.assertEquals(data,"Add to Basket");
+        String value=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 3);
+        Assert.assertEquals(data,value);
         System.out.println(data);
         LoggerHandler.info("Successfully verifed the text Basket");
         test.log(Status.INFO,"Successfully verifed the text Available");

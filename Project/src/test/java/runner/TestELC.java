@@ -81,7 +81,7 @@ public class TestELC extends Base{
     }
 
     
-    //testcase6
+
     @Test
     public void happyland(){
         test=report.createTest("happy");
@@ -114,7 +114,6 @@ public class TestELC extends Base{
         SoftToysPage softToy=new SoftToysPage(test);
         softToy.SoftToysTest();
     }
-    // testcase7
     @Test
     public void puzzle(){
         test=report.createTest("puzzle");
@@ -147,7 +146,7 @@ public class TestELC extends Base{
         PawPatrolHomePage pawPatrolHomePage = new PawPatrolHomePage(test);
         pawPatrolHomePage.TestPawPatrol();
     }
-    @AfterMethod
+    
     /*
     * Method name : verifyAboutUsUrl
     * Author name : C Sai Kiran
@@ -161,6 +160,7 @@ public class TestELC extends Base{
         footerPage page=new footerPage(test);
         page.footerFunctionality();
     }
+    @AfterMethod
     public void closeELC(){
         driver.quit();
     }
@@ -169,4 +169,5 @@ public class TestELC extends Base{
     {
         report.flush();
     }
+   
 }
