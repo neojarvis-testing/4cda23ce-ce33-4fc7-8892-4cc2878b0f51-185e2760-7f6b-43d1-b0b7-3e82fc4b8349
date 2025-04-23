@@ -76,6 +76,7 @@ public class TestELC extends Base{
         out.testcase3();
         
     }
+
     /*Method Name:test4
      * Author Name:Vipul Saxena
      * Description: Executes 4th test case.
@@ -84,6 +85,7 @@ public class TestELC extends Base{
      */
 
      @Test(priority = 4)
+
     public void test4()
     {
         test=report.createTest("Test4");
