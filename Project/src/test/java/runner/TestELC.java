@@ -106,12 +106,26 @@ public class TestELC extends Base{
        PawPatrolHomePage pawPatrolHomePage = new PawPatrolHomePage(test);
        pawPatrolHomePage.TestPawPatrol();
     }
+    /*
+     * a.Method Name: happyland
+     * b.Author Name: PrasannaLaxmi
+     * c.Description: This test case ensures that a product is sucessfully added to cart
+     * d.Parameter: None
+     * e.Return Type: void
+     */
     @Test(priority = 6)
     public void happyland(){
         test=report.createTest("happy");
         HappyLandHomePage h=new HappyLandHomePage(test);
         h.output1();
     }
+     /*
+     * a.Method Name: puzzle
+     * b.Author Name: PrasannaLaxmi
+     * c.Description:  This test case ensures that a product is successfully added to the wishlist after specific filters have been applied.
+     * d.Parameter: None
+     * e.Return Type: void
+     */
     @Test(priority = 7)
     public void puzzle(){
         test=report.createTest("puzzle");
