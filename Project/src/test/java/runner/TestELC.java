@@ -176,7 +176,7 @@ public class TestELC extends Base{
     * Return Type : void
     * Parameter : None
     */
-   // @Test
+   @Test
     public void footer(){
         test=report.createTest("testCase10");
         footerPage page=new footerPage(test);
