@@ -22,7 +22,6 @@ public class ElcCars {
         this.test =test;
     }
 
-
     /*
      * a.Method Name: clickOnAccept
      * b.Author Name: Pratham Maheshwari
@@ -49,8 +48,7 @@ public class ElcCars {
     public void verifyLogo(){
         try {
             String text = Base.driver.findElement(HomePageLocators.logo).getDomAttribute("title");
-            System.out.println(text);
-            Assert.assertEquals(text,"Early Learning Centre");
+            Assert.assertEquals(text,ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 9, 6));
             LoggerHandler.info("Logo verified");
             test.log(Status.PASS,"Logo Verified");
         } catch (AssertionError e) {
@@ -58,6 +56,7 @@ public class ElcCars {
             test.log(Status.FAIL,"Logo not Verified");
         }
     }
+
     /*
      * a.Method Name: clickOnSearchBar
      * b.Author Name: Pratham Maheshwari
@@ -70,7 +69,7 @@ public class ElcCars {
             helper.wait(HomePageLocators.searchBar);
             helper.clickOnElement(HomePageLocators.searchBar);
             LoggerHandler.info("Clicked on searchBar");
-            test.log(Status.PASS, "Clicked on searchBar");
+            test.log(Status.INFO, "Clicked on searchBar");
         } catch (Exception e) {
             LoggerHandler.error("Not able to click on searchBar");
             test.log(Status.FAIL, "Not able to click on searchBar");
@@ -91,7 +90,7 @@ public class ElcCars {
             Thread.sleep(500);
             helper.enterAction(HomePageLocators.searchBar);
             String x = helper.getText(ElcCarsHomePageLocator.verifyCar);
-            Assert.assertTrue(x.contains("Cars"));
+            Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 0, 0)));
             LoggerHandler.info("Data entered on searchBar");
             test.log(Status.PASS, "Data entered on searchBar");
         } catch (AssertionError | Exception e) {
@@ -110,10 +109,9 @@ public class ElcCars {
     public void verifyCarUrl(){
         try {
             String x = Base.driver.getCurrentUrl();
-            System.out.println(x);
-            Assert.assertTrue(x.contains("Cars"));
+            Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 9, 0)));
             LoggerHandler.info("Verified Cars");
-            test.log(Status.PASS, "Cars verified");
+            test.log(Status.INFO, "Cars verified");
         } catch (AssertionError e) {
             LoggerHandler.error("Not able to verify Cars");
             test.log(Status.FAIL, "Cars not verified");
@@ -132,9 +130,9 @@ public class ElcCars {
             helper.wait(ElcCarsHomePageLocator.showMore);
             helper.clickOnElement(ElcCarsHomePageLocator.showMore);
             String x = helper.getText(ElcCarsHomePageLocator.toyCars);
-            Assert.assertTrue(x.contains("Toy"));
+            Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 9, 1)));
             LoggerHandler.info("Clicked on show more");
-            test.log(Status.PASS, "Clicked on show more");
+            test.log(Status.INFO, "Clicked on show more");
         } catch (AssertionError | Exception e) {
             LoggerHandler.error("Not able to click on show more");
             test.log(Status.FAIL, "Not able to click on show more");
@@ -153,8 +151,7 @@ public class ElcCars {
             helper.wait(ElcCarsHomePageLocator.toyCars);
             helper.clickOnElement(ElcCarsHomePageLocator.toyCars);
             String x = helper.getText(ElcCarsHomePageLocator.imaginativePlay);
-            System.out.println(x);
-            Assert.assertTrue(x.contains("play"));
+            Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 9, 2)));
             LoggerHandler.info("Clicked on Toy Cars");
             test.log(Status.PASS, "Clicked on Toy Cars");
         } catch (AssertionError | Exception e) {
@@ -175,7 +172,7 @@ public class ElcCars {
             helper.wait(ElcCarsHomePageLocator.imaginativePlay);
             helper.clickOnElement(ElcCarsHomePageLocator.imaginativePlay);
             String x = helper.getText(ElcCarsHomePageLocator.fineMotorSkills);
-            Assert.assertTrue(x.contains("Fine"));
+            Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 9, 3)));
             LoggerHandler.info("Clicked on Imaginative Play");
             test.log(Status.PASS, "Clicked on Imaginative Play");
         } catch (AssertionError | Exception e) {
@@ -196,8 +193,7 @@ public class ElcCars {
             helper.wait(ElcCarsHomePageLocator.fineMotorSkills);
             helper.clickOnElement(ElcCarsHomePageLocator.fineMotorSkills);
             String x = helper.getText(ElcCarsHomePageLocator.selected);
-            System.out.println(x);
-            Assert.assertTrue(x.contains("selected"));
+            Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 9, 4)));
             LoggerHandler.info("Clicked on Fine Motor Skill");
             test.log(Status.PASS, "Clicked on Fine Motor Skill");
         } catch (AssertionError | Exception e) {
@@ -219,9 +215,9 @@ public class ElcCars {
             helper.wait(ElcCarsHomePageLocator.firstProduct);
             helper.clickOnElement(ElcCarsHomePageLocator.firstProduct);
             String x = helper.getText(ElcCarsFirstProductLocator.wishlist);
-            Assert.assertTrue(x.contains("Wishlist"));
+            Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 9, 5)));
             LoggerHandler.info("Clicked on First Product");
-            test.log(Status.PASS, "Clicked on First Product");
+            test.log(Status.INFO, "Clicked on First Product");
         } catch (AssertionError | Exception e) {
             LoggerHandler.error("Not able to click on First Product");
             test.log(Status.FAIL, "Not able to click on First Product");
@@ -257,13 +253,9 @@ public class ElcCars {
     public void back(){
         try {
             Base.driver.navigate().back();
-            // String x = helper.getText(ElcCarsFirstProductLocator.wishlist);
-            // Assert.assertTrue(x.contains("Wishlist"));
-            // LoggerHandler.info("Verified text Wishlist");
-            // test.log(Status.PASS, "Verified text Wishlist");
-        } catch (AssertionError | Exception e) {
-            // LoggerHandler.error("Not able to Verify text Wishlist");
-            // test.log(Status.FAIL, "Not able to Verify text Wishlist");
+        } catch (Exception e) {
+            LoggerHandler.error("Not able to move back");
+            test.log(Status.FAIL, "Not able to move back");
         }
     }
 
