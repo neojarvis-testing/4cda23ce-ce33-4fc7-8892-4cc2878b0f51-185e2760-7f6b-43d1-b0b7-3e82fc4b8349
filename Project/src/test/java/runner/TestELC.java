@@ -147,7 +147,6 @@ public class TestELC extends Base{
         PawPatrolHomePage pawPatrolHomePage = new PawPatrolHomePage(test);
         pawPatrolHomePage.TestPawPatrol();
     }
-    @AfterMethod
     /*
     * Method name : verifyAboutUsUrl
     * Author name : C Sai Kiran
@@ -161,6 +160,7 @@ public class TestELC extends Base{
         footerPage page=new footerPage(test);
         page.footerFunctionality();
     }
+    @AfterMethod
     public void closeELC(){
         driver.quit();
     }
