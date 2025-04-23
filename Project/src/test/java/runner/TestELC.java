@@ -42,7 +42,6 @@ public class TestELC extends Base{
      * return type:void
      */
 
-  //  @Test
     @Test
     public void test3()
     {
@@ -59,7 +58,6 @@ public class TestELC extends Base{
      * return type:void
      */
 
-    //@Test
     @Test
     public void test4()
     {
@@ -75,7 +73,7 @@ public class TestELC extends Base{
      * d.Parameter: None
      * e.Return Type: void
      */
-   // @Test
+   @Test
     public void addFilteredProductToWishlist(){
         test = report.createTest("Cars");
         ElcCars car = new ElcCars(test);
@@ -106,7 +104,7 @@ public class TestELC extends Base{
      * Return Type : void
      * Parameter : none
      */
-    //@Test
+    @Test
     public void NewbornBabyGifts(){
         test=report.createTest("Newborn Baby Gifts");
         NewbornBabyGiftsPage newbornBabyGifts=new NewbornBabyGiftsPage(test);
@@ -120,7 +118,7 @@ public class TestELC extends Base{
      * Return Type : void
      * Parameter : none
      */
-    //@Test
+    @Test
     public void SoftToys(){
         test=report.createTest("Soft Toys");
         SoftToysPage softToy=new SoftToysPage(test);
@@ -149,7 +147,7 @@ public class TestELC extends Base{
      * d.Parameter: None
      * e.Return Type: void
      */
-    //@Test
+    @Test
     public void verification(){
         test= report.createTest("Verification");
         Elcfooterverify footer = new Elcfooterverify(test);
@@ -163,7 +161,7 @@ public class TestELC extends Base{
     * Return Type : void
     * Parameter : None
      */
-   // @Test
+   @Test
     public void PawPatroll(){
         test = report.createTest("PawPatrol");
         PawPatrolHomePage pawPatrolHomePage = new PawPatrolHomePage(test);
@@ -178,11 +176,12 @@ public class TestELC extends Base{
     * Return Type : void
     * Parameter : None
     */
-   // @Test
+   @Test
     public void footer(){
         test=report.createTest("testCase10");
         footerPage page=new footerPage(test);
         page.footerFunctionality();
+
     }
     @AfterMethod
     public void closeELC(){
