@@ -8,6 +8,7 @@ import com.aventstack.extentreports.Status;
 import uistore.HomePageLocators;
 import uistore.OutdoorPageLocators;
 import utils.Base;
+import utils.ExcelReader;
 import utils.LoggerHandler;
 import utils.Screenshot;
 import utils.WebDriverHelper;
@@ -47,7 +48,7 @@ public class OutdoorToysPage {
     public void verifyHomePageUrl(){
         try {
             String url=Base.driver.getCurrentUrl();
-            Assert.assertTrue(url.equals("https://www.elc.co.uk/"));
+            Assert.assertTrue(url.equals(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 5, 0)));
             test.log(Status.PASS, "Verified HomePage Url");
             LoggerHandler.info("Verified HomePage Url");
         } catch (Exception e) {
@@ -111,7 +112,7 @@ public class OutdoorToysPage {
     {
         try {
             String url=Base.driver.getCurrentUrl();
-            Assert.assertTrue(url.contains("bikes"));
+            Assert.assertTrue(url.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 2)));
             test.log(Status.PASS, "Contains bikes");
             LoggerHandler.info("Contains bikes");
         } catch (Exception e) {
