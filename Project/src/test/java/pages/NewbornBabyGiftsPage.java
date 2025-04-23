@@ -8,6 +8,7 @@ import com.aventstack.extentreports.Status;
 import uistore.HomePageLocators;
 import uistore.NewbornBabyGiftsPageLocator;
 import utils.Base;
+import utils.ExcelReader;
 import utils.LoggerHandler;
 import utils.Screenshot;
 import utils.WebDriverHelper;
@@ -82,8 +83,9 @@ public class NewbornBabyGiftsPage {
      */
     public void verifyURL(){
         try {
-            String data=Base.driver.getCurrentUrl();
-            Assert.assertTrue(data.contains("new-born-baby-gift-ideas"));
+            String url=Base.driver.getCurrentUrl();
+            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 2, 0);
+            Assert.assertTrue(url.contains(data));
             test.log(Status.PASS, "Verified URL contains new-born-baby-gift-ideas");
             LoggerHandler.info("Verified URL contains new-born-baby-gift-ideas");
         } catch (Exception e) {
@@ -194,8 +196,9 @@ public class NewbornBabyGiftsPage {
      */
     public void verifyStandardDelivery(){
         try {
-            String data=helper.getText(NewbornBabyGiftsPageLocator.standardDelivery);
-            Assert.assertTrue(data.contains("Standard Delivery"));
+            String value=helper.getText(NewbornBabyGiftsPageLocator.standardDelivery);
+            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 2, 1);
+            Assert.assertTrue(value.contains(data));
             test.log(Status.PASS, "Verified text Standard Deliver");
             LoggerHandler.info("Verified text Standard Delivery");
         } catch (Exception e) {
@@ -248,8 +251,9 @@ public class NewbornBabyGiftsPage {
      */
     public void verifyHome(){
         try {
-            String data=helper.getText(NewbornBabyGiftsPageLocator.home);
-            Assert.assertTrue(data.contains("Home"));
+            String value=helper.getText(NewbornBabyGiftsPageLocator.home);
+            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 2, 2);
+            Assert.assertTrue(value.contains(data));
             test.log(Status.PASS, "Verified text Home");
             LoggerHandler.info("Verified text Standard Home");
         } catch (Exception e) {

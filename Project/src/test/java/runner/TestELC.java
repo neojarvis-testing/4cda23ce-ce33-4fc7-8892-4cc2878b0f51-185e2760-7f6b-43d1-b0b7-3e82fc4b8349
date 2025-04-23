@@ -174,6 +174,7 @@ public class TestELC extends Base{
         test=report.createTest("testCase10");
         FooterPage page=new FooterPage(test);
         page.footerFunctionality();
+
     }
     @AfterMethod
     public void closeELC(){

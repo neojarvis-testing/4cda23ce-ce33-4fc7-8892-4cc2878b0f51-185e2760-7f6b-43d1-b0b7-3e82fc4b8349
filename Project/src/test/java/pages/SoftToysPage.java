@@ -8,6 +8,7 @@ import com.aventstack.extentreports.Status;
 import uistore.HomePageLocators;
 import uistore.SoftToysPageLocator;
 import utils.Base;
+import utils.ExcelReader;
 import utils.LoggerHandler;
 import utils.WebDriverHelper;
 
@@ -81,8 +82,9 @@ public class SoftToysPage {
      */
     public void verifyURL(){
         try {
-            String data=Base.driver.getCurrentUrl();
-            Assert.assertTrue(data.contains("soft-toys"));
+            String url=Base.driver.getCurrentUrl();
+            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 3, 0);
+            Assert.assertTrue(url.contains(data));
             test.log(Status.PASS, "Verified URL contains soft-toys");
             LoggerHandler.info("Verified URL contains soft-toys");
         } catch (Exception e) {
@@ -136,8 +138,9 @@ public class SoftToysPage {
      */
     public void verifyBrands(){
         try {
-            String data=helper.getText(SoftToysPageLocator.brands);
-            Assert.assertTrue(data.contains("Brands"));
+            String value=helper.getText(SoftToysPageLocator.brands);
+            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 3, 1);
+            Assert.assertTrue(value.contains(data));
             test.log(Status.PASS, "Verified text Brands");
             LoggerHandler.info("Verified text Brands");
         } catch (Exception e) {
@@ -191,8 +194,9 @@ public class SoftToysPage {
      */
     public void verifyHomeDelivery(){
         try {
-            String data=helper.getText(SoftToysPageLocator.homeDelivery);
-            Assert.assertTrue(data.contains("Home Delivery"));
+            String value=helper.getText(SoftToysPageLocator.homeDelivery);
+            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 3, 2);
+            Assert.assertTrue(value.contains(data));
             test.log(Status.PASS, "Verified text Home Delivery");
             LoggerHandler.info("Verified text Home Delivery");
         } catch (Exception e) {
