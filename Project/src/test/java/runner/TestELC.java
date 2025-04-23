@@ -41,7 +41,6 @@ public class TestELC extends Base{
      * Parameters:None
      * return type:void
      */
-
     @Test
     public void test3()
     {
@@ -50,13 +49,13 @@ public class TestELC extends Base{
         out.testcase3();
         
     }
+
     /*Method Name:test4
      * Author Name:Vipul Saxena
      * Description: Executes 4th test case.
      * Parameters:None
      * return type:void
      */
-
     @Test
     public void test4()
     {
@@ -65,7 +64,6 @@ public class TestELC extends Base{
         learn.testcase4();
     }
         
-   
     /*
      * a.Method Name: addFilteredProductToWishlist
      * b.Author Name: Pratham Maheshwari
@@ -88,6 +86,7 @@ public class TestELC extends Base{
         HappyLandHomePage h=new HappyLandHomePage(test);
         h.output1();
     }
+
     /*
      * Method Name : NewbornBabyGifts
      * Author Name : Akki Manith
@@ -101,6 +100,7 @@ public class TestELC extends Base{
         NewbornBabyGiftsPage newbornBabyGifts=new NewbornBabyGiftsPage(test);
         newbornBabyGifts.NewbabyBornGiftsPageTest();
     }
+
     /*
      * Method Name : SoftToys
      * Author Name : Akki Manith
@@ -114,12 +114,14 @@ public class TestELC extends Base{
         SoftToysPage softToy=new SoftToysPage(test);
         softToy.SoftToysTest();
     }
+
     @Test
     public void puzzle(){
         test=report.createTest("puzzle");
         PuzzleHomePage p=new PuzzleHomePage(test);
         p.output2();
     }
+
     /*
      * a.Method Name: verification
      * b.Author Name: Pratham Maheshwari
@@ -133,6 +135,7 @@ public class TestELC extends Base{
         Elcfooterverify footer = new Elcfooterverify(test);
         footer.clickAndVerifyUrl();
     }
+    
      /*
     * Method name : PawPatroll
     * Author name : karthik
@@ -146,7 +149,6 @@ public class TestELC extends Base{
         PawPatrolHomePage pawPatrolHomePage = new PawPatrolHomePage(test);
         pawPatrolHomePage.TestPawPatrol();
     }
-    
     /*
     * Method name : verifyAboutUsUrl
     * Author name : C Sai Kiran
