@@ -10,6 +10,7 @@ import uistore.HomePageLocators;
 
 import utils.Base;
 import utils.LoggerHandler;
+import utils.Reporter;
 import utils.Screenshot;
 import utils.WebDriverHelper;
 
@@ -53,6 +54,8 @@ public class HappyLandHomePage {
             helper.hoverOverElement(HomePageLocators.explore); 
         LoggerHandler.info("Hover on Explore");
         test.log(Status.PASS,"Hover on Explore");
+        Screenshot.captureScreenShot("ELC-Screenshot");
+        Reporter.attachScreenshotToReport("ELC-Screenshot", test, "ELC-Screenshot");
         } catch (Exception e) {
           System.out.println(e.getMessage());
           LoggerHandler.error("Not able to Hover on Explore");
