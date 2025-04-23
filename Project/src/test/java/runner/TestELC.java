@@ -43,6 +43,7 @@ public class TestELC extends Base{
      */
 
   //  @Test
+    @Test
     public void test3()
     {
         test=report.createTest("Test3");
@@ -50,6 +51,7 @@ public class TestELC extends Base{
         out.testcase3();
         
     }
+
     /*Method Name:test4
      * Author Name:Vipul Saxena
      * Description: Executes 4th test case.
@@ -58,6 +60,7 @@ public class TestELC extends Base{
      */
 
     //@Test
+    @Test
     public void test4()
     {
         test=report.createTest("Test4");
@@ -93,6 +96,7 @@ public class TestELC extends Base{
         HappyLandHomePage h=new HappyLandHomePage(test);
         h.output1();
     }
+
     /*
      * Method Name : NewbornBabyGifts
      * Author Name : Akki Manith
@@ -106,6 +110,7 @@ public class TestELC extends Base{
         NewbornBabyGiftsPage newbornBabyGifts=new NewbornBabyGiftsPage(test);
         newbornBabyGifts.NewbabyBornGiftsPageTest();
     }
+
     /*
      * Method Name : SoftToys
      * Author Name : Akki Manith
@@ -119,6 +124,7 @@ public class TestELC extends Base{
         SoftToysPage softToy=new SoftToysPage(test);
         softToy.SoftToysTest();
     }
+
     // testcase7
      /*
      * a.Method Name: puzzle
@@ -133,6 +139,7 @@ public class TestELC extends Base{
         PuzzleHomePage p=new PuzzleHomePage(test);
         p.output2();
     }
+
     /*
      * a.Method Name: verification
      * b.Author Name: Pratham Maheshwari
@@ -146,6 +153,7 @@ public class TestELC extends Base{
         Elcfooterverify footer = new Elcfooterverify(test);
         footer.clickAndVerifyUrl();
     }
+    
      /*
     * Method name : PawPatroll
     * Author name : karthik
@@ -160,6 +168,7 @@ public class TestELC extends Base{
         pawPatrolHomePage.TestPawPatrol();
     }
   
+
     /*
     * Method name : verifyAboutUsUrl
     * Author name : C Sai Kiran

@@ -11,6 +11,7 @@ import uistore.HomePageLocators;
 import utils.Base;
 import utils.ExcelReader;
 import utils.LoggerHandler;
+import utils.Reporter;
 import utils.Screenshot;
 import utils.WebDriverHelper;
 
@@ -58,6 +59,8 @@ public class HappyLandHomePage {
             Assert.assertTrue(text.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 5, 3)));
         LoggerHandler.info("Hover on Explore");
         test.log(Status.PASS,"Hover on Explore");
+        Screenshot.captureScreenShot("ELC-Screenshot");
+        Reporter.attachScreenshotToReport("ELC-Screenshot", test, "ELC-Screenshot");
         } catch (Exception e) {
           System.out.println(e.getMessage());
           LoggerHandler.error("Not able to Hover on Explore");
