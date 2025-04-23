@@ -176,7 +176,7 @@ public class OutdoorToysPage {
     {
         try {
             String text=helper.getText(OutdoorPageLocators.VerifySearch);
-            Assert.assertTrue(text.contains("Search"));
+            Assert.assertTrue(text.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 3)));
             test.log(Status.PASS, "Verified Search");
             LoggerHandler.info("Verified Search");
         } catch (Exception e) {
@@ -282,7 +282,7 @@ public class OutdoorToysPage {
     {
         try {
             String data=helper.getText(OutdoorPageLocators.checkout);
-            Assert.assertTrue(data.contains("Check Out"));
+            Assert.assertTrue(data.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 5, 2)));
             test.log(Status.PASS, "Verified checkout");
             LoggerHandler.info("Verified checkout");
         } catch (Exception e) {
