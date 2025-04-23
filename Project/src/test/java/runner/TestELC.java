@@ -81,10 +81,8 @@ public class TestELC extends Base{
         ElcCars car = new ElcCars(test);
         car.cars();
     }
-<<<<<<< HEAD
 
     
-=======
     //testcase6
     /*
      * a.Method Name: happyland
@@ -93,7 +91,6 @@ public class TestELC extends Base{
      * d.Parameter: None
      * e.Return Type: void
      */
->>>>>>> ed399ab4515516575aad13bef7e5105e38cc54be
 
     @Test
     public void happyland(){
@@ -130,8 +127,6 @@ public class TestELC extends Base{
         softToy.SoftToysTest();
     }
 
-<<<<<<< HEAD
-=======
     // testcase7
      /*
      * a.Method Name: puzzle
@@ -140,7 +135,6 @@ public class TestELC extends Base{
      * d.Parameter: None
      * e.Return Type: void
      */
->>>>>>> ed399ab4515516575aad13bef7e5105e38cc54be
     @Test
     public void puzzle(){
         test=report.createTest("puzzle");
@@ -175,11 +169,8 @@ public class TestELC extends Base{
         PawPatrolHomePage pawPatrolHomePage = new PawPatrolHomePage(test);
         pawPatrolHomePage.TestPawPatrol();
     }
-<<<<<<< HEAD
-=======
   
 
->>>>>>> ed399ab4515516575aad13bef7e5105e38cc54be
     /*
     * Method name : verifyAboutUsUrl
     * Author name : C Sai Kiran
