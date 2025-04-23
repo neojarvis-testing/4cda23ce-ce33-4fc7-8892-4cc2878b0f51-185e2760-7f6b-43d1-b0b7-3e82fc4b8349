@@ -14,7 +14,7 @@ import pages.LearningPage;
 import pages.OutdoorToysPage;
 import pages.NewbornBabyGiftsPage;
 import pages.SoftToysPage;
-import pages.footerPage;
+import pages.FooterPage;
 import pages.ElcCars;
 import pages.Elcfooterverify;
 import pages.HappyLandHomePage;
@@ -35,6 +35,32 @@ public class TestELC extends Base{
         driver.navigate().refresh();
     }
 
+    /*
+     * Method Name : NewbornBabyGifts
+     * Author Name : Akki Manith
+     * Description : To add the Newborn Baby Gifts under Shop by Age into the basket
+     * Return Type : void
+     * Parameter : none
+     */
+    @Test(priority = 1)
+    public void NewbornBabyGifts(){
+        test=report.createTest("Newborn Baby Gifts");
+        NewbornBabyGiftsPage newbornBabyGifts=new NewbornBabyGiftsPage(test);
+        newbornBabyGifts.NewbabyBornGiftsPageTest();
+    }
+    /*
+     * Method Name : SoftToys
+     * Author Name : Akki Manith
+     * Description : To add the Soft toys under Type of toy into the basket
+     * Return Type : void
+     * Parameter : none
+     */
+    @Test(priority = 2)
+    public void SoftToys(){
+        test=report.createTest("Soft Toys");
+        SoftToysPage softToy=new SoftToysPage(test);
+        softToy.SoftToysTest();
+    }
    /*Method Name:test3
      * Author Name:Vipul Saxena
      * Description: Executes 3rd test case.
@@ -42,7 +68,7 @@ public class TestELC extends Base{
      * return type:void
      */
 
-    @Test
+    @Test(priority = 3)
     public void test3()
     {
         test=report.createTest("Test3");
@@ -58,7 +84,8 @@ public class TestELC extends Base{
      * return type:void
      */
 
-    @Test
+     @Test(priority = 4)
+
     public void test4()
     {
         test=report.createTest("Test4");
@@ -67,21 +94,18 @@ public class TestELC extends Base{
     }
         
     /*
-     * a.Method Name: addFilteredProductToWishlist
-     * b.Author Name: Pratham Maheshwari
-     * c.Description: This test case ensures that a product is successfully added to the wishlist after specific filters have been applied.
-     * d.Parameter: None
-     * e.Return Type: void
-     */
-   @Test
-    public void addFilteredProductToWishlist(){
-        test = report.createTest("Cars");
-        ElcCars car = new ElcCars(test);
-        car.cars();
+   * Method name : PawPatroll
+   * Author name : karthik
+   * Description : this test case no. 5 ensures that product is added to the basket
+   * Return Type : void
+   * Parameter : None
+    */
+   @Test(priority = 5)
+   public void PawPatroll(){
+       test = report.createTest("PawPatrol");
+       PawPatrolHomePage pawPatrolHomePage = new PawPatrolHomePage(test);
+       pawPatrolHomePage.TestPawPatrol();
     }
-
-    
-    //testcase6
     /*
      * a.Method Name: happyland
      * b.Author Name: PrasannaLaxmi
@@ -89,43 +113,12 @@ public class TestELC extends Base{
      * d.Parameter: None
      * e.Return Type: void
      */
-
-    @Test
+    @Test(priority = 6)
     public void happyland(){
         test=report.createTest("happy");
         HappyLandHomePage h=new HappyLandHomePage(test);
         h.output1();
     }
-
-    /*
-     * Method Name : NewbornBabyGifts
-     * Author Name : Akki Manith
-     * Description : To add the Newborn Baby Gifts under Shop by Age into the basket
-     * Return Type : void
-     * Parameter : none
-     */
-    @Test
-    public void NewbornBabyGifts(){
-        test=report.createTest("Newborn Baby Gifts");
-        NewbornBabyGiftsPage newbornBabyGifts=new NewbornBabyGiftsPage(test);
-        newbornBabyGifts.NewbabyBornGiftsPageTest();
-    }
-
-    /*
-     * Method Name : SoftToys
-     * Author Name : Akki Manith
-     * Description : To add the Soft toys under Type of toy into the basket
-     * Return Type : void
-     * Parameter : none
-     */
-    @Test
-    public void SoftToys(){
-        test=report.createTest("Soft Toys");
-        SoftToysPage softToy=new SoftToysPage(test);
-        softToy.SoftToysTest();
-    }
-
-    // testcase7
      /*
      * a.Method Name: puzzle
      * b.Author Name: PrasannaLaxmi
@@ -133,11 +126,25 @@ public class TestELC extends Base{
      * d.Parameter: None
      * e.Return Type: void
      */
-    @Test
+    @Test(priority = 7)
     public void puzzle(){
         test=report.createTest("puzzle");
         PuzzleHomePage p=new PuzzleHomePage(test);
         p.output2();
+    }
+   
+    /*
+     * a.Method Name: addFilteredProductToWishlist
+     * b.Author Name: Pratham Maheshwari
+     * c.Description: This test case ensures that a product is successfully added to the wishlist after specific filters have been applied.
+     * d.Parameter: None
+     * e.Return Type: void
+     */
+    @Test(priority = 8)
+    public void addFilteredProductToWishlist(){
+        test = report.createTest("Cars");
+        ElcCars car = new ElcCars(test);
+        car.cars();
     }
 
     /*
@@ -147,28 +154,14 @@ public class TestELC extends Base{
      * d.Parameter: None
      * e.Return Type: void
      */
-    @Test
+    @Test(priority = 9)
     public void verification(){
         test= report.createTest("Verification");
         Elcfooterverify footer = new Elcfooterverify(test);
         footer.clickAndVerifyUrl();
     }
     
-     /*
-    * Method name : PawPatroll
-    * Author name : karthik
-    * Description : this test case no. 5 ensures that product is added to the basket
-    * Return Type : void
-    * Parameter : None
-     */
-   @Test
-    public void PawPatroll(){
-        test = report.createTest("PawPatrol");
-        PawPatrolHomePage pawPatrolHomePage = new PawPatrolHomePage(test);
-        pawPatrolHomePage.TestPawPatrol();
-    }
-  
-
+    
     /*
     * Method name : verifyAboutUsUrl
     * Author name : C Sai Kiran
@@ -176,10 +169,10 @@ public class TestELC extends Base{
     * Return Type : void
     * Parameter : None
     */
-   @Test
+    @Test(priority = 10)
     public void footer(){
         test=report.createTest("testCase10");
-        footerPage page=new footerPage(test);
+        FooterPage page=new FooterPage(test);
         page.footerFunctionality();
 
     }
