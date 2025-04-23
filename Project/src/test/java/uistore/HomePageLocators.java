@@ -25,6 +25,7 @@ public class HomePageLocators {
 
 
     //Vipul Locators
+    
     //TestCase 3
     public static By accept = By.id("onetrust-accept-btn-handler");
     public static By ElcLogo=By.cssSelector("div[class='banner__component banner']");
@@ -57,7 +58,12 @@ public static By artandcraft=By.xpath("//span[text()='Arts & Crafts']");
 public static By creativityfilter=By.xpath("//span[text()='Creativity']");
 public static By artfirstproduct=By.xpath("//a[text()='Early Learning Centre Ready Mix Paint Set 6 Pack']");
 public static By verifyminutes=By.id("js-store-availability-text");
+    //testcase4
 
+    // public static By Learningskills=By.cssSelector("span[class='yCmsComponent nav__link js_nav__link'] a[href='/c/learning-skills']");
+    // public static By Learningskills=By.xpath("(//a[@href='/c/learning-skills'])[1]");
+    // public static By creativity=By.cssSelector("a[href='/c/learning-skills/creativity']");
+    
 
 
 
