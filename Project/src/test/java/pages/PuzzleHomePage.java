@@ -31,6 +31,8 @@ public class PuzzleHomePage {
         try {
             helper.wait(HomePageLocators.Cookies);
             helper.clickOnElement(HomePageLocators.Cookies);
+            String url=Base.driver.getCurrentUrl();
+            Assert.assertTrue(url.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 2)));
             test.log(Status.PASS, "clicked on accept cookies");
             LoggerHandler.info("clicked on accept cookies");
         } catch (Exception e) {
@@ -50,6 +52,8 @@ public class PuzzleHomePage {
     public void clickOnSearch(){
         try {
             helper.clickOnElement(HomePageLocators.searchbar); 
+            String url=Base.driver.getCurrentUrl();
+            Assert.assertTrue(url.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 1)));
         LoggerHandler.info("Clicked on SearchBar");
         test.log(Status.PASS,"Clicked on SearchBar");
         } catch (Exception e) {
@@ -68,8 +72,8 @@ public class PuzzleHomePage {
     public void sendadata(){
         try {
             helper.sendData(HomePageLocators.searchbar,ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 1, 0)); 
-            // helper.enterAction(HomePageLocators.searchbar); 
-            // helper.enterAction(HomePageLocators.searchbar); 
+            String url=Base.driver.getCurrentUrl();
+            Assert.assertTrue(url.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 2)));
         LoggerHandler.info("Data sent on SearchBar");
         test.log(Status.PASS,"Data sent on SearchBar");
         } catch (Exception e) {
@@ -89,6 +93,9 @@ public class PuzzleHomePage {
         try {
             Thread.sleep(500);
             helper.enterAction(HomePageLocators.searchbar);
+            //String learning=helper.getText(HappyLandHomePageLocator.learning);
+            String title=Base.driver.getTitle();
+            Assert.assertTrue(title.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 3)));
         LoggerHandler.info("Puzzles entered on searchBar");
         test.log(Status.PASS,"Puzzles entered on searchBar");
         } catch (Exception e) {
@@ -107,7 +114,9 @@ public class PuzzleHomePage {
     public void clickOnShowmore(){
         try {
             helper.wait(HappyLandHomePageLocator.showmore);
-            helper.clickOnElement(HappyLandHomePageLocator.showmore); 
+            helper.clickOnElement(HappyLandHomePageLocator.showmore);
+            String show=helper.getText(HappyLandHomePageLocator.showmore);
+            Assert.assertTrue(show.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 4))); 
         LoggerHandler.info("Clicked on Showmore");
         test.log(Status.PASS,"Clicked on Showmore");
         } catch (Exception e) {
@@ -126,6 +135,8 @@ public class PuzzleHomePage {
     public void clickOnJigsawPuzzle(){
         try {
         helper.clickOnElement(HappyLandHomePageLocator.jigsaw); 
+        String jigsaw=helper.getText(HappyLandHomePageLocator.jigsaw);
+            Assert.assertTrue(jigsaw.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 5)));
         LoggerHandler.info("Clicked on jigsaw");
         test.log(Status.PASS,"Clicked on jigsaw");
         } catch (Exception e) {
@@ -145,6 +156,8 @@ public class PuzzleHomePage {
         try {
         helper.wait(HappyLandHomePageLocator.children);
         helper.clickOnElement(HappyLandHomePageLocator.children); 
+        String children=helper.getText(HappyLandHomePageLocator.children);
+            Assert.assertTrue(children.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 6)));
         LoggerHandler.info("Clicked on Children Games");
         test.log(Status.PASS,"Clicked on Children Games");
         } catch (Exception e) {
@@ -164,6 +177,8 @@ public class PuzzleHomePage {
         try {
             helper.wait(HappyLandHomePageLocator.discover);
          helper.clickOnElement(HappyLandHomePageLocator.discover); 
+         String discover=helper.getText(HappyLandHomePageLocator.discover);
+            Assert.assertTrue(discover.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 7)));
         LoggerHandler.info("Clicked on Discover");
         test.log(Status.PASS,"Clicked on Discover");
         } catch (Exception e) {
@@ -183,11 +198,13 @@ public class PuzzleHomePage {
         try {
         helper.wait(HappyLandHomePageLocator.second);
         helper.clickOnElement(HappyLandHomePageLocator.second); 
-        LoggerHandler.info("Clicked on First Element");
+        String learning=helper.getText(HappyLandHomePageLocator.second);
+            Assert.assertTrue(learning.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 8)));
+        LoggerHandler.info("Clicked on PuzzleFirst Element");
         test.log(Status.PASS,"Clicked on First Element");
         } catch (Exception e) {
           System.out.println(e.getMessage());
-          LoggerHandler.error("Not able to Clicked on FirstElement");
+          LoggerHandler.error("Not able to Clicked on PuzzleFirstElement");
           test.log(Status.PASS,"Not able to Clicked on FirstElement");
         }
     }
@@ -202,6 +219,8 @@ public class PuzzleHomePage {
         try {
         helper.wait(HappyLandHomePageLocator.wishlist);
          helper.clickOnElement(HappyLandHomePageLocator.wishlist); 
+         String wish=helper.getText(HappyLandHomePageLocator.wishlist);
+         Assert.assertTrue(wish.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 0)));
         LoggerHandler.info("Clicked on Wishlist");
         test.log(Status.PASS,"Clicked on Wishlist");
         } catch (Exception e) {
@@ -220,10 +239,11 @@ public class PuzzleHomePage {
     public void verifyLearning(){
         try {
             String learning=helper.getText(HappyLandHomePageLocator.learning);
-            Assert.assertTrue(learning.contains("Learning"));
+            Assert.assertTrue(learning.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 5, 0)));
+
             Screenshot.captureScreenShot("learning");
             LoggerHandler.info("Text contains Learning");
-            test.log(Status.PASS,"Text contains Learning");
+            test.log(Status.INFO,"Text contains Learning");
             Screenshot.captureScreenShot("learning");
         } catch (Exception e) {
             System.out.println(e.getMessage());

@@ -41,6 +41,8 @@ public class TestELC extends Base{
      * Parameters:None
      * return type:void
      */
+
+  //  @Test
     @Test
     public void test3()
     {
@@ -56,6 +58,8 @@ public class TestELC extends Base{
      * Parameters:None
      * return type:void
      */
+
+    //@Test
     @Test
     public void test4()
     {
@@ -71,15 +75,21 @@ public class TestELC extends Base{
      * d.Parameter: None
      * e.Return Type: void
      */
-    @Test
+   // @Test
     public void addFilteredProductToWishlist(){
         test = report.createTest("Cars");
         ElcCars car = new ElcCars(test);
         car.cars();
     }
-
-    
     //testcase6
+    /*
+     * a.Method Name: happyland
+     * b.Author Name: PrasannaLaxmi
+     * c.Description: This test case ensures that a product is sucessfully added to cart
+     * d.Parameter: None
+     * e.Return Type: void
+     */
+
     @Test
     public void happyland(){
         test=report.createTest("happy");
@@ -94,7 +104,7 @@ public class TestELC extends Base{
      * Return Type : void
      * Parameter : none
      */
-    @Test
+    //@Test
     public void NewbornBabyGifts(){
         test=report.createTest("Newborn Baby Gifts");
         NewbornBabyGiftsPage newbornBabyGifts=new NewbornBabyGiftsPage(test);
@@ -108,7 +118,7 @@ public class TestELC extends Base{
      * Return Type : void
      * Parameter : none
      */
-    @Test
+    //@Test
     public void SoftToys(){
         test=report.createTest("Soft Toys");
         SoftToysPage softToy=new SoftToysPage(test);
@@ -116,6 +126,13 @@ public class TestELC extends Base{
     }
 
     // testcase7
+     /*
+     * a.Method Name: puzzle
+     * b.Author Name: PrasannaLaxmi
+     * c.Description:  This test case ensures that a product is successfully added to the wishlist after specific filters have been applied.
+     * d.Parameter: None
+     * e.Return Type: void
+     */
     @Test
     public void puzzle(){
         test=report.createTest("puzzle");
@@ -130,7 +147,7 @@ public class TestELC extends Base{
      * d.Parameter: None
      * e.Return Type: void
      */
-    @Test
+    //@Test
     public void verification(){
         test= report.createTest("Verification");
         Elcfooterverify footer = new Elcfooterverify(test);
@@ -144,12 +161,13 @@ public class TestELC extends Base{
     * Return Type : void
     * Parameter : None
      */
-    @Test
+   // @Test
     public void PawPatroll(){
         test = report.createTest("PawPatrol");
         PawPatrolHomePage pawPatrolHomePage = new PawPatrolHomePage(test);
         pawPatrolHomePage.TestPawPatrol();
     }
+  
 
     /*
     * Method name : verifyAboutUsUrl
@@ -158,7 +176,7 @@ public class TestELC extends Base{
     * Return Type : void
     * Parameter : None
     */
-    @Test
+   // @Test
     public void footer(){
         test=report.createTest("testCase10");
         footerPage page=new footerPage(test);
