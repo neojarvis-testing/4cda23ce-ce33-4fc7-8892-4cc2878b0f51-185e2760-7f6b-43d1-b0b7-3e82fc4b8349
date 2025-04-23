@@ -145,6 +145,7 @@ public class TestELC extends Base{
         footer.clickAndVerifyUrl();
     }
     
+    
     /*
     * Method name : verifyAboutUsUrl
     * Author name : C Sai Kiran

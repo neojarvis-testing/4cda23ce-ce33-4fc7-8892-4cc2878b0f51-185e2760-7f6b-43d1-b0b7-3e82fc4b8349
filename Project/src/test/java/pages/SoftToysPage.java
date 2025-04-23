@@ -6,7 +6,6 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import uistore.HomePageLocators;
-import uistore.NewbornBabyGiftsPageLocator;
 import uistore.SoftToysPageLocator;
 import utils.Base;
 import utils.LoggerHandler;
