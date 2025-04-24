@@ -14,6 +14,9 @@ import com.google.common.io.Files;
 
 public class Screenshot extends Base{
     public static TakesScreenshot ts;
+    public static final String userCommonPath= "user.dir";
+    public static final String screenShot ="/screenshots";
+    public static final String dateFormat = "yyyy.MM.dd.HH.mm.ss";
     /* 
      * MethodName:captureScreenshot
      * AuthorName:PrasannaLaxmi
@@ -22,11 +25,11 @@ public class Screenshot extends Base{
      * Returntype:void
     */
     public static void captureScreenShot(String filename){
-        String timestamp=new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+        String timestamp=new SimpleDateFormat(dateFormat).format(new Date());
         String name=filename + timestamp + ".png";
         ts=(TakesScreenshot)driver;
         File file=ts.getScreenshotAs(OutputType.FILE);
-        File screenshotDir=new File(System.getProperty("user.dir")+"/screenshots");
+        File screenshotDir=new File(System.getProperty(userCommonPath)+screenShot);
         if (!screenshotDir.exists()) {
          screenshotDir.mkdirs();
         }
@@ -49,11 +52,11 @@ public class Screenshot extends Base{
         JavascriptExecutor js=(JavascriptExecutor) driver;
         js.executeScript("arguments[0].style.backgroundColor='orange';",element);
         File file=ts.getScreenshotAs(OutputType.FILE);
-        File screenshotDir=new File(System.getProperty("user.dir")+"/screenshots");
+        File screenshotDir=new File(System.getProperty(userCommonPath)+screenShot);
         if (!screenshotDir.exists()) {
             screenshotDir.mkdirs();
         }
-        String timestamp=new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+        String timestamp=new SimpleDateFormat(dateFormat).format(new Date());
         File target=new File(screenshotDir,filename+timestamp+".png");
         js.executeScript("arguments[0].style.backgroundColor='';",element);
         try {
@@ -71,10 +74,10 @@ public class Screenshot extends Base{
     */
         public static void captureSpecificElementScreenShot(String filename,By locator){
             WebElement element=driver.findElement(locator);
-            String timestamp=new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+            String timestamp=new SimpleDateFormat(dateFormat).format(new Date());
             String name=filename + timestamp + ".png";
             File file=element.getScreenshotAs(OutputType.FILE);
-            File screenshotDir=new File(System.getProperty("user.dir")+"/screenshots");
+            File screenshotDir=new File(System.getProperty(userCommonPath)+screenShot);
             if (!screenshotDir.exists()) {
              screenshotDir.mkdirs();
             }

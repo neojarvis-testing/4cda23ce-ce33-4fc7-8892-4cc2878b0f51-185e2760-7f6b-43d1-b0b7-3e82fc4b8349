@@ -15,8 +15,11 @@ import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class ElcCars {
-    public static ExtentTest test;
-    public static WebDriverHelper helper;
+    ExtentTest test;
+    WebDriverHelper helper;
+    public static final String sheetName="Sheet1";
+    public static final String dirPath ="/testData/ELCData.xlsx";
+    public static final String commonPath = "user.dir";
     public ElcCars(ExtentTest test){
         helper= new WebDriverHelper(Base.driver);
         this.test =test;
@@ -48,8 +51,7 @@ public class ElcCars {
     public void verifyLogo(){
         try {
             String text = Base.driver.findElement(HomePageLocators.logo).getDomAttribute("title");
-            System.out.println(text);
-            // Assert.assertEquals(text,ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 9, 6));
+            Assert.assertEquals(text,ExcelReader.readData(System.getProperty(commonPath)+dirPath, sheetName, 9, 6));
             LoggerHandler.info("Logo verified");
             test.log(Status.PASS,"Logo Verified");
         } catch (AssertionError e) {
@@ -67,8 +69,8 @@ public class ElcCars {
      */
     public void clickOnSearchBar(){
         try {
-            helper.wait(HomePageLocators.searchBar);
-            helper.clickOnElement(HomePageLocators.searchBar);
+            helper.wait(HomePageLocators.searchBarHomePage);
+            helper.clickOnElement(HomePageLocators.searchBarHomePage);
             LoggerHandler.info("Clicked on searchBar");
             test.log(Status.INFO, "Clicked on searchBar");
         } catch (Exception e) {
@@ -86,16 +88,15 @@ public class ElcCars {
      */
     public void enterDataOnSearchBar(){
         try {
-            helper.wait(HomePageLocators.searchBar);
-            helper.sendData(HomePageLocators.searchBar,ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 0, 0));
+            helper.wait(HomePageLocators.searchBarHomePage);
+            helper.sendData(HomePageLocators.searchBarHomePage,ExcelReader.readData(System.getProperty(commonPath)+dirPath, sheetName, 0, 0));
             Thread.sleep(500);
-            helper.enterAction(HomePageLocators.searchBar);
+            helper.enterAction(HomePageLocators.searchBarHomePage);
             String x = helper.getText(ElcCarsHomePageLocator.verifyCar);
-            System.out.println(x);
-            Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 0, 0)));
+            Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty(commonPath)+dirPath, sheetName, 0, 0)));
             LoggerHandler.info("Data entered on searchBar");
             test.log(Status.PASS, "Data entered on searchBar");
-        } catch (AssertionError | Exception e) {
+        } catch (AssertionError | InterruptedException e) {
             LoggerHandler.error("Not able to enter data on searchBar");
             test.log(Status.FAIL, "Not able to enter data on searchBar");
         }
@@ -111,8 +112,7 @@ public class ElcCars {
     public void verifyCarUrl(){
         try {
             String x = Base.driver.getCurrentUrl();
-            System.out.println(x);
-            // Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 9, 0)));
+            Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty(commonPath)+dirPath, sheetName, 9, 0)));
             LoggerHandler.info("Verified Cars");
             test.log(Status.INFO, "Cars verified");
         } catch (AssertionError e) {
@@ -133,8 +133,7 @@ public class ElcCars {
             helper.wait(ElcCarsHomePageLocator.showMore);
             helper.clickOnElement(ElcCarsHomePageLocator.showMore);
             String x = helper.getText(ElcCarsHomePageLocator.toyCars);
-            System.out.println(x);
-            // Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 9, 1)));
+            Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty(commonPath)+dirPath, sheetName, 9, 1)));
             LoggerHandler.info("Clicked on show more");
             test.log(Status.INFO, "Clicked on show more");
         } catch (AssertionError | Exception e) {
@@ -155,8 +154,7 @@ public class ElcCars {
             helper.wait(ElcCarsHomePageLocator.toyCars);
             helper.clickOnElement(ElcCarsHomePageLocator.toyCars);
             String x = helper.getText(ElcCarsHomePageLocator.imaginativePlay);
-            System.out.println(x);
-            // Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 9, 2)));
+            Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty(commonPath)+dirPath, sheetName, 9, 2)));
             LoggerHandler.info("Clicked on Toy Cars");
             test.log(Status.PASS, "Clicked on Toy Cars");
         } catch (AssertionError | Exception e) {
@@ -177,8 +175,7 @@ public class ElcCars {
             helper.wait(ElcCarsHomePageLocator.imaginativePlay);
             helper.clickOnElement(ElcCarsHomePageLocator.imaginativePlay);
             String x = helper.getText(ElcCarsHomePageLocator.fineMotorSkills);
-            System.out.println(x);
-            // Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 9, 3)));
+            Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty(commonPath)+dirPath, sheetName, 9, 3)));
             LoggerHandler.info("Clicked on Imaginative Play");
             test.log(Status.PASS, "Clicked on Imaginative Play");
         } catch (AssertionError | Exception e) {
@@ -199,8 +196,7 @@ public class ElcCars {
             helper.wait(ElcCarsHomePageLocator.fineMotorSkills);
             helper.clickOnElement(ElcCarsHomePageLocator.fineMotorSkills);
             String x = helper.getText(ElcCarsHomePageLocator.selected);
-            System.out.println(x);
-            // Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 9, 4)));
+            Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty(commonPath)+dirPath, sheetName, 9, 4)));
             LoggerHandler.info("Clicked on Fine Motor Skill");
             test.log(Status.PASS, "Clicked on Fine Motor Skill");
         } catch (AssertionError | Exception e) {
@@ -222,8 +218,7 @@ public class ElcCars {
             helper.wait(ElcCarsHomePageLocator.firstProduct);
             helper.clickOnElement(ElcCarsHomePageLocator.firstProduct);
             String x = helper.getText(ElcCarsFirstProductLocator.wishlist);
-            System.out.println(x);
-            // Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 9, 5)));
+            Assert.assertTrue(x.contains(ExcelReader.readData(System.getProperty(commonPath)+dirPath, sheetName, 9, 5)));
             LoggerHandler.info("Clicked on First Product");
             test.log(Status.INFO, "Clicked on First Product");
         } catch (AssertionError | Exception e) {

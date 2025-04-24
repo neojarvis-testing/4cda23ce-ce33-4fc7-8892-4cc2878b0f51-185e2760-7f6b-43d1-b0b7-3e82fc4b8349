@@ -13,8 +13,12 @@ import utils.LoggerHandler;
 import utils.WebDriverHelper;
 
 public class SoftToysPage {
-    public static ExtentTest test;
-    public static WebDriverHelper helper;
+    ExtentTest test;
+    WebDriverHelper helper;
+    public static final String sheetsName = "Sheet1";
+    public static final String dirsPath = "/testData/ELCData.xlsx";
+    public static final String userCommonPath ="user.dir" ;
+    
     public SoftToysPage(ExtentTest test){
         helper=new WebDriverHelper(Base.driver);
         this.test=test;
@@ -83,7 +87,7 @@ public class SoftToysPage {
     public void verifyURL(){
         try {
             String url=Base.driver.getCurrentUrl();
-            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 3, 0);
+            String data=ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 3, 0);
             Assert.assertTrue(url.contains(data));
             test.log(Status.PASS, "Verified URL contains soft-toys");
             LoggerHandler.info("Verified URL contains soft-toys");
@@ -139,7 +143,7 @@ public class SoftToysPage {
     public void verifyBrands(){
         try {
             String value=helper.getText(SoftToysPageLocator.brands);
-            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 3, 1);
+            String data=ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 3, 1);
             Assert.assertTrue(value.contains(data));
             test.log(Status.PASS, "Verified text Brands");
             LoggerHandler.info("Verified text Brands");
@@ -195,7 +199,7 @@ public class SoftToysPage {
     public void verifyHomeDelivery(){
         try {
             String value=helper.getText(SoftToysPageLocator.homeDelivery);
-            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 3, 2);
+            String data=ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 3, 2);
             Assert.assertTrue(value.contains(data));
             test.log(Status.PASS, "Verified text Home Delivery");
             LoggerHandler.info("Verified text Home Delivery");

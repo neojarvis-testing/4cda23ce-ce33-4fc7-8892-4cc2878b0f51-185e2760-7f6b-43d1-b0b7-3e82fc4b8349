@@ -14,9 +14,12 @@ import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class OutdoorToysPage {
-    public static WebDriverHelper helper;
-    public static ExtentTest test;
-
+    WebDriverHelper helper;
+    ExtentTest test;
+    public static final String sheetsName = "Sheet1";
+    public static final String dirsPath = "/testData/ELCData.xlsx";
+    public static final String userCommonPath ="user.dir" ;
+    
     public OutdoorToysPage(ExtentTest test)
     {
         helper=new WebDriverHelper(Base.driver);
@@ -48,7 +51,7 @@ public class OutdoorToysPage {
     public void verifyHomePageUrl(){
         try {
             String url=Base.driver.getCurrentUrl();
-            Assert.assertTrue(url.equals(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 5, 0)));
+            Assert.assertTrue(url.equals(ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 5, 0)));
             test.log(Status.PASS, "Verified HomePage Url");
             LoggerHandler.info("Verified HomePage Url");
         } catch (Exception e) {
@@ -112,7 +115,7 @@ public class OutdoorToysPage {
     {
         try {
             String url=Base.driver.getCurrentUrl();
-            Assert.assertTrue(url.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 2)));
+            Assert.assertTrue(url.contains(ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 6, 2)));
             test.log(Status.PASS, "Contains bikes");
             LoggerHandler.info("Contains bikes");
         } catch (Exception e) {
@@ -176,7 +179,7 @@ public class OutdoorToysPage {
     {
         try {
             String text=helper.getText(OutdoorPageLocators.VerifySearch);
-            Assert.assertTrue(text.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 3)));
+            Assert.assertTrue(text.contains(ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 6, 3)));
             test.log(Status.PASS, "Verified Search");
             LoggerHandler.info("Verified Search");
         } catch (Exception e) {
@@ -282,7 +285,7 @@ public class OutdoorToysPage {
     {
         try {
             String data=helper.getText(OutdoorPageLocators.checkout);
-            Assert.assertTrue(data.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 5, 2)));
+            Assert.assertTrue(data.contains(ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 5, 2)));
             test.log(Status.PASS, "Verified checkout");
             LoggerHandler.info("Verified checkout");
         } catch (Exception e) {

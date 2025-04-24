@@ -6,6 +6,7 @@ import org.apache.log4j.FileAppender;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
 public class LoggerHandler {
+    private LoggerHandler(){}
     public static Logger logger = Logger.getLogger(LoggerHandler.class);
  
     static {

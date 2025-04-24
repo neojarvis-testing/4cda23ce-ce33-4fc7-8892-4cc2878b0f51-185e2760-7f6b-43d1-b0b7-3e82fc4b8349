@@ -10,6 +10,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelReader {
+    private ExcelReader(){}
     public static XSSFWorkbook workbook;
     public static XSSFSheet sheet;
     public static XSSFRow row;

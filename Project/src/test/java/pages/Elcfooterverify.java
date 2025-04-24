@@ -13,8 +13,12 @@ import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class Elcfooterverify {
-    public static ExtentTest test;
-    public static WebDriverHelper helper;
+    ExtentTest test;
+    WebDriverHelper helper;
+    public static final String sheetsName = "Sheet1";
+    public static final String dirsPath = "/testData/ELCData.xlsx";
+    public static final String userCommonPath ="user.dir" ;
+    
     public Elcfooterverify(ExtentTest test){
         helper= new WebDriverHelper(Base.driver);
         this.test =test;
@@ -51,10 +55,10 @@ public class Elcfooterverify {
             helper.wait(HomePageLocators.contactUs);
             helper.clickOnElement(HomePageLocators.contactUs);
             LoggerHandler.info("Clicked on Contact us");
-            test.log(Status.INFO, "Clicked on Contact us");
-        } catch (Exception e) {
+            test.log(Status.INFO, "Clicked on Contacts us");
+        } catch (InterruptedException e) {
             LoggerHandler.error("Not able to click on Contact us");
-            test.log(Status.FAIL, "Not able to click on Contact us");
+            test.log(Status.FAIL, "Not able to clicks on Contact us");
         }
     }
 
@@ -68,13 +72,11 @@ public class Elcfooterverify {
     public void verifyContactUsUrl(){
         try {
             String str = Base.driver.getTitle();
-            System.out.println(str);
             String x = Base.driver.getCurrentUrl();
-            Assert.assertEquals(x,ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 10, 0));
+            Assert.assertEquals(x,ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 10, 0));
             LoggerHandler.info("Verified ContactUs URL");
             test.log(Status.PASS, "Cars ContactUs URL");
             Base.driver.navigate().back();
-            // Base.driver.navigate().to("https://www.elc.co.uk/");
         } catch (AssertionError e) {
             LoggerHandler.error("Not able to verify ContactUs URL");
             test.log(Status.FAIL, "ContactUs URL not verified");
@@ -93,11 +95,11 @@ public class Elcfooterverify {
             helper.scrollToFooter();
             helper.wait(HomePageLocators.delivery);
             helper.clickOnElement(HomePageLocators.delivery);
-            LoggerHandler.info("Clicked on Delivery option");
+            LoggerHandler.info("Clicked on Delivery options");
             test.log(Status.INFO, "Clicked on Delivery option");
         } catch (Exception e) {
             LoggerHandler.error("Not able to click on Delivery option");
-            test.log(Status.FAIL, "Not able to click on Delivery option");
+            test.log(Status.FAIL, "Not able to click on Delivery options");
         }
     }
 
@@ -111,14 +113,13 @@ public class Elcfooterverify {
     public void verifyDeliveryOptionUrl(){
         try {
             String str = Base.driver.getTitle();
-            System.out.println(str);
             String x = Base.driver.getCurrentUrl();
-            Assert.assertEquals(x,ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 10, 1));
-            LoggerHandler.info("Verified Delivery Option URL");
+            Assert.assertEquals(x,ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 10, 1));
+            LoggerHandler.info("Verified Delivery Options URL");
             test.log(Status.PASS, "Verified Delivery Option URL");
             Base.driver.navigate().back();
         } catch (AssertionError e) {
-            LoggerHandler.error("Not able to verify Delivery Option URL");
+            LoggerHandler.error("Not able to verify Delivery Options URL");
             test.log(Status.FAIL, "Delivery Option URL not verified");
         }
     }
@@ -135,10 +136,10 @@ public class Elcfooterverify {
             helper.scrollToFooter();
             helper.wait(HomePageLocators.productSafety);
             helper.clickOnElement(HomePageLocators.productSafety);
-            LoggerHandler.info("Clicked on Product Safety Notices");
+            LoggerHandler.info("Clicked on Products Safety Notices");
             test.log(Status.INFO, "Clicked on Product Safety Notices");
         } catch (Exception e) {
-            LoggerHandler.error("Not able to click on Product Safety Notices");
+            LoggerHandler.error("Not able to click on Products Safety Notices");
             test.log(Status.FAIL, "Not able to click on Product Safety Notices");
         }
     }
@@ -153,11 +154,10 @@ public class Elcfooterverify {
     public void verifyProductSafetyUrl(){
         try {
             String str = Base.driver.getTitle();
-            System.out.println(str);
             String x = Base.driver.getCurrentUrl();
-            Assert.assertEquals(x,ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 10, 2));
+            Assert.assertEquals(x,ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 10, 2));
             LoggerHandler.info("Verified Product Safety notices URL");
-            test.log(Status.PASS, "Verified Product Safety notices URL");
+            test.log(Status.PASS, "Verified Product Safety notice URL");
             Base.driver.navigate().back();
         } catch (AssertionError e) {
             LoggerHandler.error("Not able to verify Product Safety notices URL");
@@ -178,10 +178,10 @@ public class Elcfooterverify {
             helper.wait(HomePageLocators.returns);
             helper.clickOnElement(HomePageLocators.returns);
             LoggerHandler.info("Clicked on Returns");
-            test.log(Status.INFO, "Clicked on Returns");
+            test.log(Status.INFO, "Clicked on Return");
         } catch (Exception e) {
             LoggerHandler.error("Not able to click on Returns");
-            test.log(Status.FAIL, "Not able to click on Returns");
+            test.log(Status.FAIL, "Not able to click on Return");
         }
     }
 
@@ -195,11 +195,10 @@ public class Elcfooterverify {
     public void verifyReturnsUrl(){
         try {
             String str = Base.driver.getTitle();
-            System.out.println(str);
             String x = Base.driver.getCurrentUrl();
-            Assert.assertEquals(x,ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 10, 3));
+            Assert.assertEquals(x,ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 10, 3));
             LoggerHandler.info("Verified Returns URL");
-            test.log(Status.PASS, "Verified Returns URL");
+            test.log(Status.PASS, "Verified Return URL");
             Base.driver.navigate().back();
         } catch (AssertionError e) {
             LoggerHandler.error("Not able to verify Returns URL");
@@ -219,10 +218,10 @@ public class Elcfooterverify {
             helper.scrollToFooter();
             helper.wait(HomePageLocators.trackYourOrder);
             helper.clickOnElement(HomePageLocators.trackYourOrder);
-            LoggerHandler.info("Clicked on Track your Order");
+            LoggerHandler.info("Clicked on Track your Orders");
             test.log(Status.INFO, "Clicked on Track your Order");
         } catch (Exception e) {
-            LoggerHandler.error("Not able to click on Track your Order");
+            LoggerHandler.error("Not able to click on Track your Orders");
             test.log(Status.FAIL, "Not able to click on Track your Order");
         }
     }
@@ -237,11 +236,10 @@ public class Elcfooterverify {
     public void verifyTrackYourOrderUrl(){
         try {
             String str = Base.driver.getTitle();
-            System.out.println(str);
             String x = Base.driver.getCurrentUrl();
-            Assert.assertEquals(x,ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 10, 4));
+            Assert.assertEquals(x,ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 10, 4));
             LoggerHandler.info("Verified Track your Order URL");
-            test.log(Status.PASS, "Verified Track your Order URL");
+            test.log(Status.PASS, "Verified Track your Orders URL");
             Base.driver.navigate().back();
         } catch (AssertionError e) {
             LoggerHandler.error("Not able to verify Track your Order URL");
@@ -262,10 +260,10 @@ public class Elcfooterverify {
             helper.wait(HomePageLocators.helpCenter);
             helper.clickOnElement(HomePageLocators.helpCenter);
             LoggerHandler.info("Clicked on Help Centre");
-            test.log(Status.INFO, "Clicked on Help Centre");
+            test.log(Status.INFO, "Clicked on Help Centres");
         } catch (Exception e) {
             LoggerHandler.error("Not able to click on Help Centre");
-            test.log(Status.FAIL, "Not able to click on Help Centre");
+            test.log(Status.FAIL, "Not able to click on Help Centres");
         }
     }
 
@@ -279,9 +277,8 @@ public class Elcfooterverify {
     public void verifyHelpCentreUrl(){
         try {
             String str = Base.driver.getTitle();
-            System.out.println(str);
             String x = Base.driver.getCurrentUrl();
-            Assert.assertEquals(x,ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 10, 5));
+            Assert.assertEquals(x,ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 10, 5));
             LoggerHandler.info("Verified Help Centre URL");
             test.log(Status.PASS, "Verified Help Centre URL");
             Base.driver.navigate().back();
@@ -321,9 +318,8 @@ public class Elcfooterverify {
     public void verifyYourPrivacyUrl(){
         try {
             String str = Base.driver.getTitle();
-            System.out.println(str);
             String x = Base.driver.getCurrentUrl();
-            Assert.assertEquals(x,ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 10, 6));
+            Assert.assertEquals(x,ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 10, 6));
             LoggerHandler.info("Verified Your Privacy URL");
             test.log(Status.PASS, "Verified Your Privacy URL");
             Base.driver.navigate().back();
@@ -363,9 +359,8 @@ public class Elcfooterverify {
     public void verifyHowToComplainUrl(){
         try {
             String str = Base.driver.getTitle();
-            System.out.println(str);
             String x = Base.driver.getCurrentUrl();
-            Assert.assertEquals(x,ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 10, 7));
+            Assert.assertEquals(x,ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 10, 7));
             LoggerHandler.info("Verified How to complain URL");
             test.log(Status.PASS, "Verified How to complain URL");
             Base.driver.navigate().back();
@@ -385,8 +380,7 @@ public class Elcfooterverify {
     public void verifyAboutUs(){
         try {
             String str = helper.getText(HomePageLocators.about);
-            System.out.println(str);
-            Assert.assertEquals(str,ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 10, 8));
+            Assert.assertEquals(str,ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 10, 8));
             LoggerHandler.info("Verified Keyword 'About Us'");
             test.log(Status.PASS, "Verified Keyword 'About Us'");
             Base.driver.navigate().back();

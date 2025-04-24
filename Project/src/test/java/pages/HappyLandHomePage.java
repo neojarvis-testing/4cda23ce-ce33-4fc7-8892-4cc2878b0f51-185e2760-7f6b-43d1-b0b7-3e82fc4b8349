@@ -16,8 +16,12 @@ import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class HappyLandHomePage {
-    public static WebDriverHelper helper;
-    public static ExtentTest test;
+    WebDriverHelper helper;
+    ExtentTest test;
+    public static final String sheetsName = "Sheet1";
+    public static final String dirsPath = "/testData/ELCData.xlsx";
+    public static final String userCommonPath ="user.dir" ;
+    
     public HappyLandHomePage(ExtentTest test){
         helper=new WebDriverHelper(Base.driver);
         this.test=test;
@@ -34,11 +38,10 @@ public class HappyLandHomePage {
             helper.wait(HomePageLocators.Cookies);
             helper.clickOnElement(HomePageLocators.Cookies);
             String url=Base.driver.getCurrentUrl();
-            Assert.assertTrue(url.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 2)));
+            Assert.assertTrue(url.contains(ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 6, 2)));
             test.log(Status.PASS, "clicked on accept cookies");
             LoggerHandler.info("clicked on accept cookies");
         } catch (Exception e) {
-            e.printStackTrace();
             test.log(Status.PASS, "Not able to clicked on accept cookies");
             LoggerHandler.info("Not able to clicked on accept cookies");
 
@@ -56,13 +59,13 @@ public class HappyLandHomePage {
             helper.wait(HomePageLocators.explore);
             helper.hoverOverElement(HomePageLocators.explore); 
             String text=helper.getText(HomePageLocators.explore);
-            Assert.assertTrue(text.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 5, 3)));
+            Assert.assertTrue(text.contains(ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 5, 3)));
         LoggerHandler.info("Hover on Explore");
         test.log(Status.PASS,"Hover on Explore");
         Screenshot.captureScreenShot("ELC-Screenshot");
-        Reporter.attachScreenshotToReport("ELC-Screenshot", test, "ELC-Screenshot");
+        Reporter.attachScreenshotToReport("ELC-Screenshot1", test, "ELC-Screenshot2");
         } catch (Exception e) {
-          System.out.println(e.getMessage());
+
           LoggerHandler.error("Not able to Hover on Explore");
           test.log(Status.PASS,"Not able to Hover on Explore");
         }
@@ -79,11 +82,11 @@ public class HappyLandHomePage {
             helper.wait(HomePageLocators.giftCards);
             helper.clickOnElement(HomePageLocators.giftCards); 
             String text=helper.getText(HomePageLocators.giftCards);
-            Assert.assertTrue(text.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 5, 4)));
+            Assert.assertTrue(text.contains(ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 5, 4)));
         LoggerHandler.info("cliked on giftcards");
         test.log(Status.PASS,"cliked on giftcards");
         } catch (Exception e) {
-          System.out.println(e.getMessage());
+
           LoggerHandler.error("Not able to cliked on giftcards");
           test.log(Status.PASS,"Not able to cliked on giftcards");
         }
@@ -98,13 +101,11 @@ public class HappyLandHomePage {
     public void verifyGift(){
         try {
             String url=Base.driver.getCurrentUrl();
-            System.out.println(url);
-            //Assert.assertTrue(url.contains("gift"));
-           Assert.assertTrue(url.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 5, 1)));
+           Assert.assertTrue(url.contains(ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 5, 1)));
             LoggerHandler.info("Url contain gift");
             test.log(Status.PASS,"Url contain gift");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+
             LoggerHandler.error("Url not contain gift");
             test.log(Status.PASS,"Url not contain gift");
         }
@@ -120,11 +121,11 @@ public class HappyLandHomePage {
         try {
             helper.clickOnElement(HomePageLocators.offers);
             String text=helper.getText(HomePageLocators.offers);
-            Assert.assertTrue(text.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 5, 5)));
+            Assert.assertTrue(text.contains(ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 5, 5)));
         LoggerHandler.info("Clicked on Offers");
         test.log(Status.PASS,"Clicked on Offers");
         } catch (Exception e) {
-          System.out.println(e.getMessage());
+
           LoggerHandler.error("Not able to Click on Offers");
           test.log(Status.PASS,"Not able to Click on Offers");
         }
@@ -140,12 +141,12 @@ public class HappyLandHomePage {
     public void verifyMonths(){
         try {
             String text=helper.getText(HappyLandHomePageLocator.months);
-            Assert.assertTrue(text.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 5, 2)));
-            LoggerHandler.info("Text contains stores");
-            test.log(Status.INFO,"Text contains stores");
+            Assert.assertTrue(text.contains(ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 5, 2)));
+            LoggerHandler.info("Text contains storess");
+            test.log(Status.INFO,"Text contains store");
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+
             LoggerHandler.error("Text not contain months");
             test.log(Status.PASS,"Text not contain months");
         }
@@ -161,12 +162,12 @@ public class HappyLandHomePage {
         try {
             helper.wait(HappyLandHomePageLocator.happyland);
             String text=helper.getText(HappyLandHomePageLocator.happyland);
-            Assert.assertTrue(text.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 5, 6)));
+            Assert.assertTrue(text.contains(ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 5, 6)));
             helper.clickOnElement(HappyLandHomePageLocator.happyland); 
         LoggerHandler.info("Clicked on HappyLand");
         test.log(Status.PASS,"Clicked on HappyLand");
         } catch (Exception e) {
-          System.out.println(e.getMessage());
+
           LoggerHandler.error("Not able to Click on HappyLand");
           test.log(Status.FAIL,"Not able to Clicked on HappyLand");
         }
@@ -184,11 +185,11 @@ public class HappyLandHomePage {
             helper.clickOnElement(HappyLandHomePageLocator.first); 
            
              String url=Base.driver.getCurrentUrl();
-             Assert.assertTrue(url.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 2)));
+             Assert.assertTrue(url.contains(ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 6, 2)));
         LoggerHandler.info("Clicked on First Product");
         test.log(Status.PASS,"Clicked on First Product");
         } catch (Exception e) {
-          System.out.println(e.getMessage());
+
           LoggerHandler.error("Not able to Click on First Product");
           test.log(Status.FAIL,"Not able to Clicked on First Product");
         }
@@ -203,13 +204,12 @@ public class HappyLandHomePage {
     public void verifyStore(){
         try {
             String text=helper.getText(HappyLandHomePageLocator.store);
-            System.out.println(text);
             Assert.assertTrue(text.contains("store"));
-            LoggerHandler.info("Text contains stores");
-            test.log(Status.INFO,"Text contains stores");
+            LoggerHandler.info("Text contain stores");
+            test.log(Status.INFO,"Text contains storees");
 
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+
             LoggerHandler.error("Text not contain Stores");
             test.log(Status.FAIL,"Text not contain Stores");
         }
@@ -225,11 +225,11 @@ public class HappyLandHomePage {
         try {
             helper.clickOnElement(HappyLandHomePageLocator.addcart); 
             String text=helper.getText(HappyLandHomePageLocator.addcart);
-            Assert.assertTrue(text.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 5, 8)));
+            Assert.assertTrue(text.contains(ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 5, 8)));
         LoggerHandler.info("Clicked on Add to Basket");
         test.log(Status.PASS,"Clicked on Add to Basket");
         } catch (Exception e) {
-          System.out.println(e.getMessage());
+
           LoggerHandler.error("Not able to Click on Add to Basket");
           test.log(Status.FAIL,"Not able to Clicked on Add to Basket");
         }
@@ -245,14 +245,12 @@ public class HappyLandHomePage {
         try {
             helper.clickOnElement(HappyLandHomePageLocator.checkout); 
             String url=Base.driver.getCurrentUrl();
-            Assert.assertTrue(url.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 2)));
-            // String text=helper.getText(HappyLandHomePageLocator.checkout);
-            // Assert.assertTrue(text.contains(ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 5, 9)));
-        LoggerHandler.info("Clicked on CheckOut");
-        test.log(Status.PASS,"Clicked on CheckOut");
-        Screenshot.captureScreenShot("Add to cart");
+            Assert.assertTrue(url.contains(ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 6, 2)));
+            LoggerHandler.info("Clicked on CheckOut");
+            test.log(Status.PASS,"Clicked on CheckOut");
+            Screenshot.captureScreenShot("Add to cart");
         } catch (Exception e) {
-          System.out.println(e.getMessage());
+
           LoggerHandler.error("Not able to Click CheckOut");
           test.log(Status.FAIL,"Not able to Clicked Checkout");
         }

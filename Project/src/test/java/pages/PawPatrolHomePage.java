@@ -14,8 +14,12 @@ import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class PawPatrolHomePage {
-    public static WebDriverHelper helper;
-    public static ExtentTest test;
+    WebDriverHelper helper;
+    ExtentTest test;
+    public static final String sheetsName = "Sheet1";
+    public static final String dirsPath = "/testData/ELCData.xlsx";
+    public static final String userCommonPath ="user.dir" ;
+    
     public PawPatrolHomePage(ExtentTest test){
         helper = new WebDriverHelper(Base.driver);
         this.test = test;
@@ -34,7 +38,7 @@ public class PawPatrolHomePage {
             test.log(Status.PASS, "click on accept cookies");
             LoggerHandler.info("click on accept cookies");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
+            
             test.log(Status.FAIL, "Failed to Click on accept cookies");
             LoggerHandler.error("Failed to Click on accept cookies");
 
@@ -54,13 +58,9 @@ public void hoverOnBrands(){
         helper.hoverOverElement(PawPatrol5Locators.HoveronBrands);
         LoggerHandler.info("Successfully Hover on Brands");
         test.log(Status.PASS,"Succesfully Hover on Brands");
-        
-    } catch (Exception e) {
-        System.out.println(e.getMessage());
+    } catch (InterruptedException e) {
         LoggerHandler.error("Failed to Hover on Brands");
         test.log(Status.FAIL,"Failed to Hover on Brands");
-
-        // TODO: handle exception
     }
     
 }
@@ -79,8 +79,6 @@ public void ClickOnPawPatrol(){
         test.log(Status.PASS,"Successfully click on PawPatrol");
         
     } catch (Exception e) {
-        // TODO: handle exception
-        System.out.println(e.getMessage());
         LoggerHandler.error("Failed to Click on PawPatrol");
         test.log(Status.FAIL,"Failed to Click on PawPatrol");
     }
@@ -95,14 +93,12 @@ public void ClickOnPawPatrol(){
 public void verifyurl(){
     try {
         String value = helper.getUrl();
-        String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 0);
+        String data=ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 6, 0);
         Assert.assertEquals(value,data);
-        System.out.println(value);
         LoggerHandler.info("verify the url");
         test.log(Status.INFO,"verify the url");
     } catch (Exception e) {
-        // TODO: handle exception
-        System.out.println(e.getMessage());
+        
         LoggerHandler.error("Failed to Verify the Url");
         test.log(Status.FAIL,"Failed to Verify the Url");
     }
@@ -121,9 +117,7 @@ public void ClickonPlaysetsAction(){
         helper.clickOnElement(PawPatrol5Locators.ClickPlaysetsActions);
         LoggerHandler.info("Successfully click on Playsets & Action Figures");
         test.log(Status.PASS,"Successfully click on Playsets & Action Figures");
-        
     } catch (Exception e) {
-        System.out.println(e.getMessage());
         LoggerHandler.error("Failed to Click on Playsets & Action Figures ");
         test.log(Status.FAIL,"Failed to Click on Playsets & Action Figures");
     }
@@ -139,15 +133,12 @@ public void ClickonPlaysetsAction(){
 public void VerifyNarrow(){
     try {
         String data = helper.getText(PawPatrol5Locators.VerifyNarrow);
-        String value=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 1);
+        String value=ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 6, 1);
         Assert.assertEquals(data,value);
-        System.out.println(data);
         LoggerHandler.info("Successfully verifed the text Narrow");
         test.log(Status.PASS, "Successfully verifed the text Narrow");
-        
     } catch (Exception e) {
-        System.out.println(e.getMessage());
-        LoggerHandler.error("Failed to verify the text.");
+        LoggerHandler.error("Fails to verify the text.");
         test.log(Status.FAIL,"Failed to verify the text.");
 
     }
@@ -202,15 +193,13 @@ public void VerifyAvailable(){
     try {
         helper.wait(PawPatrol5Locators.VerifyAvailable);
         String data = helper.getText(PawPatrol5Locators.VerifyAvailable);
-        String value=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 2);
+        String value=ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 6, 2);
         Assert.assertEquals(data,value);
-        System.out.println(data);
-        LoggerHandler.info("Successfully verifed the text Available");
+        LoggerHandler.info("Successfully verifing the text Available");
         test.log(Status.PASS,"Successfully verifed the text Available");
-        
     } catch (Exception e) {
-        LoggerHandler.error("Failed to verify the text.");
-        test.log(Status.FAIL,"Failed to verify the text.");
+        LoggerHandler.error("Failing to verify the text.");
+        test.log(Status.FAIL,"Failss to verify the text.");
     }
 }
 /*
@@ -227,7 +216,6 @@ public void ClickOnAddtoBasket(){
         LoggerHandler.info("Successfully Clicked on Add to Basket");
         test.log(Status.PASS,"Successfully Clicked on Add to Basket");
     } catch (Exception e) {
-        System.out.println(e.getMessage());
         LoggerHandler.error("Failed to Click on AddtoBasket");
         test.log(Status.FAIL,"Failed to Click on AddtoBasket");
 
@@ -248,7 +236,6 @@ public void ClickOnCheckOut()
         LoggerHandler.info("Succesffully Clicked on CheckOut");
         test.log(Status.PASS,"Succesffully Clicked on CheckOut");
     } catch (Exception e) {
-        System.out.println(e.getMessage());
         LoggerHandler.error("Failed to Click on CheckOut");
         test.log(Status.FAIL,"Failed to Click on CheckOut");
     }
@@ -264,14 +251,12 @@ public void verifyBasket(){
     try {
         helper.wait(PawPatrol5Locators.VerifyBasket);
         String data = helper.getText(PawPatrol5Locators.VerifyBasket);
-        String value=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 6, 3);
+        String value=ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 6, 3);
         Assert.assertEquals(data,value);
-        System.out.println(data);
         LoggerHandler.info("Successfully verifed the text Basket");
-        test.log(Status.INFO,"Successfully verifed the text Available");
+        test.log(Status.INFO,"Successfull verification of the text Available");
         Screenshot.captureScreenShot("Add to Basket");
     } catch (Exception e) {
-        System.out.println(e.getMessage());
         LoggerHandler.error("Failed to Verify the text");
         test.log(Status.FAIL,"Failed to Verify the text");
     }

@@ -14,8 +14,12 @@ import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class NewbornBabyGiftsPage {
-    public static ExtentTest test;
-    public static WebDriverHelper helper;
+    ExtentTest test;
+    WebDriverHelper helper;
+    public static final String sheetsName = "Sheet1";
+    public static final String dirsPath = "/testData/ELCData.xlsx";
+    public static final String userCommonPath ="user.dir" ;
+    
     public NewbornBabyGiftsPage(ExtentTest test){
         helper=new WebDriverHelper(Base.driver);
         this.test=test;
@@ -84,7 +88,7 @@ public class NewbornBabyGiftsPage {
     public void verifyURL(){
         try {
             String url=Base.driver.getCurrentUrl();
-            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 2, 0);
+            String data=ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 2, 0);
             Assert.assertTrue(url.contains(data));
             test.log(Status.PASS, "Verified URL contains new-born-baby-gift-ideas");
             LoggerHandler.info("Verified URL contains new-born-baby-gift-ideas");
@@ -102,7 +106,6 @@ public class NewbornBabyGiftsPage {
      */
     public void clickShowMore(){
         try {
-            // helper.jsScrollIntoView(NewbornBabyGiftsPageLocator.showMore);
             helper.wait(NewbornBabyGiftsPageLocator.showMore);
             helper.clickOnElement(NewbornBabyGiftsPageLocator.showMore);
             test.log(Status.PASS, "Clicked on Show More under Toy type");
@@ -121,7 +124,6 @@ public class NewbornBabyGiftsPage {
      */
     public void clickBabyActivityToys(){
         try {
-            // helper.jsScrollIntoView(NewbornBabyGiftsPageLocator.babyActivityToys);
             helper.wait(NewbornBabyGiftsPageLocator.babyActivityToys);
             helper.clickOnElement(NewbornBabyGiftsPageLocator.babyActivityToys);
             test.log(Status.PASS, "Clicked on Baby Activity Toys");
@@ -197,7 +199,7 @@ public class NewbornBabyGiftsPage {
     public void verifyStandardDelivery(){
         try {
             String value=helper.getText(NewbornBabyGiftsPageLocator.standardDelivery);
-            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 2, 1);
+            String data=ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 2, 1);
             Assert.assertTrue(value.contains(data));
             test.log(Status.PASS, "Verified text Standard Deliver");
             LoggerHandler.info("Verified text Standard Delivery");
@@ -252,7 +254,7 @@ public class NewbornBabyGiftsPage {
     public void verifyHome(){
         try {
             String value=helper.getText(NewbornBabyGiftsPageLocator.home);
-            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 2, 2);
+            String data=ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 2, 2);
             Assert.assertTrue(value.contains(data));
             test.log(Status.PASS, "Verified text Home");
             LoggerHandler.info("Verified text Standard Home");

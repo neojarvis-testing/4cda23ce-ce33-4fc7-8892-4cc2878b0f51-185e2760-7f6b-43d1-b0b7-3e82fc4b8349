@@ -14,8 +14,12 @@ import utils.Screenshot;
 import utils.WebDriverHelper;
 
 public class FooterPage {
-    public static ExtentTest test;
-    public static WebDriverHelper helper;
+    ExtentTest test;
+    WebDriverHelper helper;
+    public static final String sheetsName = "Sheet1";
+    public static final String dirsPath = "/testData/ELCData.xlsx";
+    public static final String userCommonPath ="user.dir" ;
+    
     public FooterPage(ExtentTest test){
         this.test=test;
         helper=new WebDriverHelper(Base.driver);
@@ -34,7 +38,6 @@ public class FooterPage {
             test.log(Status.INFO, "click on accept cookies");
             LoggerHandler.info("click on accept cookies");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             test.log(Status.FAIL, "not click on accept cookies");
             LoggerHandler.error("not click on accept cookies");
         }
@@ -54,7 +57,6 @@ public class FooterPage {
             test.log(Status.PASS, "scroll down to footer");
             LoggerHandler.info("scroll down to footer");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             test.log(Status.FAIL, "not scroll down to footer");
             LoggerHandler.error("not scroll down to footer");
         }
@@ -69,14 +71,12 @@ public class FooterPage {
     public void verifyAboutUsUrl(){
         try {
             String value=helper.getUrl();
-            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 12, 0);
+            String data=ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 12, 0);
             Assert.assertEquals(value, data);
-            System.out.println(data);
             Base.driver.navigate().back();
             test.log(Status.PASS, "navigate back to home page");
             LoggerHandler.info("navigate back to home page");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             test.log(Status.FAIL, "not navigate back to home page");
             LoggerHandler.error("not navigate back to home page");
         }
@@ -96,7 +96,6 @@ public class FooterPage {
             test.log(Status.PASS, "click on store finder");
             LoggerHandler.info("click on store finder");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             test.log(Status.FAIL,"not click on store finder" );
             LoggerHandler.error("not click on store finder");
         }
@@ -111,14 +110,12 @@ public class FooterPage {
     public void verifyStoreFindUrl(){
         try {
             String value=helper.getUrl();
-            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1", 12, 1);
+            String data=ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName, 12, 1);
             Assert.assertEquals(value, data);
-            System.out.println(data);
             Base.driver.navigate().back();
             test.log(Status.PASS, "verify the store finder url");
             LoggerHandler.info("verify the store finder url");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             test.log(Status.FAIL,"not verify the store finder url" );
             LoggerHandler.error("not verify the store finder url");
         }
@@ -139,7 +136,6 @@ public class FooterPage {
             test.log(Status.PASS, "click on WEE Regulations");
             LoggerHandler.info("click on WEE Regulations");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             test.log(Status.FAIL, "not click on WEE Regulations");
             LoggerHandler.error("not click on WEE Regulations");
         }
@@ -154,14 +150,12 @@ public class FooterPage {
     public void verifyWEERegulationsUrl(){
         try {
             String value=helper.getUrl();
-            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx", "Sheet1" , 12, 2);
+            String data=ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath, sheetsName , 12, 2);
             Assert.assertEquals(value, data);
-            System.out.println(value);
             helper.switchBackToParent();
             test.log(Status.INFO, "verify the weeRegulations url");
             LoggerHandler.info("verify the weeRegulations url");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             test.log(Status.FAIL,"not verify the weeRegulations url" );
             LoggerHandler.error("not verify the weeRegulations url");
         }
@@ -181,7 +175,6 @@ public class FooterPage {
             test.log(Status.PASS, "click on Press");
             LoggerHandler.info("click on Press");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             test.log(Status.FAIL,"not click on Press" );
             LoggerHandler.error("not click on Press");
         }
@@ -196,14 +189,12 @@ public class FooterPage {
     public void verifyPressUrl(){
         try {
             String value=helper.getUrl();
-            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx","Sheet1" , 12, 3);
+            String data=ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath,sheetsName , 12, 3);
             Assert.assertEquals(value, data);
-            System.out.println(value);
             Base.driver.navigate().back();
             test.log(Status.PASS, "verify the press url");
             LoggerHandler.info("verify the press url");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             test.log(Status.FAIL,"not verify the press url" );
             LoggerHandler.error("not verify the press url");
         }
@@ -223,7 +214,6 @@ public class FooterPage {
             test.log(Status.PASS, "click on Affilates");
             LoggerHandler.info("click on Affilates");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             test.log(Status.FAIL,"not click on Affilates" );
             LoggerHandler.error("not click on Affilates");
         }
@@ -238,14 +228,12 @@ public class FooterPage {
     public void verifyAffilatesUrl(){
         try {
             String value=helper.getUrl();
-            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx","Sheet1" , 12, 4);
+            String data=ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath,sheetsName , 12, 4);
             Assert.assertEquals(value, data);
-            System.out.println(value);
             Base.driver.navigate().back();
             test.log(Status.INFO, "verify the affilates url");
             LoggerHandler.info("verify the affilates url");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             test.log(Status.FAIL, "not verify the affilates url");
             LoggerHandler.error("not verify the affilates url");
         }
@@ -266,7 +254,6 @@ public class FooterPage {
             LoggerHandler.info("click on Careers");
             helper.switchTab();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             test.log(Status.FAIL,"not click on Careers" );
             LoggerHandler.error("not click on Careers");
         }
@@ -281,14 +268,12 @@ public class FooterPage {
     public void verifyCareersUrl(){
         try {
             String value=helper.getUrl();
-            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx","Sheet1" , 12, 5);
+            String data=ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath,sheetsName , 12, 5);
             Assert.assertEquals(value, data);
-            System.out.println(value);
             helper.switchBackToParent();
-            test.log(Status.PASS, "verify the careers url");
-            LoggerHandler.info("verify the careers url");
+            test.log(Status.PASS, "verifing the careers url");
+            LoggerHandler.info("verifes the careers url");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             test.log(Status.FAIL,"verify the careers url" );
             LoggerHandler.error("not verify the careers url");
         }
@@ -308,7 +293,6 @@ public class FooterPage {
             test.log(Status.PASS, "click on gift card");
             LoggerHandler.info("click on gift card");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             test.log(Status.FAIL,"not click on gift card" );
             LoggerHandler.error("not click on gift card");
         }
@@ -323,14 +307,12 @@ public class FooterPage {
     public void verifyGiftCardUrl(){
         try {
             String value=helper.getUrl();
-            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx","Sheet1" , 12, 6);
+            String data=ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath,sheetsName , 12, 6);
             Assert.assertEquals(value, data);
-            System.out.println(value);
             test.log(Status.PASS, "verify the gift card url");
             LoggerHandler.info("verify the gift card url");
             Base.driver.navigate().back();
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             test.log(Status.FAIL, "not verify the gift card url");
             LoggerHandler.error("not verify the gift card url");
         }
@@ -350,7 +332,6 @@ public class FooterPage {
             test.log(Status.PASS, "click on klarna");
             LoggerHandler.info("click on klarna");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             test.log(Status.FAIL,"not click on klarna" );
             LoggerHandler.error("not click on klarna");
         }
@@ -365,14 +346,12 @@ public class FooterPage {
     public void verifyKlarnaUrl(){
         try {
             String value=helper.getUrl();
-            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx","Sheet1" , 12, 7);
+            String data=ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath,sheetsName , 12, 7);
             Assert.assertEquals(value, data);
-            System.out.println(value);
             Base.driver.navigate().back();
             test.log(Status.PASS, "verify the klarna url");
             LoggerHandler.info("verify the klarna url");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             test.log(Status.FAIL, "not verify the klarna url");
             LoggerHandler.error("not verify the klarna url");
         }
@@ -387,13 +366,11 @@ public class FooterPage {
     public void verifyUsefulLinksText(){
         try {
             String value=helper.getText(HomePageLocators.usefulLinks);
-            String data=ExcelReader.readData(System.getProperty("user.dir")+"/testData/ELCData.xlsx","Sheet1" , 12, 8);
+            String data=ExcelReader.readData(System.getProperty(userCommonPath)+dirsPath,sheetsName , 12, 8);
             Assert.assertEquals(value, data);;
-            System.out.println(value);
             test.log(Status.PASS, "verify the useful links url");
             LoggerHandler.info("verify the useful links url");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             test.log(Status.FAIL, "not verify the useful links url");
             LoggerHandler.error("not verify the useful links url");
         }
@@ -413,7 +390,6 @@ public class FooterPage {
             test.log(Status.PASS, "captured the elc screenshot");
             LoggerHandler.info("captured the elc screenshot");
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             test.log(Status.FAIL, "not captured the elc screenshot");
             LoggerHandler.error("not captured the elc screenshot");
         }
